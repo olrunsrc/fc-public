@@ -33,10 +33,11 @@ RUN echo "while rosbag play ${WS}/footsteps_2017-05-02-14-40-59.bag && python ${
   > do_footsteps.bash
 
 #set up telnet
+COPY password.file .
 RUN echo "telnet	stream	tcp	nowait	telnetd	/usr/sbin/tcpd	/usr/sbin/in.telnetd" > /etc/inetd.conf \
-    && adduser -m olrun \
+    && useradd -ms /bin/bash olrun \
     && usermod -aG sudo olrun \
-    && cat password.file | /etc/bin/passwd olrun
+    && cat password.file | /usr/bin/passwd olrun
 
 ADD posix_ipc-1.0.0.tar.gz . 
 WORKDIR posix_ipc-1.0.0
@@ -81,9 +82,10 @@ RUN echo "/usr/local/nvidia/lib" >> /etc/ld.so.conf.d/nvidia.conf && \
     echo "/usr/local/nvidia/lib64" >> /etc/ld.so.conf.d/nvidia.conf
 
 ENV PATH /usr/local/nvidia/bin:/usr/local/cuda/bin:${PATH}
-ENV LD_LIBRARY_PATH /usr/local/nvidia/lib:/usr/local/nvidia/lib64
+ENV LD_LIBRARY_PATH /usr/local/nvidia/lib:/usr/local/nvidia/lib64:${LD_LIBRARY_PATH}
 
 #cuDNN
+WORKDIR ${WS}
 RUN echo "deb http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1404/x86_64 /" > /etc/apt/sources.list.d/nvidia-ml.list
 
 ENV CUDNN_VERSION 6.0.21
@@ -116,9 +118,11 @@ RUN curl -O https://bootstrap.pypa.io/get-pip.py && \
 rm get-pip.py
 
 RUN pip --no-cache-dir install \
-http://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-0.0.0-cp27-none-linux_x86_64.whl
+http://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-0.12.1-cp27-none-linux_x86_64.whl
 
 ENV LD_LIBRARY_PATH /usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH
 
 # start a roscore
-CMD ["python", "-m", "SimpleHTTPServer", "8000"]
+#CMD ["python", "-m", "SimpleHTTPServer", "8000"]
+COPY olrun.bash .
+CMD ["/bin/bash", "olrun.bash" ]
