@@ -1,0 +1,10 @@
+export LD_LIBRARY_PATH=/usr/local/nvidia/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/nvidia/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/home/docker/ws:$LD_LIBRARY_PATH
+
+export IS_GAZEBO=true
+export ROS_IP=10.9.20.1
+export ROS_MASTER_URI=http://10.9.20.1:11311
+source /home/docker/ws/install/setup.bash
+
+

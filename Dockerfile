@@ -43,7 +43,7 @@ ADD posix_ipc-1.0.0.tar.gz .
 WORKDIR posix_ipc-1.0.0
 RUN python setup.py install 
 WORKDIR ${WS}
-RUN pip install trollius autobahn 
+RUN pip install trollius autobahn web.py
 RUN apt-get update \
  && apt-get install -y \
     ros-indigo-gazebo-ros
@@ -124,7 +124,9 @@ ENV LD_LIBRARY_PATH /usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH
 
 # start a roscore
 #CMD ["python", "-m", "SimpleHTTPServer", "8000"]
-COPY midi/ .
-copy trajectories/ .
+COPY midi/ midi/
+copy trajectories/ trajectories/
 COPY olrun.bash .
+COPY fixbashrc.txt .
+COPY testtf.py .
 CMD ["/bin/bash", "olrun.bash" ]
