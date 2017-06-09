@@ -1,0 +1,133 @@
+robot_side: 1
+joint_trajectory_messages: 
+  - 
+    trajectory_points: #ShoulderPitch
+      - 
+        time: 2.0
+        position: 0.0
+        velocity: 0.0
+        unique_id: 0
+      - 
+        time: 3.0
+        position: 0.0
+        velocity: 0.0
+        unique_id: 0
+      - 
+        time: 4.0
+        position: 0.0
+        velocity: 0.0
+        unique_id: 0
+    unique_id: 0
+  - 
+    trajectory_points: #ShoulderRoll
+      - 
+        time: 2.0
+        position: -1.0
+        velocity: 0.0
+        unique_id: 0
+      - 
+        time: 3.0
+        position: 0.0
+        velocity: 0.0
+        unique_id: 0
+      - 
+        time: 4.0
+        position: -1.0
+        velocity: 0.0
+        unique_id: 0
+    unique_id: 0
+  - 
+    trajectory_points: #ShoulderYaw
+      - 
+        time: 2.0
+        position: 2.0
+        velocity: 0.0
+        unique_id: 0
+      - 
+        time: 3.0
+        position: 0.0
+        velocity: 0.0
+        unique_id: 0
+      - 
+        time: 4.0
+        position: 2.0
+        velocity: 0.0
+        unique_id: 0
+    unique_id: 0
+  - 
+    trajectory_points: #ElbowPitch
+      - 
+        time: 2.0
+        position: 1.0
+        velocity: 0.0
+        unique_id: 0
+      - 
+        time: 3.0
+        position: 2.0
+        velocity: 0.0
+        unique_id: 0
+      - 
+        time: 4.0
+        position: 1.0
+        velocity: 0.0
+        unique_id: 0
+    unique_id: 0
+  - 
+    trajectory_points: #ForearmYaw
+      - 
+        time: 2.0
+        position: 0.0
+        velocity: 0.0
+        unique_id: 0
+      - 
+        time: 3.0
+        position: 0.0
+        velocity: 0.0
+        unique_id: 0
+      - 
+        time: 4.0
+        position: 0.0
+        velocity: 0.0
+        unique_id: 0
+    unique_id: 0
+  - 
+    trajectory_points: #WristRoll
+      - 
+        time: 2.0
+        position: 0.0
+        velocity: 0.0
+        unique_id: 0
+      - 
+        time: 3.0
+        position: 0.0
+        velocity: 0.0
+        unique_id: 0
+      - 
+        time: 4.0
+        position: 0.0
+        velocity: 0.0
+        unique_id: 0
+    unique_id: 0
+  - 
+    trajectory_points: #WristPitch
+      - 
+        time: 2.0
+        position: 0.0
+        velocity: 0.0
+        unique_id: 0
+      - 
+        time: 3.0
+        position: 0.0
+        velocity: 0.0
+        unique_id: 0
+      - 
+        time: 4.0
+        position: 0.0
+        velocity: 0.0
+        unique_id: 0
+    unique_id: 0
+execution_mode: 0
+previous_message_id: 0
+unique_id: -1
+---
+

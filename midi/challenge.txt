@@ -1,0 +1,37 @@
+#SRCSIM messages and commands
+
+rosservice call /srcsim/finals/start_task 1 1
+/srcsim/finals/task
+/task1/checkpoint2/satellite
+/task3/checkpoint5/leak
+
+task: 3
+current_checkpoint: 3
+checkpoints_completion:
+  -
+    secs: 40
+    nsecs: 332000000
+  -
+    secs: 40
+    nsecs: 756000000
+start_time:
+  secs: 35
+  nsecs: 236000000
+elapsed_time:
+  secs: 5
+  nsecs: 520000000
+timed_out: False
+finished: False
+
+target_pitch: -0.2
+target_yaw: 1.0
+current_pitch: -0.0306981597753
+current_yaw: 0.238853778623
+pitch_correct_now: False
+yaw_correct_now: False
+pitch_completed: False
+yaw_completed: False
+
+
+
+value: 0.01

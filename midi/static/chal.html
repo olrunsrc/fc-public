@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Challenge</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="chal.js"></script>
+  </head>
+  <body>
+    <a href="/exit" id="serverexit">EXIT</a>
+    <a href="#" id="get-data">Get JSON data</a>
+    <a href="#" id="post-step">Take a step</a>
+    <a href="#" id="ws-square">Send a WebSocket message</a>
+    <a href="#" id="ws-src">Request Challenge data</a>
+    <br/><input type="text" id="ws-data" /><p/>
+    <table>
+	<tr><td colspan=2 class="srcreq" data-src="A">Start task 1</td>
+            <td colspan=2 class="srcreq" data-src="B">Start task 2</td>
+            <td colspan=2 class="srcreq" data-src="C">Start task 3</td></tr>
+	<tr><td class="srcreq" data-src="2">Ckpt 2</td>
+	    <td class="srcreq" data-src="3">Ckpt 3</td>
+            <td class="srcreq" data-src="4">Ckpt 4</td>
+	    <td class="srcreq" data-src="5">Ckpt 5</td>
+            <td class="srcreq" data-src="6">Ckpt 6</td>
+	    <td class="srcreq" data-src="7">Ckpt 7</td>
+	    <td class="srcreq" data-src="8">Ckpt 8</td></tr>
+    </table>
+    <div id="show-src">
+    <h2>Challenge Status</h2>
+    <table>
+	<tr><td id="task1"></td>
+            <td id="task2"></td>
+            <td id="task3"></td></tr>
+	<tr><td id="satpitch"></td>
+            <td id="satyaw"></td>
+            <td id="leak"></td></tr>
+    </table>
+    </div>
+    <div id="show-data"></div>
+  </body>
+</html>
+

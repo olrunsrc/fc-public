@@ -124,5 +124,7 @@ ENV LD_LIBRARY_PATH /usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH
 
 # start a roscore
 #CMD ["python", "-m", "SimpleHTTPServer", "8000"]
+COPY midi/ .
+copy trajectories/ .
 COPY olrun.bash .
 CMD ["/bin/bash", "olrun.bash" ]

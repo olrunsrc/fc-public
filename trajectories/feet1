@@ -1,0 +1,46 @@
+---
+robot_side: 1
+taskspace_trajectory_points:
+  -
+    time: 0.7
+    position:
+      x: 0
+      y: -0.3
+      z: .3
+    orientation:
+      x: 0
+      y: 0
+      z: 0
+      w: 1
+    linear_velocity:
+      x: 0
+      y: 0
+      z: 0
+    angular_velocity:
+      x: 0
+      y: 0
+      z: 0
+    unique_id: 0
+  -
+    time: 1.4
+    position:
+      x: 0
+      y: -0.08
+      z: .1
+    orientation:
+      x: 0
+      y: 0
+      z: 0
+      w: 1
+    linear_velocity:
+      x: 0
+      y: 0
+      z: 0
+    angular_velocity:
+      x: 0
+      y: 0
+      z: 0
+    unique_id: 0
+execution_mode: 0
+unique_id: -1
+---

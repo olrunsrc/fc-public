@@ -1,0 +1,132 @@
+robot_side: 0
+joint_trajectory_messages: 
+  - 
+    trajectory_points: 
+      - 
+        time: 5.0
+        position: 0.0
+        velocity: 0.0
+        unique_id: 0
+      - 
+        time: 6.0
+        position: 0.0
+        velocity: 0.0
+        unique_id: 0
+      - 
+        time: 7.0
+        position: 0.0
+        velocity: 0.0
+        unique_id: 0
+    unique_id: 0
+  - 
+    trajectory_points: 
+      - 
+        time: 5.0
+        position: 1.0
+        velocity: 0.0
+        unique_id: 0
+      - 
+        time: 6.0
+        position: 0.0
+        velocity: 0.0
+        unique_id: 0
+      - 
+        time: 7.0
+        position: 1.0
+        velocity: 0.0
+        unique_id: 0
+    unique_id: 0
+  - 
+    trajectory_points: 
+      - 
+        time: 5.0
+        position: 0.0
+        velocity: 0.0
+        unique_id: 0
+      - 
+        time: 6.0
+        position: 0.0
+        velocity: 0.0
+        unique_id: 0
+      - 
+        time: 7.0
+        position: 0.0
+        velocity: 0.0
+        unique_id: 0
+    unique_id: 0
+  - 
+    trajectory_points: 
+      - 
+        time: 5.0
+        position: 0.0
+        velocity: 0.0
+        unique_id: 0
+      - 
+        time: 6.0
+        position: 0.0
+        velocity: 0.0
+        unique_id: 0
+      - 
+        time: 7.0
+        position: 0.0
+        velocity: 0.0
+        unique_id: 0
+    unique_id: 0
+  - 
+    trajectory_points: 
+      - 
+        time: 5.0
+        position: 0.0
+        velocity: 0.0
+        unique_id: 0
+      - 
+        time: 6.0
+        position: 0.0
+        velocity: 0.0
+        unique_id: 0
+      - 
+        time: 7.0
+        position: 0.0
+        velocity: 0.0
+        unique_id: 0
+    unique_id: 0
+  - 
+    trajectory_points: 
+      - 
+        time: 5.0
+        position: 0.0
+        velocity: 0.0
+        unique_id: 0
+      - 
+        time: 6.0
+        position: 0.0
+        velocity: 0.0
+        unique_id: 0
+      - 
+        time: 7.0
+        position: 0.0
+        velocity: 0.0
+        unique_id: 0
+    unique_id: 0
+  - 
+    trajectory_points: 
+      - 
+        time: 5.0
+        position: 0.0
+        velocity: 0.0
+        unique_id: 0
+      - 
+        time: 6.0
+        position: 0.0
+        velocity: 0.0
+        unique_id: 0
+      - 
+        time: 7.0
+        position: 0.0
+        velocity: 0.0
+        unique_id: 0
+    unique_id: 0
+execution_mode: 0
+previous_message_id: 0
+unique_id: -1
+---

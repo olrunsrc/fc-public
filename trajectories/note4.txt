@@ -1,0 +1,17 @@
+./armTest.py
+./walkcmd.py -x 5.6 -y -0.001 -n 10 -s 1 -d 0.7
+
+./runme2.py -x 5.6 -n 10 -d 0.7 -s 1.0 -l 9.7 -y -0.002 -r
+
+time: 51.573 steps:  9 robot: ( 5.033, 1.000) left:  4.548 right:  5.033
+ Started: 37.873
+Finished: 50.273
+ Elapsed: 12.400
+n:10 dx: 0.560 dy:-0.000 l/r: 1 dual: 0.700 swing: 1.000  arm linger for  9.700s
+
+Start line crossed: [38 421000000]
+Finish line crossed: [50 686000000]
+Elapsed time: [12 265000000]
+
+
+

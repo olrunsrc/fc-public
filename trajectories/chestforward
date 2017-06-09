@@ -1,0 +1,27 @@
+taskspace_trajectory_points: 
+  - 
+    time: 0
+    orientation: 
+      x: 0
+      y: 0
+      z: 0
+      w: 1
+    angular_velocity: 
+      x: 0
+      y: 0
+      z: 0
+  - 
+    time: 2
+    orientation: 
+      x: 0
+      y: 0.13
+      z: 0
+      w: 0.992
+    angular_velocity: 
+      x: 0
+      y: 0
+      z: 0
+execution_mode: 0
+unique_id: -1
+---
+

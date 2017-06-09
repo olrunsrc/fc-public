@@ -1,0 +1,4 @@
+#!/bin/bash
+
+rostopic pub -1 -f $1 /ihmc_ros/valkyrie/control/hand_trajectory ihmc_msgs/HandTrajectoryRosMessage
+

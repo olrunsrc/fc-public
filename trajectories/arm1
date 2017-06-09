@@ -1,0 +1,55 @@
+{ robot_side:  1,
+joint_trajectory_messages: [
+  {trajectory_points: [
+    {time: 0, position: 0.47, velocity: 0, unique_id: -1},
+    {time: 1, position: 0.57, velocity: 0, unique_id: -1},
+    {time: 2, position: 0.67, velocity: 0, unique_id: -1},
+    {time: 3, position: 0.57, velocity: 0, unique_id: -1},
+    {time: 4, position: 0.47, velocity: 0, unique_id: -1},
+    {time: 5, position: 0.37, velocity: 0, unique_id: -1}],
+   unique_id: -1},
+  {trajectory_points: [
+    {time: 0, position: 0.47, velocity: 0, unique_id: -1},
+    {time: 1, position: 0.57, velocity: 0, unique_id: -1},
+    {time: 2, position: 0.67, velocity: 0, unique_id: -1},
+    {time: 3, position: 0.57, velocity: 0, unique_id: -1},
+    {time: 4, position: 0.47, velocity: 0, unique_id: -1},
+    {time: 5, position: 0.37, velocity: 0, unique_id: -1}],
+   unique_id: -1},
+  {trajectory_points: [
+    {time: 0, position: 0.47, velocity: 0, unique_id: -1},
+    {time: 1, position: 0.57, velocity: 0, unique_id: -1},
+    {time: 2, position: 0.67, velocity: 0, unique_id: -1},
+    {time: 3, position: 0.57, velocity: 0, unique_id: -1},
+    {time: 4, position: 0.47, velocity: 0, unique_id: -1},
+    {time: 5, position: 0.37, velocity: 0, unique_id: -1}],
+   unique_id: -1},
+  {trajectory_points: [
+    {time: 0, position: 0.47, velocity: 0, unique_id: -1},
+    {time: 1, position: 0.57, velocity: 0, unique_id: -1},
+    {time: 2, position: 0.67, velocity: 0, unique_id: -1},
+    {time: 3, position: 0.57, velocity: 0, unique_id: -1},
+    {time: 4, position: 0.47, velocity: 0, unique_id: -1},
+    {time: 5, position: 0.37, velocity: 0, unique_id: -1}],
+   unique_id: -1},
+  {trajectory_points: [
+    {time: 0, position: 0.47, velocity: 0, unique_id: -1},
+    {time: 1, position: 0.57, velocity: 0, unique_id: -1},
+    {time: 2, position: 0.67, velocity: 0, unique_id: -1},
+    {time: 3, position: 0.57, velocity: 0, unique_id: -1},
+    {time: 4, position: 0.47, velocity: 0, unique_id: -1},
+    {time: 5, position: 0.37, velocity: 0, unique_id: -1}],
+   unique_id: -1},
+  {trajectory_points: [
+    {time: 0, position: 0.47, velocity: 0, unique_id: -1},
+    {time: 1, position: 0.57, velocity: 0, unique_id: -1},
+    {time: 2, position: 0.67, velocity: 0, unique_id: -1},
+    {time: 3, position: 0.57, velocity: 0, unique_id: -1},
+    {time: 4, position: 0.47, velocity: 0, unique_id: -1},
+    {time: 5, position: 0.37, velocity: 0, unique_id: -1}],
+   unique_id: -1}
+],
+execution_mode: 0,
+previous_message_id: 0,
+unique_id: -1
+}
