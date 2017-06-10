@@ -154,7 +154,7 @@ class ChallengeProtocolA(WebSocketServerProtocol):
 	print("CPAWebSocket connection closed: {0}".format(reason))
 
 class WSS:
-    def __init__(self,protocol,ip='127.0.0.1',port=9000):
+    def __init__(self,protocol,ip='127.0.0.1',port=9002):
 	global chalmap
 	self.memfile = open("data/chalmap","r+b")
 	self.memmap = mmap.mmap(self.memfile.fileno(),0)
@@ -195,7 +195,7 @@ def main():
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     s.connect(("8.8.8.8", 80))
     ip = s.getsockname()[0]
-    srv = WSS(ChallengeProtocolA, ip, 9000)
+    srv = WSS(ChallengeProtocolA, "10.9.20.1", 9002)
     try:
         srv.run()
     except KeyboardInterrupt:
