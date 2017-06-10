@@ -75,7 +75,7 @@ class TaskState:
     def update(self, msg):
 	if float(msg.task)==self.task:
 	    self.curr = float(msg.current_checkpoint)
-	    for i,v in enumerate( msg.checkpoints_completion ):
+	    for i,v in enumerate( msg.checkpoint_durations ):
 		self.comp[i] = v.to_sec()
 	    self.start = msg.start_time.to_sec()
 	    self.elapsed = msg.elapsed_time.to_sec()
