@@ -76,7 +76,8 @@ const tplTask = ({ curr, elapsed, task, comp, timedout, start, finished }) => `
 `;
 
     //var wSockaddr = "ws://" + location.hostname + ":9000"
-    var wSockaddr = "ws://10.9.20.1:9002"
+    //var wSockaddr = "ws://10.9.20.1:9002"
+    var wSockaddr = "ws://192.168.2.10:9002"
     var wSock = new WebSocket(wSockaddr);
     function sendText(cmd,val){
         var msg = { cmd: cmd, x: val };

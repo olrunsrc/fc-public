@@ -38,7 +38,9 @@ const tplTask = ({ curr, elapsed, task, comp, timedout, start, finished }) => `
     //var wSockaddr = "ws://" + location.hostname?location.hostname:"localhost" + ":9000"
     //var wSockaddr = "ws://192.168.0.61:9001"
     //var wSockaddr = "ws://192.168.0.79:9001"
-    var wSockaddr = "ws://127.0.0.1:9001"
+    //var wSockaddr = "ws://127.0.0.1:9001"
+    var wSockaddr = "ws://192.168.2.10:9001"
+    //var wSockaddr = "ws://10.9.20.1:9001"
     var wSock = new WebSocket(wSockaddr);
     wSock.binaryType = 'arraybuffer'
     function sendText(cmd,val){
