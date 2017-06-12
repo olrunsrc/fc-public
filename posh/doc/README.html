@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+</head>
+<body>
+<h1>Creating API documentation
+</h1>
+<p>API documentation can be created using <a
+ href="http://epydoc.sourceforge.net/">EpyDoc</a>.
+</p>
+<p>EpyDoc (http://epydoc.sourceforge.net/) automatically generates
+Python class
+and module documentation based on importing the modules and
+investigating
+each class. EpyDoc is based on Python and does not support Jython.
+As many of the modules in this project import Java classes, import in
+Python would fail. That prohibits EPyDoc to generate documentation for
+the classes in those modules.
+</p>
+<p>The stubs provided here allow Python to import the modules
+correctly.
+They won't run, but that's not required for generating the
+documentation.
+Hence, by using this path in the PYTHONPATH, one can use EpyDoc for
+automated class documentation.<br>
+</p>
+<p>Important note:&nbsp; If you write new java code e.g. in
+platform_files/MASON, you have to ensure you edit the .py documentation
+files to keep this system working.&nbsp; If anyone knows another
+documentation system that does work correctly with jython, please let
+us know!
+</p>
+<p>The following steps generate the documentation in Linux (and
+probably
+also on OS X), given that Epydoc is installed correctly:
+</p>
+<ol>
+  <li>In a console, go to the project root.&nbsp; Let us assume for
+now, that the project root is at /home/user/src/jyposh.</li>
+  <li>Create the PYTHONPATH environment variable that it points to the
+project root and to the stubs root. In our example that would be (given
+that you are using bash): <br>
+    <br>
+    <span style="font-family: monospace;"> export
+PYTHONPATH=/home/user/src/jyposh:/home/user/src/jyposh/doc/stubs</span><br>
+    <br>
+  </li>
+  <li>Run Epydoc to generate the documentation. More details about how
+to class Epydoc to generate different forms of the documentation can be
+found in the Epydoc documentation. We will generate HTML documentation
+in the 'doc' folder: <br>
+    <br>
+    <span style="font-family: monospace;"> epydoc -o doc POSH </span><br>
+    <br>
+As given above, Epydoc has to be run in the project root. Otherwise it
+won't find the files. The above command only documents the API of the
+POSH implementations. To create additional documentation for, say, the
+MASON library, use something like <br>
+    <br>
+    <span style="font-family: monospace;"> epydoc -o doc POSH
+library/mason/mason.py</span> </li>
+</ol>
+<p><br>
+</p>
+<p>Happy documenting!
+</p>
+</body>
+</html>

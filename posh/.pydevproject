@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse-pydev version="1.0"?>
+
+<pydev_project>
+<pydev_pathproperty name="org.python.pydev.PROJECT_SOURCE_PATH">
+<path>/jyposh</path>
+<path>/jyposh/POSH/log4j-1.2.jar</path>
+<path>/jyposh/platform_files/MASON/mason.jar</path>
+</pydev_pathproperty>
+<pydev_property name="org.python.pydev.PYTHON_PROJECT_VERSION">jython 2.1</pydev_property>
+</pydev_project>

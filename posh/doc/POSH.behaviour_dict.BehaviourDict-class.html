@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>POSH.behaviour_dict.BehaviourDict</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="POSH-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="POSH-module.html">Package&nbsp;POSH</a> ::
+        <a href="POSH.behaviour_dict-module.html">Module&nbsp;behaviour_dict</a> ::
+        Class&nbsp;BehaviourDict
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="POSH.behaviour_dict.BehaviourDict-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class BehaviourDict</h1><p class="nomargin-top"><span class="codelink"><a href="POSH.behaviour_dict-pysrc.html#BehaviourDict">source&nbsp;code</a></span></p>
+<p>The behaviour dictionary.</p>
+  <p>The behaviour dictionary is a dictionary of behaviours, its actions 
+  and senses. Each of the behaviours is registered with the dictionary. 
+  Subsequently, it allows looking up actions and senses by their names, and
+  returns their behaviour and their actual method.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__init__"></a><span class="summary-sig-name">__init__</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Initialises the behaviour dictionary.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.behaviour_dict-pysrc.html#BehaviourDict.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.behaviour_dict.BehaviourDict-class.html#registerBehaviour" class="summary-sig-name">registerBehaviour</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">behaviour</span>)</span><br />
+      Registers the given behaviour.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.behaviour_dict-pysrc.html#BehaviourDict.registerBehaviour">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">sequence of <a href="POSH.behaviour.Behaviour-class.html" 
+      class="link">POSH.Behaviour</a> objects</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.behaviour_dict.BehaviourDict-class.html#getBehaviours" class="summary-sig-name">getBehaviours</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns a list of behaviours.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.behaviour_dict-pysrc.html#BehaviourDict.getBehaviours">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.behaviour_dict.BehaviourDict-class.html#getBehaviour" class="summary-sig-name">getBehaviour</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">behav_name</span>)</span><br />
+      Returns the behaviour object with the given name.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.behaviour_dict-pysrc.html#BehaviourDict.getBehaviour">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><a href="POSH.behaviour.Behaviour-class.html" 
+      class="link">POSH.Behaviour</a> class method</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.behaviour_dict.BehaviourDict-class.html#getAction" class="summary-sig-name">getAction</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">actionName</span>)</span><br />
+      Returns an action by name.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.behaviour_dict-pysrc.html#BehaviourDict.getAction">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">sequence of strings</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.behaviour_dict.BehaviourDict-class.html#getActionNames" class="summary-sig-name">getActionNames</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns the list of available action names.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.behaviour_dict-pysrc.html#BehaviourDict.getActionNames">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><a href="POSH.behaviour.Behaviour-class.html" 
+      class="link">POSH.Behaviour</a></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.behaviour_dict.BehaviourDict-class.html#getActionBehaviour" class="summary-sig-name">getActionBehaviour</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">actionName</span>)</span><br />
+      Returns the behaviour that provides the given action.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.behaviour_dict-pysrc.html#BehaviourDict.getActionBehaviour">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><a href="POSH.behaviour.Behaviour-class.html" 
+      class="link">POSH.Behaviour</a> class method</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.behaviour_dict.BehaviourDict-class.html#getSense" class="summary-sig-name">getSense</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">senseName</span>)</span><br />
+      Returns a sense by name.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.behaviour_dict-pysrc.html#BehaviourDict.getSense">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">sequence of strings</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.behaviour_dict.BehaviourDict-class.html#getSenseNames" class="summary-sig-name">getSenseNames</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns a list of available sense names.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.behaviour_dict-pysrc.html#BehaviourDict.getSenseNames">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><a href="POSH.behaviour.Behaviour-class.html" 
+      class="link">POSH.Behaviour</a></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.behaviour_dict.BehaviourDict-class.html#getSenseBehaviour" class="summary-sig-name">getSenseBehaviour</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">senseName</span>)</span><br />
+      Returns the behaviour that provides the given sense.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.behaviour_dict-pysrc.html#BehaviourDict.getSenseBehaviour">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="registerBehaviour"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">registerBehaviour</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">behaviour</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.behaviour_dict-pysrc.html#BehaviourDict.registerBehaviour">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Registers the given behaviour.</p>
+  <p>Upon registering, it is checked if all action and sense methods are 
+  actually available in the given behaviour. If that is not the case, an 
+  AttributeError is thrown.</p>
+  <p>If there is already an action or a sense with the same name registered
+  in the behaviour dictionary, a NameError is thrown.</p>
+  <p>The actions and senses are aquired by using the behaviour's <a 
+  href="POSH.behaviour.Behaviour-class.html#getActions" 
+  class="link">POSH.Behaviour.getActions</a> and <a 
+  href="POSH.behaviour.Behaviour-class.html#getSenses" 
+  class="link">POSH.Behaviour.getSenses</a> methods.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>behaviour</code></strong> (<a href="POSH.behaviour.Behaviour-class.html" 
+          class="link">POSH.Behaviour</a>) - The behaviour to register.</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>AttributeError</strong></code> - If an action or a sense method could not be found.</li>
+        <li><code><strong class='fraise'>NameError</strong></code> - If a given action or sense is already registered in the behaviour 
+        dictionary, or if a behaviour with the same name is already 
+        registered in the dictionary.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getBehaviours"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getBehaviours</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.behaviour_dict-pysrc.html#BehaviourDict.getBehaviours">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns a list of behaviours.</p>
+  <dl class="fields">
+    <dt>Returns: sequence of <a href="POSH.behaviour.Behaviour-class.html" 
+      class="link">POSH.Behaviour</a> objects</dt>
+        <dd>List of behaviours.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getBehaviour"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getBehaviour</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">behav_name</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.behaviour_dict-pysrc.html#BehaviourDict.getBehaviour">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the behaviour object with the given name.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>behav_name</code></strong> (string) - The name of the behaviour.</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>NameError</strong></code> - If no behaviour with the given name was registered.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getAction"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getAction</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">actionName</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.behaviour_dict-pysrc.html#BehaviourDict.getAction">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns an action by name.</p>
+  <p>This method raises a NameError if no action with the given name was 
+  registered.</p>
+  <dl class="fields">
+    <dt>Returns: <a href="POSH.behaviour.Behaviour-class.html" 
+      class="link">POSH.Behaviour</a> class method</dt>
+        <dd>The action with the given name.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>NameError</strong></code> - If action wasn't registered.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getActionNames"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getActionNames</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.behaviour_dict-pysrc.html#BehaviourDict.getActionNames">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the list of available action names.</p>
+  <dl class="fields">
+    <dt>Returns: sequence of strings</dt>
+        <dd>A list of action names.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getActionBehaviour"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getActionBehaviour</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">actionName</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.behaviour_dict-pysrc.html#BehaviourDict.getActionBehaviour">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the behaviour that provides the given action.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>actionName</code></strong> (string) - The action that the behaviour provides</li>
+    </ul></dd>
+    <dt>Returns: <a href="POSH.behaviour.Behaviour-class.html" 
+      class="link">POSH.Behaviour</a></dt>
+        <dd>The behaviour that provides the given action.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>NameError</strong></code> - If no behaviour provides that action.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getSense"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getSense</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">senseName</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.behaviour_dict-pysrc.html#BehaviourDict.getSense">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns a sense by name.</p>
+  <p>The method raises a NameError if no sense with the given name was 
+  registered.</p>
+  <dl class="fields">
+    <dt>Returns: <a href="POSH.behaviour.Behaviour-class.html" 
+      class="link">POSH.Behaviour</a> class method</dt>
+        <dd>The sense with the given name.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getSenseNames"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getSenseNames</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.behaviour_dict-pysrc.html#BehaviourDict.getSenseNames">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns a list of available sense names.</p>
+  <dl class="fields">
+    <dt>Returns: sequence of strings</dt>
+        <dd>A list of sense names.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getSenseBehaviour"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getSenseBehaviour</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">senseName</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.behaviour_dict-pysrc.html#BehaviourDict.getSenseBehaviour">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the behaviour that provides the given sense.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>senseName</code></strong> (string) - The sense that the behaviour provides</li>
+    </ul></dd>
+    <dt>Returns: <a href="POSH.behaviour.Behaviour-class.html" 
+      class="link">POSH.Behaviour</a></dt>
+        <dd>The behaviour that provides the given sense.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>NameError</strong></code> - If no behaviour provides that sense.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="POSH-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Mon Oct 27 17:45:05 2008
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

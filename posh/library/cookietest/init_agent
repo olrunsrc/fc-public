@@ -1,0 +1,8 @@
+# agent initialisation file
+
+# the following line starts a new agent that uses the plan cookietest.lap
+[cookietest]
+
+# start another cookie monster at the same time (if both are uncommented), that searches for files called 'brownie'
+[cookietest]
+CookieBehaviour.cookie_name = brownie

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>POSH.strict</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="POSH-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="POSH-module.html">Package&nbsp;POSH</a> ::
+        Package&nbsp;strict
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="POSH.strict-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="POSH.strict-module.html">Package POSH.strict</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-docstring">"""The strict POSH interface.</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-name">__version__</tt> <tt class="py-op">=</tt> <tt class="py-number">0.1</tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-comment"># POSH imports</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Module POSH.scheduled.agent=POSH.scheduled.agent-module.html,Module POSH.strict.agent=POSH.strict.agent-module.html"><a title="POSH.scheduled.agent
+POSH.strict.agent" class="py-name" href="#" onclick="return doclink('link-0', 'agent', 'link-0');">agent</a></tt> <tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Class POSH.scheduled.agent.Agent=POSH.scheduled.agent.Agent-class.html,Class POSH.strict.agent.Agent=POSH.strict.agent.Agent-class.html"><a title="POSH.scheduled.agent.Agent
+POSH.strict.agent.Agent" class="py-name" href="#" onclick="return doclink('link-1', 'Agent', 'link-1');">Agent</a></tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-2" class="py-name" targets="Module POSH.strict.timer=POSH.strict.timer-module.html"><a title="POSH.strict.timer" class="py-name" href="#" onclick="return doclink('link-2', 'timer', 'link-2');">timer</a></tt> <tt class="py-keyword">import</tt> <tt id="link-3" class="py-name" targets="Class POSH.strict.timer.TimerBase=POSH.strict.timer.TimerBase-class.html"><a title="POSH.strict.timer.TimerBase" class="py-name" href="#" onclick="return doclink('link-3', 'TimerBase', 'link-3');">TimerBase</a></tt><tt class="py-op">,</tt> <tt id="link-4" class="py-name" targets="Class POSH.strict.timer.SteppedTimer=POSH.strict.timer.SteppedTimer-class.html"><a title="POSH.strict.timer.SteppedTimer" class="py-name" href="#" onclick="return doclink('link-4', 'SteppedTimer', 'link-4');">SteppedTimer</a></tt><tt class="py-op">,</tt> <tt id="link-5" class="py-name" targets="Class POSH.strict.timer.RealTimeTimer=POSH.strict.timer.RealTimeTimer-class.html"><a title="POSH.strict.timer.RealTimeTimer" class="py-name" href="#" onclick="return doclink('link-5', 'RealTimeTimer', 'link-5');">RealTimeTimer</a></tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-6" class="py-name" targets="Module POSH.strict.action=POSH.strict.action-module.html"><a title="POSH.strict.action" class="py-name" href="#" onclick="return doclink('link-6', 'action', 'link-6');">action</a></tt> <tt class="py-keyword">import</tt> <tt id="link-7" class="py-name" targets="Class POSH.strict.action.Action=POSH.strict.action.Action-class.html"><a title="POSH.strict.action.Action" class="py-name" href="#" onclick="return doclink('link-7', 'Action', 'link-7');">Action</a></tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-8" class="py-name" targets="Module POSH.scheduled.sense=POSH.scheduled.sense-module.html,Module POSH.strict.sense=POSH.strict.sense-module.html"><a title="POSH.scheduled.sense
+POSH.strict.sense" class="py-name" href="#" onclick="return doclink('link-8', 'sense', 'link-8');">sense</a></tt> <tt class="py-keyword">import</tt> <tt id="link-9" class="py-name" targets="Class POSH.scheduled.sense.Sense=POSH.scheduled.sense.Sense-class.html,Class POSH.strict.sense.Sense=POSH.strict.sense.Sense-class.html"><a title="POSH.scheduled.sense.Sense
+POSH.strict.sense.Sense" class="py-name" href="#" onclick="return doclink('link-9', 'Sense', 'link-9');">Sense</a></tt><tt class="py-op">,</tt> <tt id="link-10" class="py-name" targets="Class POSH.strict.sense.Trigger=POSH.strict.sense.Trigger-class.html"><a title="POSH.strict.sense.Trigger" class="py-name" href="#" onclick="return doclink('link-10', 'Trigger', 'link-10');">Trigger</a></tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-11" class="py-name" targets="Module POSH.strict.element=POSH.strict.element-module.html"><a title="POSH.strict.element" class="py-name" href="#" onclick="return doclink('link-11', 'element', 'link-11');">element</a></tt> <tt class="py-keyword">import</tt> <tt id="link-12" class="py-name" targets="Class POSH.scheduled.basic.Element=POSH.scheduled.basic.Element-class.html,Class POSH.strict.element.Element=POSH.strict.element.Element-class.html"><a title="POSH.scheduled.basic.Element
+POSH.strict.element.Element" class="py-name" href="#" onclick="return doclink('link-12', 'Element', 'link-12');">Element</a></tt><tt class="py-op">,</tt> <tt id="link-13" class="py-name" targets="Class POSH.strict.element.PlanElement=POSH.strict.element.PlanElement-class.html"><a title="POSH.strict.element.PlanElement" class="py-name" href="#" onclick="return doclink('link-13', 'PlanElement', 'link-13');">PlanElement</a></tt><tt class="py-op">,</tt> <tt id="link-14" class="py-name" targets="Class POSH.strict.element.ElementCollection=POSH.strict.element.ElementCollection-class.html"><a title="POSH.strict.element.ElementCollection" class="py-name" href="#" onclick="return doclink('link-14', 'ElementCollection', 'link-14');">ElementCollection</a></tt><tt class="py-op">,</tt> <tt id="link-15" class="py-name" targets="Class POSH.strict.element.FireResult=POSH.strict.element.FireResult-class.html"><a title="POSH.strict.element.FireResult" class="py-name" href="#" onclick="return doclink('link-15', 'FireResult', 'link-15');">FireResult</a></tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-16" class="py-name" targets="Module POSH.scheduled.action_pattern=POSH.scheduled.action_pattern-module.html,Module POSH.strict.action_pattern=POSH.strict.action_pattern-module.html,Method POSH.strict.lapparser.LAPParser.action_pattern()=POSH.strict.lapparser.LAPParser-class.html#action_pattern"><a title="POSH.scheduled.action_pattern
+POSH.strict.action_pattern
+POSH.strict.lapparser.LAPParser.action_pattern" class="py-name" href="#" onclick="return doclink('link-16', 'action_pattern', 'link-16');">action_pattern</a></tt> <tt class="py-keyword">import</tt> <tt id="link-17" class="py-name" targets="Class POSH.strict.action_pattern.ActionPattern=POSH.strict.action_pattern.ActionPattern-class.html"><a title="POSH.strict.action_pattern.ActionPattern" class="py-name" href="#" onclick="return doclink('link-17', 'ActionPattern', 'link-17');">ActionPattern</a></tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-18" class="py-name" targets="Module POSH.strict.drive=POSH.strict.drive-module.html"><a title="POSH.strict.drive" class="py-name" href="#" onclick="return doclink('link-18', 'drive', 'link-18');">drive</a></tt> <tt class="py-keyword">import</tt> <tt id="link-19" class="py-name" targets="Class POSH.strict.drive.DriveCollection=POSH.strict.drive.DriveCollection-class.html"><a title="POSH.strict.drive.DriveCollection" class="py-name" href="#" onclick="return doclink('link-19', 'DriveCollection', 'link-19');">DriveCollection</a></tt><tt class="py-op">,</tt> <tt id="link-20" class="py-name" targets="Class POSH.strict.drive.DriveElement=POSH.strict.drive.DriveElement-class.html"><a title="POSH.strict.drive.DriveElement" class="py-name" href="#" onclick="return doclink('link-20', 'DriveElement', 'link-20');">DriveElement</a></tt><tt class="py-op">,</tt> <tt id="link-21" class="py-name" targets="Class POSH.strict.drive.DrivePriorityElement=POSH.strict.drive.DrivePriorityElement-class.html"><a title="POSH.strict.drive.DrivePriorityElement" class="py-name" href="#" onclick="return doclink('link-21', 'DrivePriorityElement', 'link-21');">DrivePriorityElement</a></tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-22" class="py-name" targets="Module POSH.scheduled.competence=POSH.scheduled.competence-module.html,Module POSH.strict.competence=POSH.strict.competence-module.html,Method POSH.strict.lapparser.LAPParser.competence()=POSH.strict.lapparser.LAPParser-class.html#competence"><a title="POSH.scheduled.competence
+POSH.strict.competence
+POSH.strict.lapparser.LAPParser.competence" class="py-name" href="#" onclick="return doclink('link-22', 'competence', 'link-22');">competence</a></tt> <tt class="py-keyword">import</tt> <tt id="link-23" class="py-name" targets="Class POSH.scheduled.competence.Competence=POSH.scheduled.competence.Competence-class.html,Class POSH.strict.competence.Competence=POSH.strict.competence.Competence-class.html"><a title="POSH.scheduled.competence.Competence
+POSH.strict.competence.Competence" class="py-name" href="#" onclick="return doclink('link-23', 'Competence', 'link-23');">Competence</a></tt><tt class="py-op">,</tt> <tt id="link-24" class="py-name" targets="Class POSH.strict.competence.CompetencePriorityElement=POSH.strict.competence.CompetencePriorityElement-class.html"><a title="POSH.strict.competence.CompetencePriorityElement" class="py-name" href="#" onclick="return doclink('link-24', 'CompetencePriorityElement', 'link-24');">CompetencePriorityElement</a></tt><tt class="py-op">,</tt> <tt id="link-25" class="py-name" targets="Class POSH.strict.competence.CompetenceElement=POSH.strict.competence.CompetenceElement-class.html"><a title="POSH.strict.competence.CompetenceElement" class="py-name" href="#" onclick="return doclink('link-25', 'CompetenceElement', 'link-25');">CompetenceElement</a></tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-26" class="py-name" targets="Module POSH.strict.planbuilder=POSH.strict.planbuilder-module.html"><a title="POSH.strict.planbuilder" class="py-name" href="#" onclick="return doclink('link-26', 'planbuilder', 'link-26');">planbuilder</a></tt> <tt class="py-keyword">import</tt> <tt id="link-27" class="py-name" targets="Class POSH.strict.planbuilder.PlanBuilder=POSH.strict.planbuilder.PlanBuilder-class.html"><a title="POSH.strict.planbuilder.PlanBuilder" class="py-name" href="#" onclick="return doclink('link-27', 'PlanBuilder', 'link-27');">PlanBuilder</a></tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="POSH-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Mon Oct 27 17:45:08 2008
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+; This file is modified from dog.lap to get rid of the unnecessary (if
+; you don't use abode) APs.  Compare it to dog.lap to test SPOSH /
+; POSH performance.  
+(
+  (documentation "clean-dog" "JJB Feb 08" "Test to see how much better dog runs without redundant / trivial APs")
+  (C c-rest (minutes 1) (goal ((s_fail)))
+     (elements
+      (
+       (resting (trigger ((in_rest_spot))) rest)
+       )
+      (
+       (has-rest-spot (trigger ((has_rest_spot))) move_to_rest_spot)
+       )
+      (
+       (set-rest-spot (trigger ((succeed))) set_rest_spot)
+       )
+      ))
+
+  (SDC life (goal ((s_fail)))
+      (drives
+       (
+	    (has-target (trigger ((has_target))) move_to_sheep_target)
+	    )
+       (
+	    (herd-width (trigger ((herd_too_wide))) select_sheep_target)
+	    ) 
+       (
+	    (default-behavior (trigger ((succeed))) c-rest)
+	    )
+       ))
+)

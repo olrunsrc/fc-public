@@ -1,0 +1,188 @@
+# This agent initialisisation file initialises 10 males and 10 females, using the malefemale script
+# Built for or by Hagen Lehmann
+
+# -----------------
+# 10 Males
+# -----------------
+
+[malefemale]
+MASON.name = Male1
+MASON.fieldNames = male, agents
+MASON.display = compass, 100-100-255, 3.0, Male1
+
+[malefemale]
+MASON.name = Male2
+MASON.fieldNames = male, agents
+MASON.display = compass, 90-90-255, 3.0, Male2
+
+[malefemale]
+MASON.name = Male3
+MASON.fieldNames = male, agents
+MASON.display = compass, 80-80-255, 3.0, Male3
+
+[malefemale]
+MASON.name = Male4
+MASON.fieldNames = male, agents
+MASON.display = compass, 70-70-255, 3.0, Male4
+
+[malefemale]
+MASON.name = Male5
+MASON.fieldNames = male, agents
+MASON.display = compass, 60-60-255, 3.0, Male5
+
+[malefemale]
+MASON.name = Male6
+MASON.fieldNames = male, agents
+MASON.display = compass, 50-50-255, 3.0, Male6
+
+[malefemale]
+MASON.name = Male7
+MASON.fieldNames = male, agents
+MASON.display = compass, 40-40-255, 3.0, Male7
+
+[malefemale]
+MASON.name = Male8
+MASON.fieldNames = male, agents
+MASON.display = compass, 30-30-255, 3.0, Male8
+
+[malefemale]
+MASON.name = Male9
+MASON.fieldNames = male, agents
+MASON.display = compass, 20-20-255, 3.0, Male9
+
+[malefemale]
+MASON.name = Male10
+MASON.fieldNames = male, agents
+MASON.display = compass, 10-10-255, 3.0, Male10
+
+
+# -----------------
+# 10 Females
+# -----------------
+
+[malefemale]
+MASON.name = Female1
+MASON.fieldNames = male, agents
+MASON.display = compass, 255-0-0, 3.0, Female1
+
+[malefemale]
+MASON.name = Female2
+MASON.fieldNames = male, agents
+MASON.display = compass, 255-10-10, 3.0, Female2
+
+[malefemale]
+MASON.name = Female3
+MASON.fieldNames = male, agents
+MASON.display = compass, 255-20-20, 3.0, Female3
+
+[malefemale]
+MASON.name = Female4
+MASON.fieldNames = male, agents
+MASON.display = compass, 255-30-30, 3.0, Female4
+
+[malefemale]
+MASON.name = Female5
+MASON.fieldNames = male, agents
+MASON.display = compass, 255-40-40, 3.0, Female5
+
+[malefemale]
+MASON.name = Female6
+MASON.fieldNames = male, agents
+MASON.display = compass, 255-50-50, 3.0, Female6
+
+[malefemale]
+MASON.name = Female7
+MASON.fieldNames = male, agents
+MASON.display = compass, 255-60-60, 3.0, Female7
+
+[malefemale]
+MASON.name = Female8
+MASON.fieldNames = male, agents
+MASON.display = compass, 255-70-70, 3.0, Female8
+
+[malefemale]
+MASON.name = Female9
+MASON.fieldNames = male, agents
+MASON.display = compass, 255-80-80, 3.0, Female9
+
+[malefemale]
+MASON.name = Female10
+MASON.fieldNames = male, agents
+MASON.display = compass, 255-90-90, 3.0, Female10
+
+
+# -----------------
+# 12 Patches of food
+# -----------------
+
+[food]
+MASON.name = Food1
+MASON.fieldNames = food
+MASON.display = circle, 100-0-100, 4.0, Food1
+MASON.loc = 100, 100
+
+[food]
+MASON.name = Food2
+MASON.fieldNames = food
+MASON.display = circle, 100-0-100, 4.0, Food2
+MASON.loc = 100, 200
+
+[food]
+MASON.name = Food3
+MASON.fieldNames = food
+MASON.display = circle, 100-0-100, 4.0, Food3
+MASON.loc = 100, 300
+
+[food]
+MASON.name = Food4
+MASON.fieldNames = food
+MASON.display = circle, 100-0-100, 4.0, Food4
+MASON.loc = 100, 400
+
+[food]
+MASON.name = Food5
+MASON.fieldNames = food
+MASON.display = circle, 100-0-100, 4.0, Food5
+MASON.loc = 250, 100
+
+[food]
+MASON.name = Food6
+MASON.fieldNames = food
+MASON.display = circle, 100-0-100, 4.0, Food6
+MASON.loc = 250, 200
+
+[food]
+MASON.name = Food7
+MASON.fieldNames = food
+MASON.display = circle, 100-0-100, 4.0, Food7
+MASON.loc = 250, 300
+
+[food]
+MASON.name = Food8
+MASON.fieldNames = food
+MASON.display = circle, 100-0-100, 4.0, Food8
+MASON.loc = 250, 400
+
+[food]
+MASON.name = Food9
+MASON.fieldNames = food
+MASON.display = circle, 100-0-100, 4.0, Food9
+MASON.loc = 400, 100
+
+[food]
+MASON.name = Food10
+MASON.fieldNames = food
+MASON.display = circle, 100-0-100, 4.0, Food10
+MASON.loc = 400, 200
+
+[food]
+MASON.name = Food11
+MASON.fieldNames = food
+MASON.display = circle, 100-0-100, 4.0, Food11
+MASON.loc = 400, 300
+
+[food]
+MASON.name = Food12
+MASON.fieldNames = food
+MASON.display = circle, 100-0-100, 4.0, Food12
+MASON.loc = 400, 400

@@ -1,0 +1,41 @@
+# This agent initialisisation file initialises 2 dogs and 2 sheep -- a little easier for debugging
+
+# -----------------
+# 2 Dogs
+# Each dog uses the dog.lap plan.
+# -----------------
+
+[sheep-dog]
+MASON.name = Tordor
+MASON.fieldNames = dogs, agents
+MASON.display = kite, red, 4, Tordor
+PanicFlocking.MINDISTANCE = 15
+PanicFlocking.NHS = 150
+
+
+[sheep-dog]
+MASON.name = Guinness
+MASON.fieldNames = dogs, agents
+MASON.display = kite, red, 4, Guinness
+PanicFlocking.MINDISTANCE = 15
+PanicFlocking.NHS = 150
+
+
+
+# ------------------
+# 2 Sheep
+# Each sheep uses the sheep.lap plan.
+# ------------------
+
+[sheep]
+MASON.name = Sheep1
+MASON.fieldNames = sheeps, agents
+MASON.display = compass, white, 4, Sheep1
+
+
+[sheep]
+MASON.name = Sheep2
+MASON.fieldNames = sheeps, agents
+MASON.display = compass, white, 4, Sheep2
+
+

@@ -1,0 +1,15 @@
+in pass_pth_details
+{'11': 'CTF-Simple2b.PathNode22 387.230133,-551.878540,-205.899963', '10': 'CTF-
+Simple2b.PathNode21 397.411743,-795.479858,-205.900085', '13': 'CTF-Simple2b.Fla
+gBase0 0.992072,520.731506,-66.821762', '12': 'CTF-Simple2b.PathNode37 2.160962,
+347.320404,-137.227463', '1': 'CTF-Simple2b.PathNode15 383.894440,-2076.516846,-
+205.900116', '0': 'CTF-Simple2b.PathNode1 211.720047,-3001.504395,-77.900032', '
+3': 'CTF-Simple2b.PathNode13 355.602875,-1704.071777,-205.900024', '2': 'CTF-Sim
+ple2b.PathNode14 389.730133,-1862.520874,-205.900085', '5': 'CTF-Simple2b.Invent
+orySpot21 -0.891642,-1266.071045,-203.000000', '4': 'CTF-Simple2b.PathNode27 5.0
+00000,-1483.000000,-204.000000', '7': 'CTF-Simple2b.PathNode0 12.432946,-1101.07
+5439,-203.000000', '6': 'CTF-Simple2b.PathNode4 -6.200005,-1248.000000,-203.0000
+00', '9': 'CTF-Simple2b.PathNode20 306.283630,-943.969238,-205.899719', '8': 'CT
+F-Simple2b.PathNode19 189.591705,-1022.335571,-205.900146', 'ID': 'PathHome'}
+
+The keys are the order in which they should be followed.  I.e. '0' is first.

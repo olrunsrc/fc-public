@@ -1,0 +1,18 @@
+botinfo:
+<type 'dict'>
+[('Name', 'Jeff'), ('Armor', '0'), ('AltFiring', '0'), ('Weapon', 'CTF-Simple.go
+owand7'), ('CurrentAmmo', '25'), ('Health', '100'), ('Location', '-1132.752075,1
+71.490829,-84.199997'), ('Team', '0'), ('Velocity', '0.000000,0.000000,0.000000'
+), ('Rotation', '0,63749,0'), ('Id', 'CTF-Simple.FriendlyRemoteMale1Bot1')]
+
+botinfo (another example): {'Name': 'Lewis', 'Armor': '0', 'AltFiring': '0', 'Weapon': 'None', 'C
+urrentAmmo': '0', 'Health': '100', 'Location': '60.780365,-2733.649414,-212.1999
+97', 'Team': '1', 'Velocity': '0.000000,0.000000,0.000000', 'Rotation': '0,65513
+,0', 'Id': 'CTF-Simple2d.FriendlyRemoteFemale1Bot1'}
+
+
+nav_points:
+[('CTF-Simple.PlayerStart4', {'Reachable': 'True', 'Id': 'CTF-Simple.PlayerStart
+4', 'Location': '-1114.915771,131.401642,-99.899857'}), ('CTF-Simple.PathNode34'
+, {'Reachable': 'True', 'Id': 'CTF-Simple.PathNode34', 'Location': '-793.400757,
+139.747559,-77.899826'})]

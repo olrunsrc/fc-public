@@ -1,0 +1,1062 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>POSH.agent_base.AgentBase</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="POSH-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="POSH-module.html">Package&nbsp;POSH</a> ::
+        <a href="POSH.agent_base-module.html">Module&nbsp;agent_base</a> ::
+        Class&nbsp;AgentBase
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="POSH.agent_base.AgentBase-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class AgentBase</h1><p class="nomargin-top"><span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+<a href="POSH.logbase.LogBase-class.html">logbase.LogBase</a> --+
+                  |
+                 <strong class="uidshort">AgentBase</strong>
+</pre>
+
+<dl><dt>Known Subclasses:</dt>
+<dd>
+      <ul class="subclass-list">
+<li><a href="POSH.strict.agent.Agent-class.html">strict.agent.Agent</a></li><li>, <a href="POSH.scheduled.agent.Agent-class.html">scheduled.agent.Agent</a></li>  </ul>
+</dd></dl>
+
+<hr />
+<p>Base class for POSH agent.</p>
+  <p>This class is not to be instantiated directly. Instead, the strict or 
+  scheduled children should be used.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.agent_base.AgentBase-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">library</span>,
+        <span class="summary-sig-arg">plan</span>,
+        <span class="summary-sig-arg">attributes</span>,
+        <span class="summary-sig-arg">world</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Initialises the agent to use the given library and plan.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">unknown</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.agent_base.AgentBase-class.html#getWorld" class="summary-sig-name">getWorld</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns the world object.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase.getWorld">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><a href="POSH.behaviour_dict.BehaviourDict-class.html" 
+      class="link">POSH.BehaviourDict</a></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.agent_base.AgentBase-class.html#getBehaviourDict" class="summary-sig-name">getBehaviourDict</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns the agent's behaviour dictionary.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase.getBehaviourDict">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Sequence of <a href="POSH.behaviour.Behaviour-class.html" 
+      class="link">POSH.Behaviour</a></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.agent_base.AgentBase-class.html#getBehaviours" class="summary-sig-name">getBehaviours</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns the agent's behaviour objects.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase.getBehaviours">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.agent_base.AgentBase-class.html#getBehaviour" class="summary-sig-name">getBehaviour</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">behav_name</span>)</span><br />
+      Returns the agent's behaviour object with the given name.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase.getBehaviour">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.agent_base.AgentBase-class.html#assignAttributes" class="summary-sig-name">assignAttributes</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">attributes</span>)</span><br />
+      Assigns the given attributes to the behaviours.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase.assignAttributes">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.agent_base.AgentBase-class.html#setRNG" class="summary-sig-name">setRNG</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">rng</span>)</span><br />
+      Sets the random number generator of the agent.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase.setRNG">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.agent_base.AgentBase-class.html#reset" class="summary-sig-name">reset</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">waittime</span>=<span class="summary-sig-default">300</span>)</span><br />
+      Resets the agent.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase.reset">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.agent_base.AgentBase-class.html#checkError" class="summary-sig-name">checkError</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">waittime</span>=<span class="summary-sig-default">0</span>)</span><br />
+      Returns the number of behaviours that report an error.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase.checkError">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.agent_base.AgentBase-class.html#startLoop" class="summary-sig-name">startLoop</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Start the real-time loop, repeatedly firing the drive collection.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase.startLoop">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool.</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.agent_base.AgentBase-class.html#pauseLoop" class="summary-sig-name">pauseLoop</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Pauses the real-time loop, or continues it.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase.pauseLoop">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.agent_base.AgentBase-class.html#stopLoop" class="summary-sig-name">stopLoop</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Stops the real-time loop.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase.stopLoop">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">(bool, bool)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.agent_base.AgentBase-class.html#loopStatus" class="summary-sig-name">loopStatus</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns the status of the real-time loop.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase.loopStatus">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.agent_base.AgentBase-class.html#exitPrepare" class="summary-sig-name">exitPrepare</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Prepares the agent to exit.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase.exitPrepare">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.agent_base.AgentBase-class.html#followDrive" class="summary-sig-name">followDrive</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Performes one loop through the drive collection.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase.followDrive">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><a href="POSH.behaviour_dict.BehaviourDict-class.html" 
+      class="link">POSH.BehaviourDict</a></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.agent_base.AgentBase-class.html#_loadBehaviours" class="summary-sig-name" onclick="show_private();">_loadBehaviours</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns all behaviours of the agent's library as a behaviour 
+      dictionary.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase._loadBehaviours">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.agent_base.AgentBase-class.html#_reflectBehaviours" class="summary-sig-name" onclick="show_private();">_reflectBehaviours</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Reflect the agent objects onto the agent.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase._reflectBehaviours">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.agent_base.AgentBase-class.html#_loadPlan" class="summary-sig-name" onclick="show_private();">_loadPlan</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">planfile</span>)</span><br />
+      Needs to be overridden to load the plan and create the data 
+      structures.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase._loadPlan">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.agent_base.AgentBase-class.html#_loop_thread_wrapper" class="summary-sig-name" onclick="show_private();">_loop_thread_wrapper</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      A wrapper for the _loop_thread() method.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase._loop_thread_wrapper">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.agent_base.AgentBase-class.html#_loop_thread" class="summary-sig-name" onclick="show_private();">_loop_thread</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The loop thread, started by <a 
+      href="POSH.agent_base.AgentBase-class.html#startLoop" 
+      class="link">startLoop</a>.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase._loop_thread">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">library</span>,
+        <span class="sig-arg">plan</span>,
+        <span class="sig-arg">attributes</span>,
+        <span class="sig-arg">world</span>=<span class="sig-default">None</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialises the agent to use the given library and plan.</p>
+  <p>The plan has to be given as the plan name without the '.lap' 
+  extension. The attributes are the ones that are assigned to the 
+  behaviours when they are initialised. The world is the one that can be 
+  accessed by the behaviours by the <a 
+  href="POSH.agent_base.AgentBase-class.html#getWorld" 
+  class="link">AgentBase.getWorld</a> method.</p>
+  <p>Note that when the behaviours are loaded from the given library, then 
+  they are reflected onto the agent object. That means, given that there is
+  a behaviour called 'bot', then it can be accessed from another behaviour 
+  either by self.agent.getBehaviour(&quot;bot&quot;), or by self.agent.bot.
+  Consequently, behaviour names that clash with already existing agent 
+  attributes cause an AttributeError to be raise upon initialising the 
+  behaviours.</p>
+  <p>The attributes are to be given in the same format as for the method <a
+  href="POSH.agent_base.AgentBase-class.html#assignAttributes" 
+  class="link">AgentBase.assignAttributes</a>.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>library</code></strong> (string) - The behaviour library to use.</li>
+        <li><strong class="pname"><code>plan</code></strong> (string) - The plan to use (without the '.lap' ending).</li>
+        <li><strong class="pname"><code>attributes</code></strong> (as for <a 
+          href="POSH.agent_base.AgentBase-class.html#assignAttributes" 
+          class="link">AgentBase.assignAttributes</a>) - The attributes to be assigned to the behaviours</li>
+    </ul></dd>
+    <dt>Overrides:
+        <a href="POSH.logbase.LogBase-class.html#__init__">logbase.LogBase.__init__</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getWorld"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getWorld</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase.getWorld">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the world object.</p>
+  <p>The returned world object is the one that was given to the agent on 
+  construction.</p>
+  <dl class="fields">
+    <dt>Returns: unknown</dt>
+        <dd>The world object.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getBehaviourDict"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getBehaviourDict</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase.getBehaviourDict">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the agent's behaviour dictionary.</p>
+  <dl class="fields">
+    <dt>Returns: <a href="POSH.behaviour_dict.BehaviourDict-class.html" 
+      class="link">POSH.BehaviourDict</a></dt>
+        <dd>The agent's behaviour dictionary.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getBehaviours"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getBehaviours</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase.getBehaviours">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the agent's behaviour objects.</p>
+  <dl class="fields">
+    <dt>Returns: Sequence of <a href="POSH.behaviour.Behaviour-class.html" 
+      class="link">POSH.Behaviour</a></dt>
+        <dd>List of behaviour objects.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getBehaviour"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getBehaviour</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">behav_name</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase.getBehaviour">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the agent's behaviour object with the given name.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>behav_name</code></strong> (string) - The name of the behaviour.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="assignAttributes"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">assignAttributes</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">attributes</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase.assignAttributes">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Assigns the given attributes to the behaviours.</p>
+  <p>The attributes are given as a dictionary that maps the tuple 
+  (behaviour_name, attribute_name) into the assigned values. If a behaviour
+  with the given name is not found, an error is raised.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>attributes</code></strong> (dictionary (behaviour_name, attribute_name) -&gt; value) - attributes that are to be assigned to behaviours</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>NameError</strong></code> - If behaviour with given name cannot be found.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setRNG"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setRNG</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">rng</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase.setRNG">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the random number generator of the agent.</p>
+  <p>Whenever the random number generator is set using this method, it is 
+  probabgated to all registered behaviours.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>rng</code></strong> (Similar to the python 'random' module) - A random number generator.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="reset"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">reset</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">waittime</span>=<span class="sig-default">300</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase.reset">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Resets the agent. Should be called just before running the main 
+  loop.</p>
+  <p>The method returns if the reset was successful. It first checks if 
+  there are any behaviours to reset, and then resets all of them. It then 
+  waits until each of them is ready, by calling checkError(). If any of 
+  these fail, then the method returns False, otherwise it returns True.</p>
+  <p>The waittime is the time allowed until the behaviours are getting 
+  ready. It is the same as given to checkError(). By default, it is set to 
+  20 seconds.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>waittime</code></strong> (int) - Timout waiting for behaviours (see <a 
+          href="POSH.agent_base.AgentBase-class.html#checkError" 
+          class="link">checkError()</a>).</li>
+    </ul></dd>
+    <dt>Returns: bool</dt>
+        <dd>If the reset was successful.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="checkError"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">checkError</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">waittime</span>=<span class="sig-default">0</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase.checkError">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the number of behaviours that report an error.</p>
+  <p>This method checks the state of the behaviours, and returns True if 
+  they are ready, and False otherwise. The method waits a maximum time, 
+  specified by 'waittime' for the behaviours to become ready. The state of 
+  a behaviour is checked by calling its checkError() methods.</p>
+  <p>'waittime' is specified in 10ths of a second. If waittime = 20, for 
+  example, then the method waits at most 2 seconds. A waittime of 0 
+  requires the behaviours to be available immediately.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>waittime</code></strong> (int) - Number of 10ths of seconds to wait for behaviours to be ready.</li>
+    </ul></dd>
+    <dt>Returns: int</dt>
+        <dd>Number of behaviours that are not ready.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="startLoop"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">startLoop</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase.startLoop">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Start the real-time loop, repeatedly firing the drive collection.</p>
+  <p>This method resets the agent by calling <a 
+  href="POSH.agent_base.AgentBase-class.html#reset" 
+  class="link">reset()</a> and then spawns a separate thread (<a 
+  href="POSH.agent_base.AgentBase-class.html#_loop_thread" class="link" 
+  onclick="show_private();">_loop_thread</a>) that repeateadly fires the 
+  drive collection until the drive collection fails, the goal is reached, 
+  or <a href="POSH.agent_base.AgentBase-class.html#stopLoop" 
+  class="link">stopLoop</a> is called.</p>
+  <dl class="fields">
+    <dt>Returns: bool</dt>
+        <dd>True if the loop was started, and False if it is already running,
+          or the reset failed.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="pauseLoop"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">pauseLoop</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase.pauseLoop">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Pauses the real-time loop, or continues it.</p>
+  <p>If this method is called when the real-time loop is not paused, then 
+  it pauses it and returns True. If the real-time loop is paused, then the 
+  loop is continued, and False is returned. If the real-time loop is not 
+  running, then an exception is thrown.</p>
+  <dl class="fields">
+    <dt>Returns: bool.</dt>
+        <dd>True if loop is paused, and False if it is continued.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>Exception</strong></code> - If called when real-time loop is not activated.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="stopLoop"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">stopLoop</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase.stopLoop">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Stops the real-time loop.</p>
+  <p>This method can also be called when the loop is paused. If it is 
+  called when the loop is not running, an exception is thrown.</p>
+  <dl class="fields">
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>Exception</strong></code> - If called when real-time loop is not activated.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="loopStatus"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">loopStatus</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase.loopStatus">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the status of the real-time loop.</p>
+  <p>The state is returned as the tuple (isRunning, isPaused). isRunning is
+  only true if the loop is currently executed. If this is the case, then 
+  isPaused indicates if the loop is currently paused.</p>
+  <dl class="fields">
+    <dt>Returns: (bool, bool)</dt>
+        <dd>status of the real-time loop.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="exitPrepare"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">exitPrepare</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase.exitPrepare">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Prepares the agent to exit.</p>
+  <p>This method stops the loop if it is running and calls exitPrepare() of
+  all behaviours.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="followDrive"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">followDrive</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase.followDrive">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Performes one loop through the drive collection.</p>
+  <p>This method needs to be overriden by inheriting classes.</p>
+  <dl class="fields">
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>NotImplementedError</strong></code> - always.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_loadBehaviours"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_loadBehaviours</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase._loadBehaviours">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns all behaviours of the agent's library as a behaviour 
+  dictionary.</p>
+  <dl class="fields">
+    <dt>Returns: <a href="POSH.behaviour_dict.BehaviourDict-class.html" 
+      class="link">POSH.BehaviourDict</a></dt>
+        <dd>Behaviour dictionary with all behaviours in the library</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_reflectBehaviours"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_reflectBehaviours</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase._reflectBehaviours">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Reflect the agent objects onto the agent.</p>
+  <p>This action is performed for all behaviour objects in the agent's 
+  behaviour dictionary. If an attribute with the same name already exists, 
+  an error is raised.</p>
+  <dl class="fields">
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>AttributeError</strong></code> - If behaviour name clashes with already existing agent attributes.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_loadPlan"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_loadPlan</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">planfile</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase._loadPlan">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Needs to be overridden to load the plan and create the data 
+  structures.</p>
+  <p>It is called form the constructor after the behaviours have been 
+  loaded and their initial attributes have been assigned.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>planfile</code></strong> (string) - filename of the plan file to load</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_loop_thread_wrapper"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_loop_thread_wrapper</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase._loop_thread_wrapper">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>A wrapper for the _loop_thread() method.</p>
+  <p>If calles _loop_thread(), and sets the object variables _exec_loop and
+  _loop_pause to the correct values after _loop_thread() returns.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="_loop_thread"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_loop_thread</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.agent_base-pysrc.html#AgentBase._loop_thread">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The loop thread, started by <a 
+  href="POSH.agent_base.AgentBase-class.html#startLoop" 
+  class="link">startLoop</a>.</p>
+  <p>This method needs to be overridden by inheriting classes. If needs to 
+  check the status of the object variables _exec_loop and _loop_pause and 
+  react to them.</p>
+  <dl class="fields">
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>NotImplementedError</strong></code> - always</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="POSH-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Mon Oct 27 17:45:05 2008
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

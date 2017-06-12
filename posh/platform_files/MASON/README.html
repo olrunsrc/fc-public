@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>BOD / MASON README</title>
+</head>
+<body>
+<i>Last Modified 20 May 2008</i>
+<h1 style="color: rgb(51, 51, 153);">README for
+jyPOSH/platform_files/MASON</h1>
+This directory includes MASON classes used by BOD agents running in a
+2-D Environment.&nbsp; These classes are implemented in Java rather
+than python/jython in order to provide the MASON behaviour with
+optimised methods to interact with the MASON environment. <br>
+<br>
+<span style="font-weight: bold; color: rgb(51, 51, 153);">Note that
+because jython is running in java 1.4, these files must also be
+compiled for java 1.4!</span><br>
+<br>
+<h2>Making it run<br>
+</h2>
+<span style="font-weight: bold; color: rgb(204, 0, 0);">The classes
+need
+to be compiled into bytecode before being used for the first time.</span>
+<br>
+<br>
+This can
+be done by using something like:<br>
+<p><span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; javac
+-target 1.4 -source 1.4 -cp
+mason.jar Entity.java OrientedEntity.java Simulation2D.java
+Simulation2DGUI.java</span><br>
+</p>
+<p>or even easier:</p>
+<p><span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; javac </span><span
+ style="font-family: monospace;">-target 1.4 -source 1.4 </span><span
+ style="font-family: monospace;">-cp
+mason.jar *.java<br>
+</span></p>
+<p>If you are lucky, the jyPOSH system may do this compile for you, but
+if it
+doesn't work just do it by hand.<br>
+</p>
+<h2>Documentation<span style="font-family: monospace;"><br>
+</span></h2>
+<p><span style="font-weight: bold; font-family: monospace;">mason_doc.py</span>
+is a documentation stub written in python to allow epydoc
+do generate appropriate documentation for the classes written in Java. <span
+ style="color: rgb(204, 0, 0);">If
+the Java files are changed, the mason_doc.py has to be updated to
+reflect
+the changes.</span></p>
+<h2><span style="color: rgb(204, 0, 0);"><span
+ style="color: rgb(0, 0, 0);">New Versions of&nbsp; MASON <br>
+</span></span></h2>
+There is a shell script, <span style="font-family: monospace;">create_mason.jar.sh</span>,
+for creating new versions of the mason.jar file when George Mason
+releases new versions of MASON.&nbsp; This should only need to be done
+by us (the people distributing BOD/MASON), but just in case you want to
+know which version of MASON we are running, see that script file.<br>
+<br>
+<hr><i> page authors: <a href="http://www.cs.bath.ac.uk/%7Ejjb/">Joanna
+Bryson</a></i>, <a style="font-style: italic;"
+ href="http://www.cs.bath.ac.uk/jd/">Jan Drugowitsch</a>
+<p></p>
+</body>
+</html>

@@ -125,7 +125,9 @@ ENV LD_LIBRARY_PATH /usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH
 # start a roscore
 #CMD ["python", "-m", "SimpleHTTPServer", "8000"]
 COPY midi/ midi/
-copy trajectories/ trajectories/
+COPY trajectories/ trajectories/
+COPY vision/ vision/
+COPY posh/ posh/
 COPY olrun.bash .
 COPY fixbashrc.txt .
 COPY testtf.py .

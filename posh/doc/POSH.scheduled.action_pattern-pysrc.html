@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>POSH.scheduled.action_pattern</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="POSH-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="POSH-module.html">Package&nbsp;POSH</a> ::
+        <a href="POSH.scheduled-module.html">Package&nbsp;scheduled</a> ::
+        Module&nbsp;action_pattern
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="POSH.scheduled.action_pattern-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="POSH.scheduled.action_pattern-module.html">Module POSH.scheduled.action_pattern</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">__future__</tt> <tt class="py-keyword">import</tt> <tt class="py-name">nested_scopes</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Module POSH.scheduled.complex=POSH.scheduled.complex-module.html"><a title="POSH.scheduled.complex" class="py-name" href="#" onclick="return doclink('link-0', 'complex', 'link-0');">complex</a></tt> <tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Class POSH.scheduled.complex.Complex=POSH.scheduled.complex.Complex-class.html"><a title="POSH.scheduled.complex.Complex" class="py-name" href="#" onclick="return doclink('link-1', 'Complex', 'link-1');">Complex</a></tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">types</tt> <tt class="py-keyword">import</tt> <tt class="py-op">*</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-2" class="py-name" targets="Module POSH.scheduled.messages=POSH.scheduled.messages-module.html"><a title="POSH.scheduled.messages" class="py-name" href="#" onclick="return doclink('link-2', 'messages', 'link-2');">messages</a></tt> <tt class="py-keyword">import</tt> <tt id="link-3" class="py-name" targets="Class POSH.scheduled.messages.Prereq=POSH.scheduled.messages.Prereq-class.html"><a title="POSH.scheduled.messages.Prereq" class="py-name" href="#" onclick="return doclink('link-3', 'Prereq', 'link-3');">Prereq</a></tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-4" class="py-name" targets="Module POSH.scheduled.basic=POSH.scheduled.basic-module.html"><a title="POSH.scheduled.basic" class="py-name" href="#" onclick="return doclink('link-4', 'basic', 'link-4');">basic</a></tt> <tt class="py-keyword">import</tt> <tt class="py-op">*</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-5" class="py-name" targets="Module POSH.scheduled.generic=POSH.scheduled.generic-module.html"><a title="POSH.scheduled.generic" class="py-name" href="#" onclick="return doclink('link-5', 'generic', 'link-5');">generic</a></tt> <tt class="py-keyword">import</tt> <tt id="link-6" class="py-name" targets="Class POSH.scheduled.generic.Generic=POSH.scheduled.generic.Generic-class.html"><a title="POSH.scheduled.generic.Generic" class="py-name" href="#" onclick="return doclink('link-6', 'Generic', 'link-6');">Generic</a></tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-7" class="py-name"><a title="POSH.scheduled.messages" class="py-name" href="#" onclick="return doclink('link-7', 'messages', 'link-2');">messages</a></tt> <tt class="py-keyword">import</tt> <tt id="link-8" class="py-name" targets="Class POSH.scheduled.generic.Content=POSH.scheduled.generic.Content-class.html"><a title="POSH.scheduled.generic.Content" class="py-name" href="#" onclick="return doclink('link-8', 'Content', 'link-8');">Content</a></tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-9" class="py-name" targets="Module POSH.scheduled.sense=POSH.scheduled.sense-module.html,Module POSH.strict.sense=POSH.strict.sense-module.html"><a title="POSH.scheduled.sense
+POSH.strict.sense" class="py-name" href="#" onclick="return doclink('link-9', 'sense', 'link-9');">sense</a></tt> <tt class="py-keyword">import</tt> <tt id="link-10" class="py-name" targets="Class POSH.scheduled.sense.Sense=POSH.scheduled.sense.Sense-class.html,Class POSH.strict.sense.Sense=POSH.strict.sense.Sense-class.html"><a title="POSH.scheduled.sense.Sense
+POSH.strict.sense.Sense" class="py-name" href="#" onclick="return doclink('link-10', 'Sense', 'link-10');">Sense</a></tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-comment">#a simple structure for encoding sequences or parallel sets of behaviors</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#which is entirely triggered by a single environmental condition.  Once</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#the pattern has started, it will complete in order unless there is a </tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#catestrophic failure of an element.  In this case, the remaining pattern</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#dies.</tt> </tt>
+<a name="Action_Pattern"></a><div id="Action_Pattern-def"><a name="L16"></a><tt class="py-lineno"> 16</tt> <a class="py-toggle" href="#" id="Action_Pattern-toggle" onclick="return toggle('Action_Pattern');">-</a><tt class="py-line"><tt class="py-comment"></tt><tt class="py-keyword">class</tt> <a class="py-def-name" href="POSH.scheduled.action_pattern.Action_Pattern-class.html">Action_Pattern</a><tt class="py-op">(</tt><tt class="py-base-class">Complex</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Action_Pattern-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Action_Pattern-expanded"><a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line">     </tt>
+<a name="Action_Pattern.__init__"></a><div id="Action_Pattern.__init__-def"><a name="L18"></a><tt class="py-lineno"> 18</tt> <a class="py-toggle" href="#" id="Action_Pattern.__init__-toggle" onclick="return toggle('Action_Pattern.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="POSH.scheduled.action_pattern.Action_Pattern-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line">                 <tt class="py-param">ap_guts</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line">                 <tt class="py-op">**</tt><tt class="py-param">kw</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Action_Pattern.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Action_Pattern.__init__-expanded"><a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line">        <tt class="py-comment"># Call ancestor init with the remaining keywords</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt id="link-11" class="py-name"><a title="POSH.scheduled.complex.Complex" class="py-name" href="#" onclick="return doclink('link-11', 'Complex', 'link-1');">Complex</a></tt><tt class="py-op">.</tt><tt id="link-12" class="py-name" targets="Method POSH.agent_base.AgentBase.__init__()=POSH.agent_base.AgentBase-class.html#__init__,Method POSH.agentinitparser.AgentInitParseError.__init__()=POSH.agentinitparser.AgentInitParseError-class.html#__init__,Method POSH.behaviour.Behaviour.__init__()=POSH.behaviour.Behaviour-class.html#__init__,Method POSH.behaviour_dict.BehaviourDict.__init__()=POSH.behaviour_dict.BehaviourDict-class.html#__init__,Method POSH.latch.Latch.__init__()=POSH.latch.Latch-class.html#__init__,Method POSH.logbase.LogBase.__init__()=POSH.logbase.LogBase-class.html#__init__,Method POSH.logbase.StreamLogger.__init__()=POSH.logbase.StreamLogger-class.html#__init__,Method POSH.profiler.Profiler.__init__()=POSH.profiler.Profiler-class.html#__init__,Method POSH.scheduled.action_pattern.Action_Pattern.__init__()=POSH.scheduled.action_pattern.Action_Pattern-class.html#__init__,Method POSH.scheduled.agent.Agent.__init__()=POSH.scheduled.agent.Agent-class.html#__init__,Method POSH.scheduled.basic.Base.__init__()=POSH.scheduled.basic.Base-class.html#__init__,Method POSH.scheduled.basic.Element.__init__()=POSH.scheduled.basic.Element-class.html#__init__,Method POSH.scheduled.blackboard.Blackboard.__init__()=POSH.scheduled.blackboard.Blackboard-class.html#__init__,Method POSH.scheduled.competence.Competence.__init__()=POSH.scheduled.competence.Competence-class.html#__init__,Method POSH.scheduled.competence_element.Competence_Element.__init__()=POSH.scheduled.competence_element.Competence_Element-class.html#__init__,Method POSH.scheduled.complex.Complex.__init__()=POSH.scheduled.complex.Complex-class.html#__init__,Method POSH.scheduled.drive_collection.Drive_Collection.__init__()=POSH.scheduled.drive_collection.Drive_Collection-class.html#__init__,Method POSH.scheduled.drive_element.Drive_Element.__init__()=POSH.scheduled.drive_element.Drive_Element-class.html#__init__,Method POSH.scheduled.generic.Bbitem.__init__()=POSH.scheduled.generic.Bbitem-class.html#__init__,Method POSH.scheduled.generic.Content.__init__()=POSH.scheduled.generic.Content-class.html#__init__,Method POSH.scheduled.generic.Generic.__init__()=POSH.scheduled.generic.Generic-class.html#__init__,Method POSH.scheduled.message.Message.__init__()=POSH.scheduled.message.Message-class.html#__init__,Method POSH.scheduled.messages.Prereq.__init__()=POSH.scheduled.messages.Prereq-class.html#__init__,Method POSH.scheduled.schedule.Schedule.__init__()=POSH.scheduled.schedule.Schedule-class.html#__init__,Method POSH.scheduled.sense.Sense.__init__()=POSH.scheduled.sense.Sense-class.html#__init__,Method POSH.strict.action.Action.__init__()=POSH.strict.action.Action-class.html#__init__,Method POSH.strict.action_pattern.ActionPattern.__init__()=POSH.strict.action_pattern.ActionPattern-class.html#__init__,Method POSH.strict.agent.Agent.__init__()=POSH.strict.agent.Agent-class.html#__init__,Method POSH.strict.competence.Competence.__init__()=POSH.strict.competence.Competence-class.html#__init__,Method POSH.strict.competence.CompetenceElement.__init__()=POSH.strict.competence.CompetenceElement-class.html#__init__,Method POSH.strict.competence.CompetencePriorityElement.__init__()=POSH.strict.competence.CompetencePriorityElement-class.html#__init__,Method POSH.strict.drive.DriveCollection.__init__()=POSH.strict.drive.DriveCollection-class.html#__init__,Method POSH.strict.drive.DriveElement.__init__()=POSH.strict.drive.DriveElement-class.html#__init__,Method POSH.strict.drive.DrivePriorityElement.__init__()=POSH.strict.drive.DrivePriorityElement-class.html#__init__,Method POSH.strict.element.CopiableElement.__init__()=POSH.strict.element.CopiableElement-class.html#__init__,Method POSH.strict.element.Element.__init__()=POSH.strict.element.Element-class.html#__init__,Method POSH.strict.element.ElementBase.__init__()=POSH.strict.element.ElementBase-class.html#__init__,Method POSH.strict.element.ElementCollection.__init__()=POSH.strict.element.ElementCollection-class.html#__init__,Method POSH.strict.element.FireResult.__init__()=POSH.strict.element.FireResult-class.html#__init__,Method POSH.strict.element.PlanElement.__init__()=POSH.strict.element.PlanElement-class.html#__init__,Method POSH.strict.lapparser.LAPLexer.__init__()=POSH.strict.lapparser.LAPLexer-class.html#__init__,Method POSH.strict.lapparser.LAPParser.__init__()=POSH.strict.lapparser.LAPParser-class.html#__init__,Method POSH.strict.lapparser.Token.__init__()=POSH.strict.lapparser.Token-class.html#__init__,Method POSH.strict.planbuilder.PlanBuilder.__init__()=POSH.strict.planbuilder.PlanBuilder-class.html#__init__,Method POSH.strict.sense.Sense.__init__()=POSH.strict.sense.Sense-class.html#__init__,Method POSH.strict.sense.Trigger.__init__()=POSH.strict.sense.Trigger-class.html#__init__,Method POSH.strict.timer.RealTimeTimer.__init__()=POSH.strict.timer.RealTimeTimer-class.html#__init__,Method POSH.strict.timer.SteppedTimer.__init__()=POSH.strict.timer.SteppedTimer-class.html#__init__,Method POSH.strict.timer.TimerBase.__init__()=POSH.strict.timer.TimerBase-class.html#__init__,Method POSH.utils.World.__init__()=POSH.utils.World-class.html#__init__"><a title="POSH.agent_base.AgentBase.__init__
+POSH.agentinitparser.AgentInitParseError.__init__
+POSH.behaviour.Behaviour.__init__
+POSH.behaviour_dict.BehaviourDict.__init__
+POSH.latch.Latch.__init__
+POSH.logbase.LogBase.__init__
+POSH.logbase.StreamLogger.__init__
+POSH.profiler.Profiler.__init__
+POSH.scheduled.action_pattern.Action_Pattern.__init__
+POSH.scheduled.agent.Agent.__init__
+POSH.scheduled.basic.Base.__init__
+POSH.scheduled.basic.Element.__init__
+POSH.scheduled.blackboard.Blackboard.__init__
+POSH.scheduled.competence.Competence.__init__
+POSH.scheduled.competence_element.Competence_Element.__init__
+POSH.scheduled.complex.Complex.__init__
+POSH.scheduled.drive_collection.Drive_Collection.__init__
+POSH.scheduled.drive_element.Drive_Element.__init__
+POSH.scheduled.generic.Bbitem.__init__
+POSH.scheduled.generic.Content.__init__
+POSH.scheduled.generic.Generic.__init__
+POSH.scheduled.message.Message.__init__
+POSH.scheduled.messages.Prereq.__init__
+POSH.scheduled.schedule.Schedule.__init__
+POSH.scheduled.sense.Sense.__init__
+POSH.strict.action.Action.__init__
+POSH.strict.action_pattern.ActionPattern.__init__
+POSH.strict.agent.Agent.__init__
+POSH.strict.competence.Competence.__init__
+POSH.strict.competence.CompetenceElement.__init__
+POSH.strict.competence.CompetencePriorityElement.__init__
+POSH.strict.drive.DriveCollection.__init__
+POSH.strict.drive.DriveElement.__init__
+POSH.strict.drive.DrivePriorityElement.__init__
+POSH.strict.element.CopiableElement.__init__
+POSH.strict.element.Element.__init__
+POSH.strict.element.ElementBase.__init__
+POSH.strict.element.ElementCollection.__init__
+POSH.strict.element.FireResult.__init__
+POSH.strict.element.PlanElement.__init__
+POSH.strict.lapparser.LAPLexer.__init__
+POSH.strict.lapparser.LAPParser.__init__
+POSH.strict.lapparser.Token.__init__
+POSH.strict.planbuilder.PlanBuilder.__init__
+POSH.strict.sense.Sense.__init__
+POSH.strict.sense.Trigger.__init__
+POSH.strict.timer.RealTimeTimer.__init__
+POSH.strict.timer.SteppedTimer.__init__
+POSH.strict.timer.TimerBase.__init__
+POSH.utils.World.__init__" class="py-name" href="#" onclick="return doclink('link-12', '__init__', 'link-12');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">kw</tt><tt class="py-op">)</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ap_guts</tt> <tt class="py-op">=</tt> <tt class="py-name">ap_guts</tt> </tt>
+</div><a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line">         </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line">    <tt class="py-comment"># When we fire the AP on the scheduler, it should put</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-comment"></tt>    <tt class="py-comment"># all of its elements onto the scheduler by calling activate()</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-comment"></tt>    <tt class="py-comment"># On subsequent runs, only the elements will run.</tt> </tt>
+<a name="Action_Pattern.fire"></a><div id="Action_Pattern.fire-def"><a name="L28"></a><tt class="py-lineno"> 28</tt> <a class="py-toggle" href="#" id="Action_Pattern.fire-toggle" onclick="return toggle('Action_Pattern.fire');">-</a><tt class="py-line"><tt class="py-comment"></tt>    <tt class="py-keyword">def</tt> <a class="py-def-name" href="POSH.scheduled.action_pattern.Action_Pattern-class.html#fire">fire</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">             <tt class="py-param">timestamp</tt><tt class="py-op">,</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line">             <tt class="py-param">timeout_interval</tt> <tt class="py-op">=</tt> <tt id="link-13" class="py-name" targets="Variable POSH.scheduled.basic.DEFAULT_VIEWTIME=POSH.scheduled.basic-module.html#DEFAULT_VIEWTIME"><a title="POSH.scheduled.basic.DEFAULT_VIEWTIME" class="py-name" href="#" onclick="return doclink('link-13', 'DEFAULT_VIEWTIME', 'link-13');">DEFAULT_VIEWTIME</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Action_Pattern.fire-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Action_Pattern.fire-expanded"><a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Method POSH.latch.Latch.activate()=POSH.latch.Latch-class.html#activate,Method POSH.scheduled.action_pattern.Action_Pattern.activate()=POSH.scheduled.action_pattern.Action_Pattern-class.html#activate,Method POSH.scheduled.competence.Competence.activate()=POSH.scheduled.competence.Competence-class.html#activate"><a title="POSH.latch.Latch.activate
+POSH.scheduled.action_pattern.Action_Pattern.activate
+POSH.scheduled.competence.Competence.activate" class="py-name" href="#" onclick="return doclink('link-14', 'activate', 'link-14');">activate</a></tt><tt class="py-op">(</tt><tt id="link-15" class="py-name" targets="Function POSH.strict.timer.timestamp()=POSH.strict.timer-module.html#timestamp"><a title="POSH.strict.timer.timestamp" class="py-name" href="#" onclick="return doclink('link-15', 'timestamp', 'link-15');">timestamp</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">     </tt>
+<a name="Action_Pattern.activate"></a><div id="Action_Pattern.activate-def"><a name="L33"></a><tt class="py-lineno"> 33</tt> <a class="py-toggle" href="#" id="Action_Pattern.activate-toggle" onclick="return toggle('Action_Pattern.activate');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="POSH.scheduled.action_pattern.Action_Pattern-class.html#activate">activate</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">timestamp</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Action_Pattern.activate-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Action_Pattern.activate-expanded"><a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">        <tt class="py-comment"># Put a note of this on the BB</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-16" class="py-name" targets="Method POSH.scheduled.generic.Generic.send()=POSH.scheduled.generic.Generic-class.html#send"><a title="POSH.scheduled.generic.Generic.send" class="py-name" href="#" onclick="return doclink('link-16', 'send', 'link-16');">send</a></tt><tt class="py-op">(</tt><tt class="py-name">content</tt> <tt class="py-op">=</tt> <tt id="link-17" class="py-name"><a title="POSH.scheduled.generic.Content" class="py-name" href="#" onclick="return doclink('link-17', 'Content', 'link-8');">Content</a></tt><tt class="py-op">(</tt><tt class="py-name">command</tt> <tt class="py-op">=</tt> <tt class="py-string">"active"</tt><tt class="py-op">,</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">                                    <tt class="py-name">tag</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tag</tt><tt class="py-op">,</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">                                    <tt id="link-18" class="py-name" targets="Module POSH.strict.action=POSH.strict.action-module.html"><a title="POSH.strict.action" class="py-name" href="#" onclick="return doclink('link-18', 'action', 'link-18');">action</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-19" class="py-name"><a title="POSH.strict.action" class="py-name" href="#" onclick="return doclink('link-19', 'action', 'link-18');">action</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">                                    <tt id="link-20" class="py-name" targets="Method POSH.strict.lapparser.LAPParser.value()=POSH.strict.lapparser.LAPParser-class.html#value"><a title="POSH.strict.lapparser.LAPParser.value" class="py-name" href="#" onclick="return doclink('link-20', 'value', 'link-20');">value</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-21" class="py-name"><a title="POSH.strict.lapparser.LAPParser.value" class="py-name" href="#" onclick="return doclink('link-21', 'value', 'link-20');">value</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">                                    <tt id="link-22" class="py-name"><a title="POSH.strict.timer.timestamp" class="py-name" href="#" onclick="return doclink('link-22', 'timestamp', 'link-15');">timestamp</a></tt> <tt class="py-op">=</tt> <tt id="link-23" class="py-name"><a title="POSH.strict.timer.timestamp" class="py-name" href="#" onclick="return doclink('link-23', 'timestamp', 'link-15');">timestamp</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">                                    <tt id="link-24" class="py-name" targets="Module POSH.scheduled.agent=POSH.scheduled.agent-module.html,Module POSH.strict.agent=POSH.strict.agent-module.html"><a title="POSH.scheduled.agent
+POSH.strict.agent" class="py-name" href="#" onclick="return doclink('link-24', 'agent', 'link-24');">agent</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">                  <tt class="py-name">timeout_interval</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">timeout_interval</tt><tt class="py-op">,</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">                  <tt id="link-25" class="py-name"><a title="POSH.strict.timer.timestamp" class="py-name" href="#" onclick="return doclink('link-25', 'timestamp', 'link-15');">timestamp</a></tt> <tt class="py-op">=</tt> <tt id="link-26" class="py-name"><a title="POSH.strict.timer.timestamp" class="py-name" href="#" onclick="return doclink('link-26', 'timestamp', 'link-15');">timestamp</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">        <tt class="py-comment"># Now for each element. If the element is a list,</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment"># then the elements within the second-level list needs to</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment"># run parallel. This means that they will all have the</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment"># same precondition, which is the previous element in the top-level</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment"># list. The next element will have all of the elementst in the</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment"># second-level list as proconditions.</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">next_preconditions</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt id="link-27" class="py-name" targets="Module POSH.strict.element=POSH.strict.element-module.html"><a title="POSH.strict.element" class="py-name" href="#" onclick="return doclink('link-27', 'element', 'link-27');">element</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">elements</tt><tt class="py-op">:</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">            <tt class="py-name">this_preconditions</tt> <tt class="py-op">=</tt> <tt class="py-name">next_preconditions</tt> <tt class="py-comment"># Slide the prereqs forward</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">            <tt class="py-name">next_preconditions</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> <tt class="py-comment"># and clear the way for the next prereqs</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">            <tt class="py-comment"># If the element is a List, then descend into it</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"><tt class="py-comment"></tt>            <tt class="py-keyword">if</tt> <tt class="py-name">type</tt><tt class="py-op">(</tt><tt id="link-28" class="py-name"><a title="POSH.strict.element" class="py-name" href="#" onclick="return doclink('link-28', 'element', 'link-27');">element</a></tt><tt class="py-op">)</tt> <tt class="py-keyword">is</tt> <tt class="py-name">ListType</tt><tt class="py-op">:</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt class="py-name">sub_element</tt> <tt class="py-keyword">in</tt> <tt id="link-29" class="py-name"><a title="POSH.strict.element" class="py-name" href="#" onclick="return doclink('link-29', 'element', 'link-27');">element</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">                    <tt class="py-name">p_tag</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tag</tt><tt class="py-op">,</tt> <tt id="link-30" class="py-name" targets="Function POSH.scheduled.basic.gensym()=POSH.scheduled.basic-module.html#gensym"><a title="POSH.scheduled.basic.gensym" class="py-name" href="#" onclick="return doclink('link-30', 'gensym', 'link-30');">gensym</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">]</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">                    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-31" class="py-name" targets="Method POSH.scheduled.complex.Complex.schedule_element()=POSH.scheduled.complex.Complex-class.html#schedule_element"><a title="POSH.scheduled.complex.Complex.schedule_element" class="py-name" href="#" onclick="return doclink('link-31', 'schedule_element', 'link-31');">schedule_element</a></tt><tt class="py-op">(</tt><tt class="py-name">preconditions</tt> <tt class="py-op">=</tt> <tt class="py-name">this_preconditions</tt><tt class="py-op">,</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">                                          <tt class="py-name">postactions</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">                                                   <tt id="link-32" class="py-name"><a title="POSH.scheduled.messages.Prereq" class="py-name" href="#" onclick="return doclink('link-32', 'Prereq', 'link-3');">Prereq</a></tt><tt class="py-op">(</tt><tt class="py-name">command</tt> <tt class="py-op">=</tt> <tt class="py-string">"result"</tt><tt class="py-op">,</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">                                                          <tt class="py-name">tag</tt> <tt class="py-op">=</tt> <tt class="py-name">p_tag</tt><tt class="py-op">,</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">                                                          <tt id="link-33" class="py-name"><a title="POSH.scheduled.agent
+POSH.strict.agent" class="py-name" href="#" onclick="return doclink('link-33', 'agent', 'link-24');">agent</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-34" class="py-name"><a title="POSH.scheduled.agent
+POSH.strict.agent" class="py-name" href="#" onclick="return doclink('link-34', 'agent', 'link-24');">agent</a></tt><tt class="py-op">)</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">                                          <tt id="link-35" class="py-name"><a title="POSH.strict.timer.timestamp" class="py-name" href="#" onclick="return doclink('link-35', 'timestamp', 'link-15');">timestamp</a></tt> <tt class="py-op">=</tt> <tt id="link-36" class="py-name"><a title="POSH.strict.timer.timestamp" class="py-name" href="#" onclick="return doclink('link-36', 'timestamp', 'link-15');">timestamp</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">                                          <tt id="link-37" class="py-name"><a title="POSH.strict.element" class="py-name" href="#" onclick="return doclink('link-37', 'element', 'link-27');">element</a></tt> <tt class="py-op">=</tt> <tt id="link-38" class="py-name"><a title="POSH.strict.element" class="py-name" href="#" onclick="return doclink('link-38', 'element', 'link-27');">element</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">                    <tt class="py-name">next_preconditions</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt id="link-39" class="py-name"><a title="POSH.scheduled.messages.Prereq" class="py-name" href="#" onclick="return doclink('link-39', 'Prereq', 'link-3');">Prereq</a></tt><tt class="py-op">(</tt><tt class="py-name">command</tt> <tt class="py-op">=</tt> <tt class="py-string">"done"</tt><tt class="py-op">,</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">                                                     <tt class="py-name">tag</tt> <tt class="py-op">=</tt> <tt class="py-name">p_tag</tt><tt class="py-op">,</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">                                                     <tt id="link-40" class="py-name"><a title="POSH.scheduled.agent
+POSH.strict.agent" class="py-name" href="#" onclick="return doclink('link-40', 'agent', 'link-24');">agent</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-41" class="py-name"><a title="POSH.scheduled.agent
+POSH.strict.agent" class="py-name" href="#" onclick="return doclink('link-41', 'agent', 'link-24');">agent</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">            <tt class="py-comment"># Else process the element regularly</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"><tt class="py-comment"></tt>            <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">                <tt class="py-name">p_tag</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tag</tt><tt class="py-op">,</tt> <tt id="link-42" class="py-name"><a title="POSH.scheduled.basic.gensym" class="py-name" href="#" onclick="return doclink('link-42', 'gensym', 'link-30');">gensym</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">]</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-43" class="py-name"><a title="POSH.scheduled.complex.Complex.schedule_element" class="py-name" href="#" onclick="return doclink('link-43', 'schedule_element', 'link-31');">schedule_element</a></tt><tt class="py-op">(</tt><tt class="py-name">preconditions</tt> <tt class="py-op">=</tt> <tt class="py-name">this_preconditions</tt><tt class="py-op">,</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">                                      <tt class="py-name">postactions</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt id="link-44" class="py-name"><a title="POSH.scheduled.messages.Prereq" class="py-name" href="#" onclick="return doclink('link-44', 'Prereq', 'link-3');">Prereq</a></tt><tt class="py-op">(</tt><tt class="py-name">command</tt> <tt class="py-op">=</tt> <tt class="py-string">"result"</tt><tt class="py-op">,</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">                                                            <tt class="py-name">tag</tt> <tt class="py-op">=</tt> <tt class="py-name">p_tag</tt><tt class="py-op">,</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">                                                            <tt id="link-45" class="py-name"><a title="POSH.scheduled.agent
+POSH.strict.agent" class="py-name" href="#" onclick="return doclink('link-45', 'agent', 'link-24');">agent</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-46" class="py-name"><a title="POSH.scheduled.agent
+POSH.strict.agent" class="py-name" href="#" onclick="return doclink('link-46', 'agent', 'link-24');">agent</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">                                                     <tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">                                      <tt id="link-47" class="py-name"><a title="POSH.strict.timer.timestamp" class="py-name" href="#" onclick="return doclink('link-47', 'timestamp', 'link-15');">timestamp</a></tt> <tt class="py-op">=</tt> <tt id="link-48" class="py-name"><a title="POSH.strict.timer.timestamp" class="py-name" href="#" onclick="return doclink('link-48', 'timestamp', 'link-15');">timestamp</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">                                      <tt id="link-49" class="py-name"><a title="POSH.strict.element" class="py-name" href="#" onclick="return doclink('link-49', 'element', 'link-27');">element</a></tt> <tt class="py-op">=</tt> <tt id="link-50" class="py-name"><a title="POSH.strict.element" class="py-name" href="#" onclick="return doclink('link-50', 'element', 'link-27');">element</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">                <tt class="py-name">next_preconditions</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt id="link-51" class="py-name"><a title="POSH.scheduled.messages.Prereq" class="py-name" href="#" onclick="return doclink('link-51', 'Prereq', 'link-3');">Prereq</a></tt><tt class="py-op">(</tt><tt class="py-name">command</tt> <tt class="py-op">=</tt> <tt class="py-string">"done"</tt><tt class="py-op">,</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">                                             <tt class="py-name">tag</tt> <tt class="py-op">=</tt> <tt class="py-name">p_tag</tt><tt class="py-op">,</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">                                             <tt id="link-52" class="py-name"><a title="POSH.scheduled.agent
+POSH.strict.agent" class="py-name" href="#" onclick="return doclink('link-52', 'agent', 'link-24');">agent</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-53" class="py-name"><a title="POSH.scheduled.agent
+POSH.strict.agent" class="py-name" href="#" onclick="return doclink('link-53', 'agent', 'link-24');">agent</a></tt><tt class="py-op">)</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">                 </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">    <tt class="py-comment"># List Generic.make_instance but returns an Action_Pattern instance</tt> </tt>
+<a name="Action_Pattern.make_instance"></a><div id="Action_Pattern.make_instance-def"><a name="L82"></a><tt class="py-lineno"> 82</tt> <a class="py-toggle" href="#" id="Action_Pattern.make_instance-toggle" onclick="return toggle('Action_Pattern.make_instance');">-</a><tt class="py-line"><tt class="py-comment"></tt>    <tt class="py-keyword">def</tt> <a class="py-def-name" href="POSH.scheduled.action_pattern.Action_Pattern-class.html#make_instance">make_instance</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">                      <tt class="py-param">drive_name</tt><tt class="py-op">,</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">                      <tt class="py-param">timestamp</tt><tt class="py-op">,</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">                      <tt class="py-param">preconditions</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">                      <tt class="py-param">postactions</tt>  <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Action_Pattern.make_instance-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Action_Pattern.make_instance-expanded"><a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">        <tt class="py-name">preconditions</tt> <tt class="py-op">=</tt> <tt class="py-name">list</tt><tt class="py-op">(</tt><tt class="py-name">preconditions</tt><tt class="py-op">)</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">        <tt class="py-name">postactions</tt> <tt class="py-op">=</tt> <tt class="py-name">list</tt><tt class="py-op">(</tt><tt class="py-name">postactions</tt><tt class="py-op">)</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">        <tt class="py-name">preconditions</tt><tt class="py-op">.</tt><tt class="py-name">extend</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">preconditions</tt><tt class="py-op">)</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">        <tt class="py-name">postactions</tt><tt class="py-op">.</tt><tt class="py-name">extend</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">postactions</tt><tt class="py-op">)</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-54" class="py-name" targets="Class POSH.scheduled.action_pattern.Action_Pattern=POSH.scheduled.action_pattern.Action_Pattern-class.html"><a title="POSH.scheduled.action_pattern.Action_Pattern" class="py-name" href="#" onclick="return doclink('link-54', 'Action_Pattern', 'link-54');">Action_Pattern</a></tt><tt class="py-op">(</tt><tt class="py-name">drive_name</tt> <tt class="py-op">=</tt> <tt class="py-name">drive_name</tt><tt class="py-op">,</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">                              <tt class="py-name">preconditions</tt> <tt class="py-op">=</tt> <tt class="py-name">preconditions</tt><tt class="py-op">,</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">                              <tt class="py-name">postactions</tt> <tt class="py-op">=</tt> <tt class="py-name">postactions</tt><tt class="py-op">,</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">                              <tt class="py-name">elements</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-55" class="py-name" targets="Method POSH.scheduled.action_pattern.Action_Pattern.copy_elements()=POSH.scheduled.action_pattern.Action_Pattern-class.html#copy_elements,Method POSH.scheduled.competence.Competence.copy_elements()=POSH.scheduled.competence.Competence-class.html#copy_elements"><a title="POSH.scheduled.action_pattern.Action_Pattern.copy_elements
+POSH.scheduled.competence.Competence.copy_elements" class="py-name" href="#" onclick="return doclink('link-55', 'copy_elements', 'link-55');">copy_elements</a></tt><tt class="py-op">(</tt><tt class="py-name">drive_name</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">                              <tt class="py-name">name</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">name</tt><tt class="py-op">,</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">                              <tt class="py-name">timeout_interval</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">timeout_interval</tt><tt class="py-op">,</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">                              <tt class="py-name">timeout</tt> <tt class="py-op">=</tt> <tt id="link-56" class="py-name"><a title="POSH.strict.timer.timestamp" class="py-name" href="#" onclick="return doclink('link-56', 'timestamp', 'link-15');">timestamp</a></tt> <tt class="py-op">+</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">timeout_interval</tt><tt class="py-op">,</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">                              <tt class="py-name">tag</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tag</tt><tt class="py-op">,</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">                              <tt class="py-name">command</tt> <tt class="py-op">=</tt> <tt class="py-string">"active"</tt><tt class="py-op">,</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">                              <tt id="link-57" class="py-name"><a title="POSH.strict.action" class="py-name" href="#" onclick="return doclink('link-57', 'action', 'link-18');">action</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-58" class="py-name"><a title="POSH.strict.action" class="py-name" href="#" onclick="return doclink('link-58', 'action', 'link-18');">action</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">                              <tt id="link-59" class="py-name"><a title="POSH.strict.lapparser.LAPParser.value" class="py-name" href="#" onclick="return doclink('link-59', 'value', 'link-20');">value</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-60" class="py-name"><a title="POSH.strict.lapparser.LAPParser.value" class="py-name" href="#" onclick="return doclink('link-60', 'value', 'link-20');">value</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">                              <tt id="link-61" class="py-name"><a title="POSH.strict.timer.timestamp" class="py-name" href="#" onclick="return doclink('link-61', 'timestamp', 'link-15');">timestamp</a></tt> <tt class="py-op">=</tt> <tt id="link-62" class="py-name"><a title="POSH.strict.timer.timestamp" class="py-name" href="#" onclick="return doclink('link-62', 'timestamp', 'link-15');">timestamp</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">                              <tt id="link-63" class="py-name"><a title="POSH.scheduled.agent
+POSH.strict.agent" class="py-name" href="#" onclick="return doclink('link-63', 'agent', 'link-24');">agent</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-64" class="py-name"><a title="POSH.scheduled.agent
+POSH.strict.agent" class="py-name" href="#" onclick="return doclink('link-64', 'agent', 'link-24');">agent</a></tt><tt class="py-op">)</tt>                 </tt>
+</div><a name="Action_Pattern.copy_elements"></a><div id="Action_Pattern.copy_elements-def"><a name="L104"></a><tt class="py-lineno">104</tt> <a class="py-toggle" href="#" id="Action_Pattern.copy_elements-toggle" onclick="return toggle('Action_Pattern.copy_elements');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="POSH.scheduled.action_pattern.Action_Pattern-class.html#copy_elements">copy_elements</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">drive_name</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Action_Pattern.copy_elements-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Action_Pattern.copy_elements-expanded"><a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">        <tt class="py-comment"># Make a subfunction that does the actual filtering (ie. mapcar)</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment"># This function is recursive but should only descend one level</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-keyword">def</tt> <tt class="py-def-name">proc_elem</tt><tt class="py-op">(</tt><tt class="py-param">this_elem</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-name">this_elem</tt><tt class="py-op">)</tt> <tt class="py-keyword">is</tt> <tt class="py-name">ListType</tt><tt class="py-op">:</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">map</tt><tt class="py-op">(</tt><tt class="py-name">proc_elem</tt><tt class="py-op">,</tt> <tt class="py-name">this_elem</tt><tt class="py-op">)</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">            <tt class="py-keyword">elif</tt> <tt class="py-op">(</tt><tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-name">this_elem</tt><tt class="py-op">)</tt> <tt class="py-keyword">is</tt> <tt class="py-name">InstanceType</tt><tt class="py-op">)</tt> <tt class="py-keyword">and</tt> \ </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">                     <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt class="py-name">this_elem</tt><tt class="py-op">,</tt> <tt id="link-65" class="py-name"><a title="POSH.scheduled.sense.Sense
+POSH.strict.sense.Sense" class="py-name" href="#" onclick="return doclink('link-65', 'Sense', 'link-10');">Sense</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt id="link-66" class="py-name"><a title="POSH.scheduled.sense.Sense
+POSH.strict.sense.Sense" class="py-name" href="#" onclick="return doclink('link-66', 'Sense', 'link-10');">Sense</a></tt><tt class="py-op">(</tt><tt class="py-name">sensor</tt> <tt class="py-op">=</tt> <tt class="py-name">this_elem</tt><tt class="py-op">.</tt><tt class="py-name">sensor</tt><tt class="py-op">,</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">                             <tt class="py-name">sense_value</tt> <tt class="py-op">=</tt> <tt class="py-name">sense_value</tt><tt class="py-op">,</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">                             <tt class="py-name">sense_predicate</tt> <tt class="py-op">=</tt> <tt class="py-name">sense_predicate</tt><tt class="py-op">,</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">                             <tt class="py-name">drive_name</tt> <tt class="py-op">=</tt> <tt class="py-name">drive_name</tt><tt class="py-op">,</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">                             <tt id="link-67" class="py-name"><a title="POSH.scheduled.agent
+POSH.strict.agent" class="py-name" href="#" onclick="return doclink('link-67', 'agent', 'link-24');">agent</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-68" class="py-name"><a title="POSH.scheduled.agent
+POSH.strict.agent" class="py-name" href="#" onclick="return doclink('link-68', 'agent', 'link-24');">agent</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">            <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">this_elem</tt> </tt>
+</div><a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line"> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">        <tt class="py-comment"># Return the </tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-keyword">return</tt> <tt class="py-name">map</tt><tt class="py-op">(</tt><tt class="py-name">proc_elem</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">elements</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line"> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">    <tt class="py-comment"># The original LISP code doesn't seem to recurse into the element list.</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line"><tt class="py-comment"></tt>    <tt class="py-comment"># Should it? It does now. This is called when the action pattern</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line"><tt class="py-comment"></tt>    <tt class="py-comment"># is a trigger, and all the elements in the action pattern</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line"><tt class="py-comment"></tt>    <tt class="py-comment"># are used as a condition. This is opposed to when the action</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line"><tt class="py-comment"></tt>    <tt class="py-comment"># pattern is fire()d (ie. put on schedule)</tt> </tt>
+<a name="Action_Pattern.trigger"></a><div id="Action_Pattern.trigger-def"><a name="L128"></a><tt class="py-lineno">128</tt> <a class="py-toggle" href="#" id="Action_Pattern.trigger-toggle" onclick="return toggle('Action_Pattern.trigger');">-</a><tt class="py-line"><tt class="py-comment"></tt>    <tt class="py-keyword">def</tt> <a class="py-def-name" href="POSH.scheduled.action_pattern.Action_Pattern-class.html#trigger">trigger</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Action_Pattern.trigger-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Action_Pattern.trigger-expanded"><a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">        <tt class="py-comment"># Descend recursively into elements. If any element fails -</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment"># the whole thing falls</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">         </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">        <tt class="py-keyword">def</tt> <tt class="py-def-name">proc_items</tt><tt class="py-op">(</tt><tt class="py-param">elements</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">             </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">this_elem</tt> <tt class="py-keyword">in</tt> <tt class="py-name">elements</tt><tt class="py-op">:</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-name">this_elem</tt><tt class="py-op">)</tt> <tt class="py-keyword">is</tt> <tt class="py-name">ListType</tt><tt class="py-op">:</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">                    <tt class="py-keyword">return</tt> <tt class="py-name">proc_elem</tt><tt class="py-op">(</tt><tt class="py-name">this_elem</tt><tt class="py-op">)</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">                <tt class="py-keyword">elif</tt> <tt class="py-op">(</tt><tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-name">this_elem</tt><tt class="py-op">)</tt> <tt class="py-keyword">is</tt> <tt class="py-name">InstanceType</tt><tt class="py-op">)</tt> <tt class="py-keyword">and</tt> \ </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">                         <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt class="py-name">this_elem</tt><tt class="py-op">,</tt> <tt id="link-69" class="py-name"><a title="POSH.scheduled.generic.Generic" class="py-name" href="#" onclick="return doclink('link-69', 'Generic', 'link-6');">Generic</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">                    <tt class="py-comment"># Probably a sense</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line"><tt class="py-comment"></tt>                    <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">this_elem</tt><tt class="py-op">.</tt><tt id="link-70" class="py-name" targets="Method POSH.scheduled.action_pattern.Action_Pattern.trigger()=POSH.scheduled.action_pattern.Action_Pattern-class.html#trigger,Method POSH.scheduled.generic.Generic.trigger()=POSH.scheduled.generic.Generic-class.html#trigger,Method POSH.strict.lapparser.LAPParser.trigger()=POSH.strict.lapparser.LAPParser-class.html#trigger"><a title="POSH.scheduled.action_pattern.Action_Pattern.trigger
+POSH.scheduled.generic.Generic.trigger
+POSH.strict.lapparser.LAPParser.trigger" class="py-name" href="#" onclick="return doclink('link-70', 'trigger', 'link-70');">trigger</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">                         </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">                        <tt class="py-keyword">return</tt> <tt class="py-number">0</tt> <tt class="py-comment"># if one element fails, stop</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">                <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">                    <tt class="py-comment"># If it isn't s Generic object, then it must be a act</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line"><tt class="py-comment"></tt>                    <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">this_elem</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">                         </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line">                        <tt class="py-keyword">return</tt> <tt class="py-number">0</tt> <tt class="py-comment"># if one element fails, stop</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">             </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-number">1</tt> </tt>
+</div><a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line">         </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">         </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">proc_items</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">elements</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="POSH-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Mon Oct 27 17:45:07 2008
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

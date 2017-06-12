@@ -1,0 +1,7 @@
+( 
+ (SDC life (goal  ((s_succeed 0)))
+     (drives
+       ((nothing  (trigger((s_succeed))) 	a_increase_food_load))                          	          
+      )
+     )
+ )

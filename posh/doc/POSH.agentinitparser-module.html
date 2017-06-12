@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>POSH.agentinitparser</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="POSH-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="POSH-module.html">Package&nbsp;POSH</a> ::
+        Module&nbsp;agentinitparser
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="POSH.agentinitparser-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module agentinitparser</h1><p class="nomargin-top"><span class="codelink"><a href="POSH.agentinitparser-pysrc.html">source&nbsp;code</a></span></p>
+<p>Module to parse agent initialisation file.</p>
+  <p>The initialisation file has the following format:</p>
+<pre class="literalblock">
+   [plan1]
+   beh1.attr1 = value1
+   beh2.attr1 = value2
+   
+   [plan2]
+   beh1.attr1 = value3
+   beh2.attr2 = value4
+</pre>
+  <p>Such a file specifies two agents to be creates, one using 'plan1', and
+  the second using 'plan2'. The first agent is initialised as follows: 
+  attribute attr1 of behaviour beh1 is set to value1, and attribute attr1 
+  of behaviour beh2 is set to value2. The second agent is initialised in a 
+  similar way.</p>
+  <p>In more detail, the agent initialisation is specified in a line-wise 
+  fashion. Comments (starting with a '#') and empty lines are ignored. 
+  Every agent block in the file start with its plan, given by '[plan]', 
+  where 'plan' can be any string _without_ spaces. After that an aribtrary 
+  number of attributes (one per line) can be given for each behaviour of 
+  the agent. An attribute is specified by 'behaviour.attrribute = value', 
+  where 'behaviour' and 'attribute' are names of the behaviour and the 
+  attribute, respectively, and 'value' is the value that the attribute is 
+  set to. The following regular expressions determine valid names and 
+  values:</p>
+<pre class="literalblock">
+   behaviour and attribute names  [a-zA-Z_][a-zA-Z0-9_]*
+   values:
+       integer                    \-?[0-9]+
+       float                      \-?(\d*\.\d+|\d+\.)([eE][\+\-]?\d+)?
+       boolean                    ([Tt]rue|[Ff]alse)
+</pre>
+  <p>The values are automatically converted into the recognised type. If no
+  type is recognised, then they are assigned to the attributes as 
+  strings.</p>
+
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Classes"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="POSH.agentinitparser.AgentInitParseError-class.html" class="summary-name">AgentInitParseError</a>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Functions</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Functions"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">float, int, bool, or string</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.agentinitparser-module.html#str_to_value" class="summary-sig-name">str_to_value</a>(<span class="summary-sig-arg">s</span>)</span><br />
+      Converts the given string to the most likely type that it represents.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.agentinitparser-pysrc.html#str_to_value">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.agentinitparser-module.html#_strip" class="summary-sig-name" onclick="show_private();">_strip</a>(<span class="summary-sig-arg">s</span>,
+        <span class="summary-sig-arg">chars</span>)</span><br />
+      Removes leading and training characters from that given string that 
+      are within the string 'chars'.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.agentinitparser-pysrc.html#_strip">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">dictionary (behaviour, attribute) -&gt; value</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.agentinitparser-module.html#parse_agent_init_file" class="summary-sig-name">parse_agent_init_file</a>(<span class="summary-sig-arg">agent_init_file</span>)</span><br />
+      Returns a data structure containing the content of the file.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.agentinitparser-pysrc.html#parse_agent_init_file">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_int_matcher"></a><span class="summary-name">_int_matcher</span> = <code title="re.compile(r'-?[0-9]+$')">re.compile(r'-<code class="re-op">?</code><code class="re-group">[</code>0<code class="re-op">-</code>9<code class="re-group">]</code><code class="re-op">+</code>$')</code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="POSH.agentinitparser-module.html#_float_matcher" class="summary-name" onclick="show_private();">_float_matcher</a> = <code title="re.compile(r'-?(\d*\.\d+|\d+\.)([eE][\+-]?\d+)?$')">re.compile(r'-<code class="re-op">?</code><code class="re-group">(</code>\d<code class="re-op">*</code>\.\d<code class="re-op">+</code><code class="re-op">|</code>\d<code class="re-op">+</code>\.<code class="re-group">)</code><code class="re-group">(</code><code class="re-group">[</code>eE<code class="re-group">]</code><code class="re-group">[</code>\+-<code class="re-group">]</code><code class="re-op">?</code>\d<code class="re-op">+</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_bool_matcher"></a><span class="summary-name">_bool_matcher</span> = <code title="re.compile(r'([Tt]rue|[Ff]alse)$')">re.compile(r'<code class="re-group">(</code><code class="re-group">[</code>Tt<code class="re-group">]</code>rue<code class="re-op">|</code><code class="re-group">[</code>Ff<code class="re-group">]</code>alse<code class="re-group">)</code>$')</code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_identifier_matcher"></a><span class="summary-name">_identifier_matcher</span> = <code title="re.compile(r'[a-zA-Z_][a-zA-Z0-9_]*$')">re.compile(r'<code class="re-group">[</code>a<code class="re-op">-</code>zA<code class="re-op">-</code>Z_<code class="re-group">]</code><code class="re-group">[</code>a<code class="re-op">-</code>zA<code class="re-op">-</code>Z0<code class="re-op">-</code>9_<code class="re-group">]</code><code class="re-op">*</code>$')</code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_plan_matcher"></a><span class="summary-name">_plan_matcher</span> = <code title="re.compile(r'\[(\S+)\]$')">re.compile(r'\[<code class="re-group">(</code>\S<code class="re-op">+</code><code class="re-group">)</code>\]$')</code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_attribute_matcher"></a><span class="summary-name">_attribute_matcher</span> = <code title="re.compile(r'(\S+)\.(\S+)\s*=\s*(.+)$')">re.compile(r'<code class="re-group">(</code>\S<code class="re-op">+</code><code class="re-group">)</code>\.<code class="re-group">(</code>\S<code class="re-op">+</code><code class="re-group">)</code>\s<code class="re-op">*</code>=\s<code class="re-op">*</code><code class="re-group">(</code>.<code class="re-op">+</code><code class="re-group">)</code>$')</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Function Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-FunctionDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="str_to_value"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">str_to_value</span>(<span class="sig-arg">s</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.agentinitparser-pysrc.html#str_to_value">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Converts the given string to the most likely type that it 
+  represents.</p>
+  <p>It tests the types in the following order: int, float, bool. If none 
+  of these match, then the string is returned as a string.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>s</code></strong> (string) - String to convert</li>
+    </ul></dd>
+    <dt>Returns: float, int, bool, or string</dt>
+        <dd>Converted value</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_strip"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_strip</span>(<span class="sig-arg">s</span>,
+        <span class="sig-arg">chars</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.agentinitparser-pysrc.html#_strip">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Removes leading and training characters from that given string that 
+  are within the string 'chars'.</p>
+  <p>This functionality is already supported by str.strip(.), but only 
+  after version 2.2.2, and thus is not supported in the Jython 
+  implementation that I'm currently working with.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="parse_agent_init_file"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">parse_agent_init_file</span>(<span class="sig-arg">agent_init_file</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.agentinitparser-pysrc.html#parse_agent_init_file">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns a data structure containing the content of the file.</p>
+  <p>See the module docstring for the accepted file format. The returned 
+  data structure is a sequence with one entry per agent, with is a pair of 
+  a string for the plan and a dictionary for the (behaviour, attribute) 
+  -&gt; value assignment.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>agent_init_file</code></strong> (string) - Filename of the agent initialisation file</li>
+    </ul></dd>
+    <dt>Returns: dictionary (behaviour, attribute) -&gt; value</dt>
+        <dd>Data structure representing content of the file</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>IOError</strong></code> - when the file cannot be read</li>
+        <li><code><strong class='fraise'><a href="POSH.agentinitparser.AgentInitParseError-class.html">AgentInitParseError</a></strong></code> - when the syntax of the file is incorrect</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== VARIABLES DETAILS ==================== -->
+<a name="section-VariablesDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-VariablesDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="_float_matcher"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_float_matcher</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+re.compile(r'-<code class="re-op">?</code><code class="re-group">(</code>\d<code class="re-op">*</code>\.\d<code class="re-op">+</code><code class="re-op">|</code>\d<code class="re-op">+</code>\.<code class="re-group">)</code><code class="re-group">(</code><code class="re-group">[</code>eE<code class="re-group">]</code><code class="re-group">[</code>\+-<code class="re-group">]</code><code class="re-op">?</code>\d<code class="re-op">+</code><code class="re-group">)</code><code class="re-op">?</code>$')
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="POSH-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Mon Oct 27 17:45:04 2008
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

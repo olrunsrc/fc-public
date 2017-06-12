@@ -1,0 +1,44 @@
+Creating API documentation
+==========================
+
+API documentation can be created using EpyDoc.
+
+Epydoc (http://epydoc.sourceforge.net/) automatically generates Python class
+and module documentation based on importing the modules and investigating
+each class. EPyDoc is based on Python and does not support Jython.
+As many of the modules in this project import Java classes, import in
+Python would fail. That prohibits EPyDoc to generate documentation for
+the classes in those modules.
+
+The stubs provided here allow Python to import the modules correctly.
+They won't run, but that's not required for generating the documentation.
+Hence, by using this path in the PYTHONPATH, one can use Epydoc for
+automated class documentation.
+
+The following steps generate the documentation in Linux (and probably
+also on OS X), given that Epydoc is installed correctly:
+
+1.) In a console, go to the project root. Let us assume for now, that
+    the project root is at /home/user/src/jyposh.
+
+2.) Create the PYTHONPATH environment variable that it points to the
+    project root and to the stubs root. In our example that would be
+    (given that you are using bash):
+
+    export PYTHONPATH=/home/user/src/jyposh:/home/user/src/jyposh/doc/stubs
+
+3.) Run Epydoc to generate the documentation. More details about how to
+    class Epydoc to generate different forms of the documentation can be
+    found in the Epydoc documentation. We will generate HTML documentation
+    in the 'doc' folder:
+
+    epydoc -o doc POSH
+
+    As given above, Epydoc has to be run in the project root. Otherwise
+    it won't find the files. The above command only documents the API
+    of the POSH implementations. To create additional documentation for, say,
+    the MASON library, use seomthing like
+
+    epydoc -o doc POSH library/mason/mason.py
+
+Happy documenting!

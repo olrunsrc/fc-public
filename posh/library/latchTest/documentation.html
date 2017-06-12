@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Documentation for latch Test (BOD/MASON)</title>
+  <meta content="Joanna Bryson &amp; Philipp Rohlfshagen" name="author">
+</head>
+<body>
+<h1>latchTest (MASON)<br>
+</h1>
+<br>
+This library was created to test a new attribute of action selection
+inspired by the emotion &amp; drive durative state systems in
+animals.&nbsp; It relies on the BOD/MASON library, and it was for this
+that POSH/profiler.py and exp_executer.py were written.&nbsp; As a
+consequence, both of those files are (as of this writing) possibly too
+dependent on BOD/MASON and may need further fixing if to be used in
+another context.<br>
+<br>
+This library has associated publications on action selection
+(Rohlfshagen &amp; Bryson 2008).<br>
+<br>
+This library was written by Philipp Rohlfshagen in the Autumn of 2007,
+based on the earlier macque library written by Hagen Lehmann.&nbsp;
+Both Rohlfshagen and Lehmann were employed by the University of Bath
+and funded by <em>The Engineering and Physical Sciences Research
+Council (EPSRC)</em>, Grant <a
+ href="http://gow.epsrc.ac.uk/ViewGrant.ASPx?Grant=GR/S79299/01&amp;bannerlink=Programme%20support">GR/S79299/01</a>
+(AIBACS), ``The Impact of
+Durative Variable state on the Design and Control of Action
+Selection''; Joanna J Bryson (University of Bath) PI.<br>
+<br>
+<h2>What does it do?</h2>
+Most files are `standard' behaviours, similar to the other libraries.
+In fact, most of the work was initially based upon the library
+`macaques'. The most crucial differences are:<br>
+<br>
+- Most behaviours inherit from the class Latch, that automatically
+allows a state to be latched. The constructor takes several arguments
+that allow to model different latches. See for more documentation below.<br>
+- The behaviour is now subclasses simply by calling the constructor. It
+is no longer required to pass the list <br>
+<br>
+<br>
+<br>
+The behaviours are as follows:<br>
+<br>
+Drinking - <br>
+<br>
+<h2>Talk to PR about...</h2>
+<ul>
+  <li>Why wants_to_interrupt looks at current_state &lt; 20 rather than
+_inter?&nbsp; Should that method just be deleted?</li>
+  <li>Document interrupt.py -- this is just for the experiments,
+right&nbsp; Is everything you really need in POSH/latch.py</li>
+</ul>
+<br>
+<hr style="width: 100%; height: 2px;"><span style="font-style: italic;">Joanna
+Bryson<br>
+1 March 2008<br>
+</span><br>
+</body>
+</html>

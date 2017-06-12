@@ -1,0 +1,134 @@
+[grooming]
+MASON.name = Agent 1
+MASON.fieldNames = agents
+MASON.display = compass, 100-100-255, 10.0, Agent 1
+MASON.loc = 300, 300
+
+[grooming]
+MASON.name = Agent 2
+MASON.fieldNames = agents
+MASON.display = compass, 100-100-255, 10.0, Agent 2
+MASON.loc = 300, 300
+
+[grooming]
+MASON.name = Agent 3
+MASON.fieldNames = agents
+MASON.display = compass, 100-100-255, 10.0, Agent 3
+MASON.loc = 300, 300
+
+[grooming]
+MASON.name = Agent 4
+MASON.fieldNames = agents
+MASON.display = compass, 100-100-255, 10.0, Agent 4
+MASON.loc = 300, 300
+
+[grooming]
+MASON.name = Agent 5
+MASON.fieldNames = agents
+MASON.display = compass, 100-100-255, 10.0, Agent 5
+MASON.loc = 300, 300
+
+####################################################
+####################################################
+
+[resources]
+MASON.name = Food 1
+MASON.fieldNames = food
+MASON.display = circle, 100-100-255, 3.0, Food 1
+
+[resources]
+MASON.name = Food 2
+MASON.fieldNames = food
+MASON.display = circle, 100-100-255, 3.0, Food 2
+
+[resources]
+MASON.name = Water 1
+MASON.fieldNames = water
+MASON.display = circle, 100-100-255, 3.0, Water 1
+
+[resources]
+MASON.name = Water 2
+MASON.fieldNames = water
+MASON.display = circle, 100-100-255, 3.0, Water 2
+
+[resources]
+MASON.name = Food 3
+MASON.fieldNames = food
+MASON.display = circle, 100-100-255, 3.0, Food 3
+
+[resources]
+MASON.name = Food 4
+MASON.fieldNames = food
+MASON.display = circle, 100-100-255, 3.0, Food 4
+
+[resources]
+MASON.name = Food 5
+MASON.fieldNames = food
+MASON.display = circle, 100-100-255, 3.0, Food 5
+
+[resources]
+MASON.name = Food 6
+MASON.fieldNames = food
+MASON.display = circle, 100-100-255, 3.0, Food 6
+
+[resources]
+MASON.name = Food 7
+MASON.fieldNames = food
+MASON.display = circle, 100-100-255, 3.0, Food 7
+
+[resources]
+MASON.name = Food 8
+MASON.fieldNames = food
+MASON.display = circle, 100-100-255, 3.0, Food 8
+
+[resources]
+MASON.name = Food 9
+MASON.fieldNames = food
+MASON.display = circle, 100-100-255, 3.0, Food 9
+
+[resources]
+MASON.name = Food 10
+MASON.fieldNames = food
+MASON.display = circle, 100-100-255, 3.0, Food 10
+
+####################################################
+
+[resources]
+MASON.name = Water 3
+MASON.fieldNames = water
+MASON.display = circle, 100-100-255, 3.0, Water 3
+
+[resources]
+MASON.name = Water 4
+MASON.fieldNames = water
+MASON.display = circle, 100-100-255, 3.0, Water 4
+
+[resources]
+MASON.name = Water 5
+MASON.fieldNames = water
+MASON.display = circle, 100-100-255, 3.0, Water 5
+
+[resources]
+MASON.name = Water 6
+MASON.fieldNames = water
+MASON.display = circle, 100-100-255, 3.0, Water 6
+
+[resources]
+MASON.name = Water 7
+MASON.fieldNames = water
+MASON.display = circle, 100-100-255, 3.0, Water 7
+
+[resources]
+MASON.name = Water 8
+MASON.fieldNames = water
+MASON.display = circle, 100-100-255, 3.0, Water 8
+
+[resources]
+MASON.name = Water 9
+MASON.fieldNames = water
+MASON.display = circle, 100-100-255, 3.0, Water 9
+
+[resources]
+MASON.name = Water 10
+MASON.fieldNames = water
+MASON.display = circle, 100-100-255, 3.0, Water 10

@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Documentation for Sheep Dog Demo (BOD/MASON)</title>
+  <meta content="Joanna Bryson" name="author">
+</head>
+<body>
+<h1>Sheep / Dog Demo --- Scheduled POSH<br>
+</h1>
+<br>
+<br>
+This is an example of a BOD/MASON library built for scheduled
+POSH.&nbsp; Scheduled POSH is based on SoL (Bryson &amp;
+Th&oacute;risson 1999).&nbsp; <br>
+<br>
+This library has not been used for
+any experiments, just for developing BOD/MASON.&nbsp; It has been
+described a little by Bryson, Caulfield and Drugowitsch (2006).&nbsp;
+The library <span style="font-weight: bold;">sheepDogDemo</span>
+contains the SPOSH version of this demo, with some further
+extensions.&nbsp; See for another example library <span
+ style="font-weight: bold;">latch
+Test</span>, which has associated publications on action selection
+(Rohlfshagen &amp; Bryson 2008).<br>
+<br>
+This library was first developed by Tristain Caulfield for EASSS in
+July 2005.&nbsp; Tristan was primarily trying to conect jyPOSH (by Andy
+Kwong) to MASON and never really worked with or understood BOD.&nbsp;
+It was updated for the new versions of BOD/MASON by Jan Drugowitsch in
+2006-7.&nbsp;&nbsp; It is being improved for better behavior
+decomposition (and better behaviour!) by Joanna Bryson in 2008.<br>
+<br>
+<h2>What does it do?</h2>
+There are two types of agents distributed randomly around the field ---
+sheep and dogs.&nbsp; In Tristan's version, the dogs just chase the
+sheep.&nbsp; The sheep flock (see Reynolds 1987).&nbsp; They also panic
+(see Aylett 199?), which means they move closer to each other when they
+either sense a predator or sense that the other sheep are paniced.<br>
+<br>
+I am making a new version where both the sheep and the dogs flock, so
+it is more clear that different agents can share behaviors in the
+behavior library.&nbsp; This will also make the dogs behave less
+stupidly.&nbsp; The difference is that the dogs flock with both dogs
+and sheep, but don't panic and have a larger avoidance value so they
+generally wind up on the outside of the herd.&nbsp; Meanwhile the sheep
+don't see the dogs as flock-mates, they see them as predators, so they
+panic.&nbsp; Panic should be represented with a flexi-latch to
+demonstrate the emotion drive thing.&nbsp; If I have time, I will also
+add a behaviour to the dogs where they chase strays.&nbsp; There may be
+a drive to look for strays which would then really demo flexi-latch and
+the drive/emotion commonality.<br>
+<br>
+<h2>Talk to Jan about...</h2>
+<ul>
+  <li>List of / doc for actions accessable through MASON class
+(probably in MASON docs somewhere...)</li>
+  <li>How to deprecate old versions of libraries if you aren't linked
+to them (can you put them in "old"?)</li>
+  <li>why does it try to validate before having read everything in --
+what if two competences refer to each other?<br>
+  </li>
+</ul>
+<h2>Talk to PR about...</h2>
+<ul>
+  <li>Why wants_to_interrupt looks at current_state &lt; 20 rather than
+_inter?&nbsp; Should that method just be deleted?</li>
+  <li>Document interrupt.py -- this is just for the experiments,
+right&nbsp; Is everything you really need in POSH/latch.py</li>
+</ul>
+<h2>Bugs!</h2>
+<ul>
+  <li>Regular POSH doesn't support different priority levels for
+elements in Competences!</li>
+  <li>ABODE doesn't support Drives calling Actions.<br>
+  </li>
+</ul>
+<br>
+<hr style="width: 100%; height: 2px;"><span style="font-style: italic;">Joanna
+Bryson<br>
+18 February 2008<br>
+</span><br>
+</body>
+</html>

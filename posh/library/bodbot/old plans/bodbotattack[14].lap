@@ -1,0 +1,90 @@
+; Name: bodbotattack.lap
+; Derived from: previous version of bodbotattack.lap (see plan archive directory)
+; Created: 19/02/2005 by Sam Partington
+
+(
+  (C wander-around (minutes 10) (goal((reachable-nav-point))) ;goal was see-player
+    (elements
+      ((stuck (trigger ((is-stuck))) avoid))
+      ;((pickup (trigger ((see-item))) pickup-item))
+      ((walk-around (trigger ((is-rotating False))) walk))
+    )
+  )
+  
+  (AP avoid (minutes 5) (stop-bot rotate then-walk))
+
+  (C then-walk (minutes 10) (goal((is-walking)))
+    (elements
+      ((try-walk (trigger ((is-rotating False))) walk))
+    )
+  )
+  
+  (C to-enemy-base (minutes 10) (goal ((at-enemy-base)))
+    (elements
+      (
+        ; in future, run-to-base will have its own element which actually goes there
+        ;(run-to-base (trigger((know-enemy-base-pos))) wander-around)
+        (find-base (trigger((reachable-nav-point))) walk-to-nav-point)
+        (find-nav-point (trigger((succeed))) rotate 10)
+        (wander-base (trigger((succeed))) wander-around)
+      )
+    )
+  )
+  
+  (AP go-to-own-base (minutes 10) (to-own-base))
+  (AP go-to-own-flag (minutes 10) (to-own-flag))
+  (AP go-to-enemy-flag (minutes 10) (to-enemy-flag))
+  
+  (AP expire-the-damage-info (seconds 8) (expire-damage-info)) ; no point having it stay on the stack for long as it gets called very often anyway
+  (AP expire-the-focus-info (seconds 10) (expire-focus-info))
+  (AP expire-the-projectile-info (seconds 2) (expire-projectile-info))
+  
+  ; may need a better goal, but timeout should do it for now
+  (C respond-to-attack (seconds 10) (goal ((fail)))
+    (elements
+      (
+        (attack-visible-attacker (trigger ((taken-damage-from-specific-player))) respond-to-visible-attacker)
+        (find-attacker (trigger ((succeed))) try-to-find-attacker)
+      )
+    )
+  )
+  
+  (AP respond-to-visible-attacker (seconds 10) (set-attacker face-attacker shoot-attacker))
+  
+  ; may need a better goal, but timeout should do it for now
+  (C try-to-find-attacker (seconds 3) (goal ((fail)))
+    (elements
+      (
+        (found-attacker (trigger ((see-enemy))) respond-to-visible-attacker)
+        (spin (trigger ((succeed))) big-rotate 1)
+      )
+    )
+  )
+  
+  (AP attack-enemy-carrying-our-flag (minutes 20) (shoot-enemy-carrying-our-flag run-to-enemy-carrying-our-flag)) ;not sure which ordering here is best
+  (AP get-medkit (minutes 1) (runto-medical-kit))
+  (AP get-weapon (minutes 1) (runto-weapon))
+  
+  (RDC life (goal ((fail)))
+      (drives
+        ;((expire-our-projectile-info (trigger ((succeed))) expire-the-projectile-info (seconds 3)))
+        ((expire-our-damage-info (trigger ((succeed))) expire-the-damage-info (seconds 10)))
+        ((expire-our-focus-info (trigger ((succeed))) expire-the-focus-info (seconds 30)))
+        
+        ((pickup-our-flag-from-ground (trigger ((our-flag-on-ground))) go-to-own-flag)) ;(our-flag-reachable) was in the trigger but it never seemed to fire
+        ;((avoid-being-shot (trigger ((incoming-projectile))) wander-around)) ;will be something particular if required in future
+        ((pickup-enemy-flag-from-ground (trigger ((enemy-flag-on-ground))) go-to-enemy-flag)) ;need to do something with (enemy-flag-reachable)
+        ((pickup-medkit-as-health-low (trigger ((see-reachable-medical-kit) (own-health-level 30 <))) get-medkit))
+        ((pickup-weapon-as-unarmed (trigger  ((see-reachable-weapon) (are-armed False))) get-weapon))
+        
+        ((respond-to-attack-since-health-low (trigger ((taken-damage) (own-health-level 30 <) (armed-and-ammo))) respond-to-attack)) 
+        ((attack-enemy-with-our-flag (trigger ((see-enemy-with-our-flag))) attack-enemy-carrying-our-flag))
+        ((respond-to-attack-health-not-low (trigger ((taken-damage) (armed-and-ammo))) respond-to-attack))
+        ((take-enemy-flag-from-base (trigger((enemy-flag-reachable)(have-enemy-flag False))) go-to-enemy-flag)) 
+        ((hit (trigger((hit-object)(is-rotating False))) avoid)) ; was in first place
+        ((go-home (trigger((have-enemy-flag))) go-to-own-base)) ;we need to extend the trigger so it also checks that the bot knows where the home base is!  Or turn it into a competence.
+        ;((pickup-weapon-though-armed (trigger  ((see-reachable-weapon))) get-weapon))
+        ((to-enemy-base (trigger((succeed))) to-enemy-base))
+      )
+  )
+)

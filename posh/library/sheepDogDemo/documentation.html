@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Documentation for the SPOSH version of the Sheep Dog Demo (BOD
+/ MASON)</title>
+  <meta content="Joanna Bryson" name="author">
+</head>
+<body>
+<h1>Sheep / Dog Demo&nbsp; (SPOSH version)<br>
+</h1>
+<br>
+This is an example BOD/MASON library built for the strict slip-stack
+(SPOSH) version of BOD.&nbsp; SPOSH is a version of POSH written
+by Jan Drugowitsch, inspired by the earliest version of POSH
+(previously available only in archaic C++).&nbsp; In contrast,
+scheduled POSH includes extra cognitive state, and is therefore
+slower.&nbsp; The scheduled POSH version of the basic version of this
+demo is included in the <span style="font-weight: bold;">mason</span>
+directory.<br>
+<br>
+This library has not been used for
+any experiments, just for developing BOD/MASON.&nbsp; It has been
+described a little by Bryson, Caulfield and Drugowitsch (2006).&nbsp;
+See for another example library <span style="font-weight: bold;">latch
+Test</span>, which has associated publications on action selection
+(Rohlfshagen &amp; Bryson 2008).&nbsp; <br>
+<br>
+This library was first developed by Tristain Caulfield for EASSS in
+July 2005.&nbsp; Tristan was primarily trying to connect jyPOSH (by
+Andy
+Kwong) to MASON and never really worked with or understood BOD.&nbsp;
+It was updated for the new versions of BOD/MASON by Jan Drugowitsch in
+2006-7.&nbsp;&nbsp; It is being improved for better behavior
+decomposition (and better behaviour!) by Joanna Bryson in 2008.<br>
+<br>
+<h2>What does it do?</h2>
+There are two types of agents distributed randomly around the field ---
+sheep and dogs.&nbsp; In Tristan's version (which is the default), the
+dogs just chase the
+sheep.&nbsp; The sheep flock (see Reynolds 1987).&nbsp; They also panic
+(see Delgado Mata &amp; Aylett 2005), which means they move closer to
+each other when they
+either sense a predator or sense that the other sheep are
+panicked.&nbsp; The flocking exploits some of the underlying MASON
+routines for flocking.<br>
+<br>
+In the new version the dogs &amp; sheep share some behaviors, which is
+what a behavior library is supposed to be about:&nbsp; code
+reuse.&nbsp; But they are still very different.&nbsp; The dogs now
+flock too, but with the sheep as well as each other.&nbsp; And the
+smarter sheep not only pull together, but also run away from the dogs,
+so the dogs herd them more effectively.&nbsp; To see the newer, smarter
+behaviour, you need to use the init_smarter_beasts agent init file,
+instead of just the default init_agents.<br>
+<br>
+The next time I feel like I have time to play with this, I'll use the
+latching demonstrated in latch test to make the dogs go off &amp; look
+for strays.<br>
+<br>
+There is <a
+ href="http://www.cs.bath.ac.uk/%7Ejjb/web/BOD/sheep-dog.html">more
+complete documentation of this demo online</a> (including suggestions
+for extending the demo &amp; teaching yourself BOD/MASON), although
+that page is now a bit out of date.<br>
+<br>
+<hr style="width: 100%; height: 2px;"><span style="font-style: italic;">Joanna
+Bryson<br>
+23 April 2008<br>
+</span><br>
+</body>
+</html>

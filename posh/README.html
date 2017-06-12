@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>jyposh directory README file</title>
+</head>
+<body style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+ alink="#ff0000" link="#0000ee" vlink="#551a8b">
+<i>Last Modified 22 April 2008</i>
+<h1 style="color: rgb(51, 51, 153);">jyPOSH documentation</h1>
+<a href="http://www.cs.bath.ac.uk/%7Ejjb/web/bod.html">Behavior
+Oriented
+Design</a> (BOD) is a way to develop AI systems.&nbsp; It requires a
+modular behavior library in any OO language, and a version of <a
+ href="http://www.cs.bath.ac.uk/%7Ejjb/web/posh.html">POSH action
+selection</a> for that language.&nbsp; jyPOSH (formerly pyPOSH) is a
+version
+of POSH that runs in <a href="http://www.python.org/">Python</a> and <a
+ href="http://www.jython.org/">Jython</a>.&nbsp; <br>
+<br>
+<span style="font-weight: bold; color: rgb(51, 51, 153);">Note on python</span>:&nbsp;
+if you are using python, you now need to use python 2.4 at least
+because of the logging.&nbsp; However, note that to maintain
+compatability with jython, most features of even python 2.3 are not
+used.<br>
+<br>
+Instructions for installing and using BOD and jyPOSH are <a
+ href="http://www.cs.bath.ac.uk/%7Ejjb/web/pyposh.html">on the web</a>.&nbsp;
+Please note that jyPOSH is open source &amp; we are happy to have
+additional help with development (including of
+documentation).&nbsp; Email us for access to our SVN repository.<br>
+<h2 style="color: rgb(51, 51, 153);">Quickstart</h2>
+There are two ways to use jyPOSH, either with a GUI or from the command
+line.&nbsp; The command line is more powerful, in that it allows you to
+easily start multiple agents by specifying their parameters in an
+initialisation file.&nbsp; The GUI just makes people happy.<br>
+<p>To use any version of jyPOSH you need to add <span
+ style="font-family: monospace; font-weight: bold;">POSH/log4j-1.2.jar</span>
+to your Java
+Classpath. Consult the documentation of your Java installation on how
+to do this.</p>
+<p>To get the GUI, run <span
+ style="font-family: monospace; font-weight: bold;">jython jyposh.py</span>.&nbsp;
+You <span style="font-style: italic;">might</span>
+be able to hack from
+there.&nbsp; However, the most significant behavior libraries we
+distribute rely on other external software (e.g. the MASON simulation
+environment or Unreal Tournament) for creating the
+environment the BOD agents will run in.&nbsp; There is one simple demo,
+<span style="font-weight: bold; color: rgb(51, 51, 153);">the cookie
+demo</span>, that is happy to run with just the OS as the environment
+(at least
+under linux, unix or mac OS X).<br>
+</p>
+<p><span style="font-family: monospace; font-weight: bold;">launch.py</span>
+contains code that will run an agent without using the GUI.&nbsp;
+If you are running under python instead of jython you <span
+ style="font-style: italic;">must</span> use
+this.&nbsp; All of the options that could be set in the GUI are also
+easily set in an <span style="font-weight: bold;">init_agent</span>
+text file, which may be passed to launch.py as an option.&nbsp; <br>
+</p>
+<p>Run either <span
+ style="color: rgb(51, 51, 153); font-family: monospace;"><span
+ style="font-weight: bold;">python
+launch.py --help</span></span> or&nbsp; <span
+ style="color: rgb(51, 51, 153); font-family: monospace;"><span
+ style="font-weight: bold;">jython
+launch.py --help </span></span>for instructions, depending which
+language you want to use.<br>
+</p>
+<p style="background-color: rgb(204, 255, 204);">Green backgrounded
+text
+indicates files that only matter if you are going to be using a MASON
+behavior library.&nbsp; <a
+ href="http://cs.gmu.edu/%7Eeclab/projects/mason/">MASON</a> is an
+agent-based modelling toolkit.&nbsp; To use MASON, you need to set the
+Java CLASSPATH to include <span
+ style="font-family: monospace; font-weight: bold;">platform_files/MASON/mason.jar</span>.
+Also, you <span style="font-weight: bold; color: rgb(153, 0, 0);">must</span>
+consult <span style="font-family: monospace; font-weight: bold;">platform_files/MASON/README</span>
+before using MASON for the first
+time.
+</p>
+<h2 style="color: rgb(51, 51, 153);">Files (in this folder)<br>
+</h2>
+<ul>
+  <li>jyposh.py : main GUI file, running this launches the GUI.</li>
+  <li>launch.py : main file -- allows launching BOD agents from the
+command line.&nbsp; Has
+about the same functionality as the GUI, but can be used with Python as
+well.&nbsp; Running&nbsp; <span style="font-family: monospace;">launch.py
+--help </span>describes options for controlling which agents are
+launched.<br>
+  </li>
+  <li>config.py: code that helps all the parts of jyPOSH to locate the
+right directories</li>
+</ul>
+<h2 style="color: rgb(51, 51, 153);">Directories</h2>
+Boldface indicates directories that have code you will edit if you
+create your own agents.<br>
+<ul>
+  <li><span style="color: rgb(51, 51, 153);"><span
+ style="font-weight: bold;">library : the behavior libraries and POSH
+script files.&nbsp; This directory contains all the files we expect you
+to customize yourself.&nbsp; That is, all the files you create when you
+create a new agent go here.</span></span><br>
+  </li>
+  <li>POSH : files that implement POSH, including both the scheduled
+and slip-stack POSH action selection</li>
+  <li style="background-color: rgb(204, 255, 204);">platform_files:
+Files that are specific to certain environments. The MASON files reside
+in this directory. If you want to run MASON simulations, please read <span
+ style="font-family: monospace; font-weight: bold;">platform_files/MASON/README.html</span>,
+which includes instructions for compiling some further java
+classes.&nbsp; Also, do not forget to add <span
+ style="font-family: monospace; font-weight: bold;">platform_files/MASON/mason.jar</span>
+to the Java CLASSPATH.<br>
+  </li>
+</ul>
+<span style="color: rgb(51, 51, 153);"><span
+ style="color: rgb(0, 0, 0);"></span></span><span
+ style="color: rgb(51, 51, 153);"><span style="color: rgb(0, 0, 0);"></span></span>
+<h2 style="color: rgb(51, 51, 153);">Behaviour Libraries<br>
+</h2>
+A single behaviour library can support many different agents on a
+single platform.&nbsp; The individual agents are defined by their POSH
+scripts, which are found in a subdirectory called <span
+ style="font-weight: bold; color: rgb(51, 0, 51);">plans</span>.&nbsp;
+When using <span style="font-family: monospace; font-weight: bold;">launch.py</span>,
+you can set the number and parameters of agents you run by editing the <span
+ style="font-weight: bold;">init_agent</span>
+script in that library's directory (or that you pass to <span
+ style="font-family: monospace; font-weight: bold;">launch.py</span> as
+an
+argument).<br>
+<br>
+Boldface indicates recommended
+libraries.&nbsp; Documentation for these can be found linked on the <a
+ href="http://www.bath.ac.uk/comp-sci/ai/AmonI-sw.html#BOD">AmonI
+Software Page</a>.<br>
+<span style="color: rgb(51, 51, 153);"><span
+ style="color: rgb(0, 0, 0);">
+</span></span>
+<ul>
+  <li><span style="font-weight: bold; color: rgb(51, 51, 153);">bodbot
+: the current Unreal Tournament library.&nbsp; Agents for playing
+capture the flag, including both offensive and defensive goals and
+play.&nbsp; </span><span style="color: rgb(0, 0, 0);">Written mostly
+by Sam
+Partington, based on Andy Kwong's poshbot (below).&nbsp;&nbsp;
+Additional code by Steve
+Couzens &amp; Tristan Caulfield.&nbsp; Recent improvements on agent
+performance and also updating to the new pyPOSH standards by Francis
+Binns and Andrew Mansfield.</span><br>
+  </li>
+  <li><span style="font-weight: bold; color: rgb(51, 51, 153);">cookietest</span>
+: a simple test library.&nbsp; Use this for simple
+experiments with POSH.&nbsp; We use it to test changes to POSH engines.<br>
+  </li>
+  <li style="background-color: rgb(204, 255, 204);"><span
+ style="font-weight: bold; color: rgb(51, 51, 153);">latch-test</span>
+: a BOD/MASON library demonstrating improved action selection using
+flexible latching.&nbsp; This work was biomimetically inspired by
+emotions and drives, and funded by the EPSRC.&nbsp; The code is written
+by Philipp Rohlfshagen, starting from a base by Hagen Lehmann.&nbsp;
+The research is documented in <a
+ href="http://www.cs.bath.ac.uk/%7Ejjb/web/publications.html#flex-latch">Rohlfshagen
+&amp; Bryson (2008)</a>.</li>
+  <li style="background-color: rgb(204, 255, 204);"><span
+ style="color: rgb(0, 0, 0);">mason : some core files for creating
+MASON libraries.&nbsp; Also contains a sheep/dog demo with the
+deprecated scheduled verison of POSH (see sheepDogDemo for the current
+version).</span><span
+ style="font-weight: bold; color: rgb(51, 51, 153);"><span
+ style="color: rgb(51, 0, 153);">&nbsp; </span><span
+ style="font-weight: normal; color: rgb(0, 0, 0);">Initially written
+by Tristan Caulfield, substantially revised by Jan Drugowitsch.&nbsp; <br>
+    </span></span></li>
+  <li style="background-color: rgb(204, 255, 204);"><span
+ style="font-weight: bold; color: rgb(51, 51, 153);"><span
+ style="font-weight: normal; color: rgb(51, 0, 153);"><span
+ style="color: rgb(0, 0, 0);">macaques : a
+behaviour library that simulates the social interaction between a group
+of monkeys using BOD/MASON. Code by Hagen Lehmann and Joanna Bryson,
+currently in
+development.</span><br>
+    </span></span></li>
+  <li>poshbot : an old behavior library for Unreal Tournament written
+by Andy Kwong.&nbsp; This will not run with the current POSH, but we
+leave it in place because it is documented by Andy Kwong's tech report
+on pyPOSH.</li>
+  <li style="background-color: rgb(204, 255, 204);"><span
+ style="font-weight: bold; color: rgb(51, 51, 153);"><span
+ style="color: rgb(51, 0, 153);">sheepDogDemo: the
+BOD/MASON library demo for social agent based modelling, showing sheep
+and
+dog agents.&nbsp; </span></span>This is the current recommended
+version based on SPOSH.&nbsp; Revised from the demo files in mason by
+Joanna Bryson.&nbsp; <span
+ style="font-weight: bold; color: rgb(51, 51, 153);"><span
+ style="font-weight: normal; color: rgb(51, 0, 153);">There is a
+(somewhat out of date) <a
+ href="http://www.cs.bath.ac.uk/%7Ejjb/web/BOD/sheep-dog.html">web page
+&amp; tutorial for the sheep/dog demo</a>.</span></span></li>
+</ul>
+<h2 style="color: rgb(51, 51, 153);">Other Documentation</h2>
+<ul>
+  <li>API documentation will be there if you have followed the
+instructions in doc/README.html<br>
+    <span style="font-family: monospace;"></span></li>
+  <li><span style="font-family: monospace;">POSH/agentinitparser.py</span>:
+documents how agent_init files should
+work</li>
+  <li><span style="font-family: monospace;">launch.py</span>: documents
+how to start BOD agents.&nbsp; Can also be
+read by running<span style="font-family: monospace;"> launch.py --help</span></li>
+  <li style="background-color: rgb(204, 255, 204);"><span
+ style="font-family: monospace;">platform_files/MASON/README.html</span>,
+necessary documentation and instructions for running MASON agents.<br>
+  </li>
+</ul>
+<br>
+<hr><i> page authors: <a href="http://www.cs.bath.ac.uk/%7Ejjb/">Joanna
+Bryson</a></i>, <a style="font-style: italic;"
+ href="http://www.cs.bath.ac.uk/jd/">Jan Drugowitsch</a><br>
+<br>
+</body>
+</html>

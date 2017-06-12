@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>POSH.strict.lapparser</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="POSH-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="POSH-module.html">Package&nbsp;POSH</a> ::
+        <a href="POSH.strict-module.html">Package&nbsp;strict</a> ::
+        Module&nbsp;lapparser
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="POSH.strict.lapparser-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module lapparser</h1><p class="nomargin-top"><span class="codelink"><a href="POSH.strict.lapparser-pysrc.html">source&nbsp;code</a></span></p>
+<pre class="literalblock">
+Parser for .lap files.
+
+The parser accepts the following grammar:
+
+Preprocessing
+-------------
+  All element matching L{(\#|\;)[^
+]*} are removed. That removes
+  all the comments staring with '#' or ';'.
+
+Terminal Symbols
+----------------
+  The following terminal symbols are accepted::
+
+    AP                       AP
+    C                        C
+    DC                       DC
+    RDC                      RDC
+    SDC                      SDC
+    SRDC                     SRDC
+    nil                      NIL
+    (?i)drives               DRIVES
+    (?i)elements             ELEMENTS
+    (?i)trigger              TRIGGER
+    (?i)goal                 GOAL
+    (?i)hours                HOURS
+    (?i)minutes              MINUTES
+    (?i)seconds              SECONDS
+    (?i)hz                   HZ
+    (?i)pm                   PM
+    (?i)none                 NONE
+    (?i)documentation        DOCUMENTATION
+    (==|=|!=|&lt;|&gt;|&lt;=|&gt;=)      PREDICATE
+    \-?(\d*\.\d+|\d+\.)([eE][\+\-]?\d+)?  NUMFLOAT
+    \-?[0-9]+                NUMINT
+    (?i)[a-z][a-z0-9_\-]*    NAME
+    (?i)'?[a-z][a-z0-9_\-]*  STRINGVALUE
+    &quot;[^&quot;]*&quot;                  COMMENT
+
+Production Rules
+----------------
+  The following production rules are used::
+
+                       plan ::= &quot;(&quot; [ &quot;(&quot; &lt;docstring&gt; ]
+                                    ( ( &quot;(&quot; &lt;competence&gt; | &lt;action-pattern&gt; )*
+                                      &quot;(&quot; &lt;drive-collection&gt;
+                                      ( &quot;(&quot; &lt;competence&gt; | &lt;action-pattern&gt; )*
+                                    )
+                                    | ( &quot;(&quot; &lt;competence&gt; )
+                                    | ( &quot;(&quot; &lt;action-pattern&gt; )
+                                &quot;)&quot;
+                  docstring ::= DOCUMENTATION COMMENT COMMENT COMMENT &quot;)&quot;
+
+           drive-collection ::= &lt;drive-collection-id&gt; NAME
+                                ( NIL | &quot;(&quot; &lt;goal&gt; | )
+                                &quot;(&quot; DRIVES &lt;drive-priorities&gt; &quot;)&quot; &quot;)&quot;
+        drive-collection-id ::= DC | RDC | SDC | SRDC
+           drive_priorities ::= &lt;drive-elements&gt;+
+             drive-elements ::= &quot;(&quot; &lt;drive-element&gt;+ &quot;)&quot;
+              drive-element ::= &quot;(&quot; NAME ( NIL | &quot;(&quot; &lt;trigger&gt; | ) NAME
+                                    ( NIL | &quot;(&quot; &lt;freq&gt; | ) &lt;opt-comment&gt; &quot;)&quot;
+
+                 competence ::= C NAME ( NIL | &quot;(&quot; &lt;time&gt; | )
+                                ( NIL | &quot;(&quot; &lt;goal&gt; | ) &quot;(&quot; ELEMENTS
+                                &lt;competence-priorities&gt; &quot;)&quot; &lt;opt-comment&gt; &quot;)&quot;
+      competence-priorities ::= &lt;competence-elements&gt;+
+        competence-elements ::= &quot;(&quot; &lt;competence-element&gt;+ &quot;)&quot;
+         competence-element ::= &quot;(&quot; NAME [ &quot;(&quot; &lt;trigger&gt; ] NAME [ INTNUM ]
+                                    &lt;opt-comment&gt; &quot;)&quot;
+
+             action-pattern ::= AP NAME ( NIL | &quot;(&quot; &lt;time&gt; | )
+                                &quot;(&quot; &lt;action-pattern-elements&gt; &lt;opt-comment&gt; &quot;)&quot;
+    action-pattern-elements ::= ( &lt;full-sense&gt; | NAME )+ &quot;)&quot;
+
+                       goal ::= GOAL &lt;senses&gt; &quot;)&quot;
+                    trigger ::= TRIGGER &lt;senses&gt; &quot;)&quot;
+                     senses ::= ( NIL | &quot;(&quot; ( NAME | &lt;full-sense&gt; )+ &quot;)&quot; )
+                 full-sense ::= &quot;(&quot; NAME [&lt;value&gt; [&lt;predicate&gt;]] &quot;)&quot;
+                      value ::= NUMINT | NUMFLOAT | NAME | STRINGVALUE | NIL
+                  predicate ::= PREDICATE
+                  
+                       freq ::= &lt;freq-unit&gt; &lt;numfloat&gt; &quot;)&quot;
+                  freq-unit ::= HOURS | MINUTES | SECONDS | HZ | PM | NONE
+                       time ::= &lt;time-unit&gt; &lt;numfloat&gt; &quot;)&quot;
+                  time-unit ::= HOURS | MINUTES | SECONDS | NONE
+                   numfloat ::= NUMINT | NUMFLOAT
+                   
+                opt-comment ::= COMMENT |
+  
+
+</pre>
+
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Classes"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="POSH.strict.lapparser.Token-class.html" class="summary-name">Token</a><br />
+      A single token.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="POSH.strict.lapparser.LAPLexer-class.html" class="summary-name">LAPLexer</a><br />
+      A Lexer for tokenising .lap files.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="POSH.strict.lapparser.ParseError-class.html" class="summary-name">ParseError</a><br />
+      An Exception that indicates a parse error.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="POSH.strict.lapparser.LAPParser-class.html" class="summary-name">LAPParser</a><br />
+      A recursive descent parser for .lap files.
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__revision__"></a><span class="summary-name">__revision__</span> = <code title="'0.1'"><code class="variable-quote">'</code><code class="variable-string">0.1</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="POSH-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Mon Oct 27 17:45:04 2008
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

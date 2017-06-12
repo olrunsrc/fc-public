@@ -1,0 +1,1425 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>POSH.strict.lapparser.LAPParser</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="POSH-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="POSH-module.html">Package&nbsp;POSH</a> ::
+        <a href="POSH.strict-module.html">Package&nbsp;strict</a> ::
+        <a href="POSH.strict.lapparser-module.html">Module&nbsp;lapparser</a> ::
+        Class&nbsp;LAPParser
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="POSH.strict.lapparser.LAPParser-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class LAPParser</h1><p class="nomargin-top"><span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser">source&nbsp;code</a></span></p>
+<p>A recursive descent parser for .lap files.</p>
+  <p>The parser takes a single input string that represents the plan file 
+  and creates a plan builder object that it then returns.</p>
+  <p>If an error while parsing (or tokenising) is encountered, a ParseError
+  is raised.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__init__"></a><span class="summary-sig-name">__init__</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Initialises the parser.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><a href="POSH.strict.planbuilder.PlanBuilder-class.html" 
+      class="link">POSH.strict.PlanBuilder</a></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.strict.lapparser.LAPParser-class.html#parse" class="summary-sig-name">parse</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">input_str</span>)</span><br />
+      Parses the given input and returns a plan builder object.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.parse">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="nextToken"></a><span class="summary-sig-name">nextToken</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Gets the next token from the lexer.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.nextToken">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">boolean</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.strict.lapparser.LAPParser-class.html#match" class="summary-sig-name">match</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">allowed_tokens</span>)</span><br />
+      Checks if the current token matches the allowed tokens.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.match">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.strict.lapparser.LAPParser-class.html#error" class="summary-sig-name">error</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">msg</span>)</span><br />
+      Raises an error with the given message.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.error">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><a href="POSH.strict.planbuilder.PlanBuilder-class.html" 
+      class="link">POSH.strict.PlanBuilder</a></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.strict.lapparser.LAPParser-class.html#start" class="summary-sig-name">start</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The parser start symbol.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.start">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.strict.lapparser.LAPParser-class.html#plan" class="summary-sig-name">plan</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      plan ::= &quot;(&quot; [ &quot;(&quot; &lt;docstring&gt; ]
+                ( ( &quot;(&quot; &lt;competence&gt; | &lt;action-pattern&gt; )*
+                  &quot;(&quot; &lt;drive-collection&gt;
+                  ( &quot;(&quot; &lt;competence&gt; | &lt;action-pattern&gt; )*
+                )
+                | ( &quot;(&quot; &lt;competence&gt; )
+                | ( &quot;(&quot; &lt;action-pattern&gt; )
+            &quot;)&quot;</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.plan">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">(string, string, string)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.strict.lapparser.LAPParser-class.html#docstring" class="summary-sig-name">docstring</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      docstring ::= DOCUMENTATION COMMENT COMMENT COMMENT &quot;)&quot;</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.docstring">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.strict.lapparser.LAPParser-class.html#drive_collection" class="summary-sig-name">drive_collection</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      drive-collection ::= &lt;drive-collection-id&gt; NAME
+                        ( NIL | &quot;(&quot; &lt;goal&gt; | )
+                        &quot;(&quot; DRIVES &lt;drive-priorities&gt; &quot;)&quot; &quot;)&quot;</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.drive_collection">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">string</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.strict.lapparser.LAPParser-class.html#drive_collection_id" class="summary-sig-name">drive_collection_id</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      drive-collection-id ::= DC | RDC | SDC | SRDC</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.drive_collection_id">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Sequence of objects as given by <a 
+      href="POSH.strict.lapparser.LAPParser-class.html#drive_elements" 
+      class="link">drive_elements</a>.</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.strict.lapparser.LAPParser-class.html#drive_priorities" class="summary-sig-name">drive_priorities</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      drive_priorities ::= &lt;drive-elements&gt;+</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.drive_priorities">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Sequence of objects given by <a 
+      href="POSH.strict.lapparser.LAPParser-class.html#drive_element" 
+      class="link">drive_element</a></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.strict.lapparser.LAPParser-class.html#drive_elements" class="summary-sig-name">drive_elements</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      drive-elements ::= &quot;(&quot; &lt;drive-element&gt;+ &quot;)&quot;</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.drive_elements">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.strict.lapparser.LAPParser-class.html#drive_element" class="summary-sig-name">drive_element</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      drive-element ::= &quot;(&quot; NAME ( NIL | &quot;(&quot; &lt;trigger&gt; | ) NAME
+                         ( NIL | &quot;(&quot; &lt;freq&gt; | ) &lt;opt-comment&gt; &quot;)&quot;</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.drive_element">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.strict.lapparser.LAPParser-class.html#competence" class="summary-sig-name">competence</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      competence ::= C NAME ( NIL | &quot;(&quot; &lt;time&gt; | )
+                  ( NIL | &quot;(&quot; &lt;goal | ) &quot;(&quot; ELEMENTS
+                  &lt;competence-priorities&gt; &quot;)&quot; &lt;opt-comment&gt; &quot;)&quot;</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.competence">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Sequence of objects as given by <a 
+      href="POSH.strict.lapparser.LAPParser-class.html#competence_elements"
+      class="link">competence_elements</a>.</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.strict.lapparser.LAPParser-class.html#competence_priorities" class="summary-sig-name">competence_priorities</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      competence-priorities ::= &lt;competence-elements&gt;+</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.competence_priorities">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Sequence of objects given by <a 
+      href="POSH.strict.lapparser.LAPParser-class.html#competence_element" 
+      class="link">competence_element</a></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.strict.lapparser.LAPParser-class.html#competence_elements" class="summary-sig-name">competence_elements</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      competence-elements ::= &quot;(&quot; &lt;competence-element&gt;+ 
+      &quot;)&quot;</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.competence_elements">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.strict.lapparser.LAPParser-class.html#competence_element" class="summary-sig-name">competence_element</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      competence-element ::= &quot;(&quot; NAME ( NIL | &quot;(&quot; &lt;trigger&gt; | ) NAME
+                              ( NIL | INTNUM | )
+                              &lt;opt-comment&gt; &quot;)&quot;</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.competence_element">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.strict.lapparser.LAPParser-class.html#action_pattern" class="summary-sig-name">action_pattern</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      aption-pattern ::= AP NAME ( NIL | &quot;(&quot; &lt;time&gt; | )
+                      &quot;(&quot; &lt;action-pattern-elements&gt; &lt;opt-comment&gt; &quot;)&quot;</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.action_pattern">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">sequence of strings and objects as returned by <a 
+      href="POSH.strict.lapparser.LAPParser-class.html#full_sense" 
+      class="link">full_sense</a></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.strict.lapparser.LAPParser-class.html#action_pattern_elements" class="summary-sig-name">action_pattern_elements</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      action-pattern-elements ::= ( &lt;full-sense&gt; | NAME )+ 
+      &quot;)&quot;</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.action_pattern_elements">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Seuquence of strings and 3-tuples</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.strict.lapparser.LAPParser-class.html#goal" class="summary-sig-name">goal</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      goal ::= GOAL &lt;senses&gt; &quot;)&quot;</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.goal">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Sequence of strings and 3-tuples</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.strict.lapparser.LAPParser-class.html#trigger" class="summary-sig-name">trigger</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      trigger ::= TRIGGER &lt;senses&gt; &quot;)&quot;</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.trigger">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">sequence of string and 3-tuple</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.strict.lapparser.LAPParser-class.html#senses" class="summary-sig-name">senses</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      senses ::= ( NIL | &quot;(&quot; ( NAME | &lt;full-sense&gt; )+ 
+      &quot;)&quot; )</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.senses">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">sequence of string/None</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.strict.lapparser.LAPParser-class.html#full_sense" class="summary-sig-name">full_sense</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      full-sense ::= &quot;(&quot; NAME [&lt;value&gt; [&lt;predicate&gt;]]
+      &quot;)&quot;</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.full_sense">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">string</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.strict.lapparser.LAPParser-class.html#value" class="summary-sig-name">value</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      value ::= NUMINT | NUMFLOAT | NAME</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.value">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">string</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.strict.lapparser.LAPParser-class.html#predicate" class="summary-sig-name">predicate</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      predicate ::= PREDICATE</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.predicate">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">long</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.strict.lapparser.LAPParser-class.html#freq" class="summary-sig-name">freq</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      freq ::= &lt;freq-unit&gt; &lt;numfloat&gt; &quot;)&quot;</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.freq">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">string</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.strict.lapparser.LAPParser-class.html#freq_unit" class="summary-sig-name">freq_unit</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      freq-unit ::= HOURS | MINUTES | SECONDS | HZ | PM | NONE</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.freq_unit">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">long</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.strict.lapparser.LAPParser-class.html#time" class="summary-sig-name">time</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      time ::= &lt;time-unit&gt; &lt;numfloat&gt; &quot;)&quot;</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.time">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">string</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.strict.lapparser.LAPParser-class.html#time_unit" class="summary-sig-name">time_unit</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      time-unit ::= HOURS | MINUTES | SECONDS | NONE</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.time_unit">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">float</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.strict.lapparser.LAPParser-class.html#numfloat" class="summary-sig-name">numfloat</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      numfloat ::= NUMINT | NUMFLOAT</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.numfloat">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">None</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="POSH.strict.lapparser.LAPParser-class.html#opt_comment" class="summary-sig-name">opt_comment</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      opt-comment ::= COMMENT |</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.opt_comment">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="parse"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">parse</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">input_str</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.parse">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Parses the given input and returns a plan builder object.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>input_str</code></strong> (string) - The input string.</li>
+    </ul></dd>
+    <dt>Returns: <a href="POSH.strict.planbuilder.PlanBuilder-class.html" 
+      class="link">POSH.strict.PlanBuilder</a></dt>
+        <dd>The plan builder object representing the plan.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="match"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">match</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">allowed_tokens</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.match">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Checks if the current token matches the allowed tokens.</p>
+  <p>If there is no current token, then this method raises an Exception 
+  that indicates that we've reached the end of the input 
+  (unexpectedly).</p>
+  <p>Otherwise it returns if the current token type matches any of the 
+  given token types.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>allowed_tokens</code></strong> (list of string) - A list of allowed tokens.</li>
+    </ul></dd>
+    <dt>Returns: boolean</dt>
+        <dd>If the current token type matches any of the allowed tokens.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="POSH.strict.lapparser.ParseError-class.html">ParseError</a></strong></code> - If the is no current token.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="error"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">error</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">msg</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.error">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Raises an error with the given message.</p>
+  <p>This method raises a ParseError of type 'Line xxx: [msg]'.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>msg</code></strong> (string) - The error message.</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="POSH.strict.lapparser.ParseError-class.html">ParseError</a></strong></code> - always</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="start"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">start</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.start">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The parser start symbol.</p>
+  <p>When called, it parses the set input string and returns the created 
+  plan builder object.</p>
+  <dl class="fields">
+    <dt>Returns: <a href="POSH.strict.planbuilder.PlanBuilder-class.html" 
+      class="link">POSH.strict.PlanBuilder</a></dt>
+        <dd>A plan builder object representing the parsed plan.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="plan"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">plan</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.plan">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+plan ::= &quot;(&quot; [ &quot;(&quot; &lt;docstring&gt; ]
+                ( ( &quot;(&quot; &lt;competence&gt; | &lt;action-pattern&gt; )*
+                  &quot;(&quot; &lt;drive-collection&gt;
+                  ( &quot;(&quot; &lt;competence&gt; | &lt;action-pattern&gt; )*
+                )
+                | ( &quot;(&quot; &lt;competence&gt; )
+                | ( &quot;(&quot; &lt;action-pattern&gt; )
+            &quot;)&quot;
+
+@return: A plan builder object representing the parsed plan.
+@rtype: L{POSH.strict.PlanBuilder}
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="docstring"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">docstring</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.docstring">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>docstring ::= DOCUMENTATION COMMENT COMMENT COMMENT &quot;)&quot;</p>
+  <dl class="fields">
+    <dt>Returns: (string, string, string)</dt>
+        <dd>The three comments.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="drive_collection"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">drive_collection</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.drive_collection">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+drive-collection ::= &lt;drive-collection-id&gt; NAME
+                        ( NIL | &quot;(&quot; &lt;goal&gt; | )
+                        &quot;(&quot; DRIVES &lt;drive-priorities&gt; &quot;)&quot; &quot;)&quot;
+
+If no goal is given, None is returned for the goal.
+
+@return: The drive collection as 
+    (id, name, goal, [priority1, priority2, ...])
+@rtype: (string, string, goal, [priorities, ...])
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="drive_collection_id"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">drive_collection_id</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.drive_collection_id">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>drive-collection-id ::= DC | RDC | SDC | SRDC</p>
+  <dl class="fields">
+    <dt>Returns: string</dt>
+        <dd>The drive collection id as a string.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="drive_priorities"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">drive_priorities</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.drive_priorities">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>drive_priorities ::= &lt;drive-elements&gt;+</p>
+  <dl class="fields">
+    <dt>Returns: Sequence of objects as given by <a 
+      href="POSH.strict.lapparser.LAPParser-class.html#drive_elements" 
+      class="link">drive_elements</a>.</dt>
+        <dd>A list of drive priorities.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="drive_elements"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">drive_elements</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.drive_elements">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>drive-elements ::= &quot;(&quot; &lt;drive-element&gt;+ 
+  &quot;)&quot;</p>
+  <dl class="fields">
+    <dt>Returns: Sequence of objects given by <a 
+      href="POSH.strict.lapparser.LAPParser-class.html#drive_element" 
+      class="link">drive_element</a></dt>
+        <dd>A sequence of drive elements as given by <a 
+          href="POSH.strict.lapparser.LAPParser-class.html#drive_element" 
+          class="link">drive_element</a></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="drive_element"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">drive_element</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.drive_element">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+drive-element ::= &quot;(&quot; NAME ( NIL | &quot;(&quot; &lt;trigger&gt; | ) NAME
+                         ( NIL | &quot;(&quot; &lt;freq&gt; | ) &lt;opt-comment&gt; &quot;)&quot;
+ 
+If no trigger is given, then None is returned for the trigger.
+If no frequency is given, then None is returned for the frequency.
+
+@return: The drive element as (name, trigger, triggerable, freq)
+@rtype: (string, trigger, string, long)
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="competence"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">competence</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.competence">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+competence ::= C NAME ( NIL | &quot;(&quot; &lt;time&gt; | )
+                  ( NIL | &quot;(&quot; &lt;goal | ) &quot;(&quot; ELEMENTS
+                  &lt;competence-priorities&gt; &quot;)&quot; &lt;opt-comment&gt; &quot;)&quot;
+
+If no time is given, them time is set to None.
+If no goal is given, the goal is set to None.
+
+@return: The competence as (name, time, goal, priorities)
+@rtype: (string, time, goal, priorities)
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="competence_priorities"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">competence_priorities</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.competence_priorities">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>competence-priorities ::= &lt;competence-elements&gt;+</p>
+  <dl class="fields">
+    <dt>Returns: Sequence of objects as given by <a 
+      href="POSH.strict.lapparser.LAPParser-class.html#competence_elements"
+      class="link">competence_elements</a>.</dt>
+        <dd>A list of competence priorities.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="competence_elements"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">competence_elements</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.competence_elements">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>competence-elements ::= &quot;(&quot; &lt;competence-element&gt;+ 
+  &quot;)&quot;</p>
+  <dl class="fields">
+    <dt>Returns: Sequence of objects given by <a 
+      href="POSH.strict.lapparser.LAPParser-class.html#competence_element" 
+      class="link">competence_element</a></dt>
+        <dd>A sequence of competence elements as given by <a 
+          href="POSH.strict.lapparser.LAPParser-class.html#competence_element"
+          class="link">competence_element</a></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="competence_element"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">competence_element</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.competence_element">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+competence-element ::= &quot;(&quot; NAME ( NIL | &quot;(&quot; &lt;trigger&gt; | ) NAME
+                              ( NIL | INTNUM | )
+                              &lt;opt-comment&gt; &quot;)&quot;
+
+If no number of retires is given, then -1 is returned.
+
+@return: The competence element as
+    (name, trigger, triggerable, maxRetries)
+@rtype: (string, trigger, string, int)
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="action_pattern"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">action_pattern</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.action_pattern">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+aption-pattern ::= AP NAME ( NIL | &quot;(&quot; &lt;time&gt; | )
+                      &quot;(&quot; &lt;action-pattern-elements&gt; &lt;opt-comment&gt; &quot;)&quot;
+
+If no time is given, None is returned for the time.
+
+@return: The action pattern as (name, time, [name1, name2, ...])
+@rtype: (string, long, (string or full-sense, ...))
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="action_pattern_elements"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">action_pattern_elements</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.action_pattern_elements">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>action-pattern-elements ::= ( &lt;full-sense&gt; | NAME )+ 
+  &quot;)&quot;</p>
+  <dl class="fields">
+    <dt>Returns: sequence of strings and objects as returned by <a 
+      href="POSH.strict.lapparser.LAPParser-class.html#full_sense" 
+      class="link">full_sense</a></dt>
+        <dd>A list of action pattern elements.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="goal"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">goal</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.goal">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>goal ::= GOAL &lt;senses&gt; &quot;)&quot;</p>
+  <p>If the list of senses is empty, then None is returned.</p>
+  <dl class="fields">
+    <dt>Returns: Seuquence of strings and 3-tuples</dt>
+        <dd>A list of senses that were given as the goal</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="trigger"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">trigger</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.trigger">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>trigger ::= TRIGGER &lt;senses&gt; &quot;)&quot;</p>
+  <p>If the list of senses is empty, then None is returned.</p>
+  <dl class="fields">
+    <dt>Returns: Sequence of strings and 3-tuples</dt>
+        <dd>A list of senses that were given as the trigger</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="senses"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">senses</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.senses">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>senses ::= ( NIL | &quot;(&quot; ( NAME | &lt;full-sense&gt; )+ 
+  &quot;)&quot; )</p>
+  <p>If NIL is given, an empty list is returned.</p>
+  <dl class="fields">
+    <dt>Returns: sequence of string and 3-tuple</dt>
+        <dd>A list of senses and full-senses</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="full_sense"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">full_sense</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.full_sense">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>full-sense ::= &quot;(&quot; NAME [&lt;value&gt; [&lt;predicate&gt;]] 
+  &quot;)&quot;</p>
+  <dl class="fields">
+    <dt>Returns: sequence of string/None</dt>
+        <dd>The full sense, and None for the elements that are not specified.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="value"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">value</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.value">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>value ::= NUMINT | NUMFLOAT | NAME</p>
+  <dl class="fields">
+    <dt>Returns: string</dt>
+        <dd>The value as string.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="predicate"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">predicate</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.predicate">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>predicate ::= PREDICATE</p>
+  <dl class="fields">
+    <dt>Returns: string</dt>
+        <dd>The predicate as string.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="freq"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">freq</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.freq">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>freq ::= &lt;freq-unit&gt; &lt;numfloat&gt; &quot;)&quot;</p>
+  <dl class="fields">
+    <dt>Returns: long</dt>
+        <dd>frequency as period time.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="freq_unit"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">freq_unit</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.freq_unit">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>freq-unit ::= HOURS | MINUTES | SECONDS | HZ | PM | NONE</p>
+  <dl class="fields">
+    <dt>Returns: string</dt>
+        <dd>The token string of the frequency unit.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="time"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">time</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.time">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>time ::= &lt;time-unit&gt; &lt;numfloat&gt; &quot;)&quot;</p>
+  <dl class="fields">
+    <dt>Returns: long</dt>
+        <dd>time in milliseconds.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="time_unit"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">time_unit</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.time_unit">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>time-unit ::= HOURS | MINUTES | SECONDS | NONE</p>
+  <dl class="fields">
+    <dt>Returns: string</dt>
+        <dd>The unit as token string.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="numfloat"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">numfloat</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.numfloat">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>numfloat ::= NUMINT | NUMFLOAT</p>
+  <dl class="fields">
+    <dt>Returns: float</dt>
+        <dd>The number as float.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="opt_comment"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">opt_comment</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="POSH.strict.lapparser-pysrc.html#LAPParser.opt_comment">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>opt-comment ::= COMMENT |</p>
+  <dl class="fields">
+    <dt>Returns: None</dt>
+        <dd>Nothing</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="POSH-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Mon Oct 27 17:45:05 2008
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

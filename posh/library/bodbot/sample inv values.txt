@@ -1,0 +1,2 @@
+{'Class': 'FriendlyBotAPI.goowand', 'Reachable': 'True', 'Id': 'CTF-Simple2dt.go
+owand0', 'Location': '467.214355,347.684052,-108.899994'}

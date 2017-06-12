@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>POSH.create_agents'</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="POSH-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="POSH-module.html">Package&nbsp;POSH</a> ::
+        Module&nbsp;create_agents'
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="POSH.create_agents%27-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="POSH.create_agents%27-module.html">Module POSH.create_agents'</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-docstring">"""Functions to create new agents.</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring">The functions were taken out of the utils module to avoid cyclic imports.</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment"># utility functions</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Module POSH.utils=POSH.utils-module.html"><a title="POSH.utils" class="py-name" href="#" onclick="return doclink('link-0', 'utils', 'link-0');">utils</a></tt> <tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Function POSH.utils.get_plan_file()=POSH.utils-module.html#get_plan_file"><a title="POSH.utils.get_plan_file" class="py-name" href="#" onclick="return doclink('link-1', 'get_plan_file', 'link-1');">get_plan_file</a></tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment"># agent bases</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-keyword">from</tt> <tt id="link-2" class="py-name" targets="Package POSH.strict=POSH.strict-module.html"><a title="POSH.strict" class="py-name" href="#" onclick="return doclink('link-2', 'strict', 'link-2');">strict</a></tt> <tt class="py-keyword">import</tt> <tt id="link-3" class="py-name" targets="Class POSH.scheduled.agent.Agent=POSH.scheduled.agent.Agent-class.html,Class POSH.strict.agent.Agent=POSH.strict.agent.Agent-class.html"><a title="POSH.scheduled.agent.Agent
+POSH.strict.agent.Agent" class="py-name" href="#" onclick="return doclink('link-3', 'Agent', 'link-3');">Agent</a></tt> <tt class="py-name">as</tt> <tt class="py-name">StrictAgent</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-4" class="py-name" targets="Package POSH.scheduled=POSH.scheduled-module.html"><a title="POSH.scheduled" class="py-name" href="#" onclick="return doclink('link-4', 'scheduled', 'link-4');">scheduled</a></tt> <tt class="py-keyword">import</tt> <tt id="link-5" class="py-name"><a title="POSH.scheduled.agent.Agent
+POSH.strict.agent.Agent" class="py-name" href="#" onclick="return doclink('link-5', 'Agent', 'link-3');">Agent</a></tt> <tt class="py-name">as</tt> <tt class="py-name">ScheduledAgent</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-comment"># private constants</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt id="link-6" class="py-name" targets="Variable POSH.create_agents'._plan_types=POSH.create_agents%27-module.html#_plan_types"><a title="POSH.create_agents'._plan_types" class="py-name" href="#" onclick="return doclink('link-6', '_plan_types', 'link-6');">_plan_types</a></tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-string">'DC'</tt><tt class="py-op">,</tt> <tt class="py-string">'SDC'</tt><tt class="py-op">,</tt> <tt class="py-string">'RDC'</tt><tt class="py-op">,</tt> <tt class="py-string">'SRDC'</tt><tt class="py-op">)</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt id="link-7" class="py-name" targets="Variable POSH.create_agents'._agent_types=POSH.create_agents%27-module.html#_agent_types"><a title="POSH.create_agents'._agent_types" class="py-name" href="#" onclick="return doclink('link-7', '_agent_types', 'link-7');">_agent_types</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-string">'DC'</tt> <tt class="py-op">:</tt> <tt class="py-name">ScheduledAgent</tt><tt class="py-op">,</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line">                <tt class="py-string">'RDC'</tt> <tt class="py-op">:</tt> <tt class="py-name">ScheduledAgent</tt><tt class="py-op">,</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line">                <tt class="py-string">'SDC'</tt> <tt class="py-op">:</tt> <tt class="py-name">StrictAgent</tt><tt class="py-op">,</tt>  </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line">                <tt class="py-string">'SRDC'</tt> <tt class="py-op">:</tt> <tt class="py-name">StrictAgent</tt> <tt class="py-op">}</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"> </tt>
+<a name="get_plan_type"></a><div id="get_plan_type-def"><a name="L20"></a><tt class="py-lineno"> 20</tt> <a class="py-toggle" href="#" id="get_plan_type-toggle" onclick="return toggle('get_plan_type');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="POSH.create_agents'-module.html#get_plan_type">get_plan_type</a><tt class="py-op">(</tt><tt class="py-param">planfile</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="get_plan_type-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="get_plan_type-expanded"><a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line">    <tt class="py-docstring">"""Returns the type of the plan of the given plan file.</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-docstring">    The type is returned as a string (e.g. 'SDC', 'RDC', SRDC'). If the type was not</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-docstring">    found then an empty string is returned. The plan has to be given without</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt class="py-docstring">    its file ending and has to be in the PLANPATH directory in the</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-docstring">    corresponding library.</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-docstring">    The function parses the plan line by line until it finds a plan type</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-docstring">    identifier after a '('. This function can fail in several ways:</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-docstring">        - There is a comment that has '(DC' or similar</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-docstring">        - The bracket is on the line before the identifier</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt class="py-docstring">        - Other ways that I haven't though about</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"><tt class="py-docstring">    @param planfile: Filename of the plan file</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-docstring">    @type planfile: string</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"><tt class="py-docstring">    @return: Type of plan, or '' if not recognised</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"><tt class="py-docstring">    @rtype: string</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"><tt class="py-docstring">    @raise IOError: If plan file is not found.</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">    <tt class="py-name">plan_lines</tt> <tt class="py-op">=</tt> <tt class="py-name">open</tt><tt class="py-op">(</tt><tt class="py-name">planfile</tt><tt class="py-op">,</tt> <tt class="py-string">'r'</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">readlines</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">plan_line</tt> <tt class="py-keyword">in</tt> <tt class="py-name">plan_lines</tt><tt class="py-op">:</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">plan_id</tt> <tt class="py-keyword">in</tt> <tt id="link-8" class="py-name"><a title="POSH.create_agents'._plan_types" class="py-name" href="#" onclick="return doclink('link-8', '_plan_types', 'link-6');">_plan_types</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">            <tt class="py-comment"># find plan type identifier</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"><tt class="py-comment"></tt>            <tt class="py-name">id_pos</tt> <tt class="py-op">=</tt> <tt class="py-name">plan_line</tt><tt class="py-op">.</tt><tt class="py-name">find</tt><tt class="py-op">(</tt><tt class="py-name">plan_id</tt><tt class="py-op">)</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">id_pos</tt> <tt class="py-op">==</tt> <tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">:</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">                <tt class="py-keyword">continue</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">            <tt class="py-comment"># is there a bracket before?</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-comment"></tt>            <tt class="py-name">bracket_pos</tt> <tt class="py-op">=</tt> <tt class="py-name">plan_line</tt><tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-name">id_pos</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">rfind</tt><tt class="py-op">(</tt><tt class="py-string">'('</tt><tt class="py-op">)</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">bracket_pos</tt> <tt class="py-op">==</tt> <tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">:</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">                <tt class="py-keyword">continue</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">            <tt class="py-comment"># only valid if there is nothing else than whitespaces between</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"><tt class="py-comment"></tt>            <tt class="py-comment"># the plan identifier and the bracket</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line"><tt class="py-comment"></tt>            <tt class="py-keyword">if</tt> <tt class="py-name">id_pos</tt> <tt class="py-op">-</tt> <tt class="py-name">bracket_pos</tt> <tt class="py-op">==</tt> <tt class="py-number">1</tt> <tt class="py-keyword">or</tt> \ </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">               <tt class="py-name">plan_line</tt><tt class="py-op">[</tt><tt class="py-name">bracket_pos</tt> <tt class="py-op">+</tt> <tt class="py-number">1</tt><tt class="py-op">:</tt><tt class="py-name">id_pos</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">isspace</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">plan_id</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-string">''</tt> </tt>
+</div><a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"> </tt>
+<a name="create_agents"></a><div id="create_agents-def"><a name="L58"></a><tt class="py-lineno"> 58</tt> <a class="py-toggle" href="#" id="create_agents-toggle" onclick="return toggle('create_agents');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="POSH.create_agents'-module.html#create_agents">create_agents</a><tt class="py-op">(</tt><tt class="py-param">library</tt><tt class="py-op">,</tt> <tt class="py-param">plan</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">agents_init</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">world</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="create_agents-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="create_agents-expanded"><a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">    <tt class="py-docstring">"""Returns a sequence of newly created agents using the given behaviour</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"><tt class="py-docstring">    library.</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"><tt class="py-docstring">    The type of agents are determined by their plan type, using the</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"><tt class="py-docstring">    get_plan_type() function. If a world object is given, it is given to the</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"><tt class="py-docstring">    agent upon initialisation.</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"><tt class="py-docstring">    The function must be given either a plan file of an agents_init structure,</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"><tt class="py-docstring">    but not both. If a plan is given, then a single agent is created and</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"><tt class="py-docstring">    returned as a sequence of one element. agents_init is a structure as</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line"><tt class="py-docstring">    returned by the agentinitparser module and allows creating and</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"><tt class="py-docstring">    initialisation of several agents. The agents are created one by one</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"><tt class="py-docstring">    and returned as a sequence. If both a plan and agents_init are given,</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"><tt class="py-docstring">    then the plan is ignored.</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"><tt class="py-docstring">    @param library: name of the library</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"><tt class="py-docstring">    @type library: string</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"><tt class="py-docstring">    @param plan: name of the plan (without path and file ending)</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"><tt class="py-docstring">    @type plan: string</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"><tt class="py-docstring">    @param agents_init: data structure for agent initialisation</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line"><tt class="py-docstring">    @type agents_init: as returned by L{POSH.agentinitparser.parse_agent_init_file}</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line"><tt class="py-docstring">    @param world: world object, given to agents at construction</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"><tt class="py-docstring">    @type world: any</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"><tt class="py-docstring">    @return: the created agents</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"><tt class="py-docstring">    @rtype: sequence of L{POSH.agent_base.AgentBase}</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line"><tt class="py-docstring">    @raise Exception: everything that can go wrong when initialising agents.</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">    <tt class="py-comment"># build initialisation structure</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"><tt class="py-comment"></tt>    <tt class="py-keyword">if</tt> <tt class="py-name">agents_init</tt> <tt class="py-op">==</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-9" class="py-name" targets="Method POSH.strict.lapparser.LAPParser.plan()=POSH.strict.lapparser.LAPParser-class.html#plan"><a title="POSH.strict.lapparser.LAPParser.plan" class="py-name" href="#" onclick="return doclink('link-9', 'plan', 'link-9');">plan</a></tt> <tt class="py-op">==</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">TypeError</tt><tt class="py-op">,</tt> <tt class="py-string">"create_agent() requires either plan or "</tt> \ </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">                             <tt class="py-string">"agents_init to be specified"</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">        <tt class="py-name">agents_init</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">(</tt><tt id="link-10" class="py-name"><a title="POSH.strict.lapparser.LAPParser.plan" class="py-name" href="#" onclick="return doclink('link-10', 'plan', 'link-9');">plan</a></tt><tt class="py-op">,</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt><tt class="py-op">)</tt><tt class="py-op">]</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">    <tt class="py-comment"># create the agents</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"><tt class="py-comment"></tt>    <tt class="py-name">agents</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">agent_init</tt> <tt class="py-keyword">in</tt> <tt class="py-name">agents_init</tt><tt class="py-op">:</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">        <tt class="py-name">agent_plan</tt><tt class="py-op">,</tt> <tt class="py-name">agent_attributes</tt> <tt class="py-op">=</tt> <tt class="py-name">agent_init</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">        <tt class="py-comment"># determine agent type from plan</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">plan_type</tt> <tt class="py-op">=</tt> <tt id="link-11" class="py-name" targets="Function POSH.create_agents'.get_plan_type()=POSH.create_agents%27-module.html#get_plan_type"><a title="POSH.create_agents'.get_plan_type" class="py-name" href="#" onclick="return doclink('link-11', 'get_plan_type', 'link-11');">get_plan_type</a></tt><tt class="py-op">(</tt><tt id="link-12" class="py-name"><a title="POSH.utils.get_plan_file" class="py-name" href="#" onclick="return doclink('link-12', 'get_plan_file', 'link-1');">get_plan_file</a></tt><tt class="py-op">(</tt><tt id="link-13" class="py-name" targets="Method POSH.utils.World.library()=POSH.utils.World-class.html#library"><a title="POSH.utils.World.library" class="py-name" href="#" onclick="return doclink('link-13', 'library', 'link-13');">library</a></tt><tt class="py-op">,</tt> <tt class="py-name">agent_plan</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">plan_type</tt> <tt class="py-op">==</tt> <tt class="py-string">''</tt><tt class="py-op">:</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">SyntaxError</tt><tt class="py-op">,</tt> \ </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">                  <tt class="py-string">"plan type of plan '%s' not recognised"</tt> <tt class="py-op">%</tt> <tt class="py-name">agent_plan</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">        <tt class="py-name">agent_type</tt> <tt class="py-op">=</tt> <tt id="link-14" class="py-name"><a title="POSH.create_agents'._agent_types" class="py-name" href="#" onclick="return doclink('link-14', '_agent_types', 'link-7');">_agent_types</a></tt><tt class="py-op">[</tt><tt class="py-name">plan_type</tt><tt class="py-op">]</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">        <tt class="py-comment"># create agent and append to sequence</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">agents</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">agent_type</tt><tt class="py-op">(</tt><tt id="link-15" class="py-name"><a title="POSH.utils.World.library" class="py-name" href="#" onclick="return doclink('link-15', 'library', 'link-13');">library</a></tt><tt class="py-op">,</tt> <tt class="py-name">agent_plan</tt><tt class="py-op">,</tt> <tt class="py-name">agent_attributes</tt><tt class="py-op">,</tt> <tt class="py-name">world</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">agents</tt> </tt>
+</div><a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="POSH-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Mon Oct 27 17:45:07 2008
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

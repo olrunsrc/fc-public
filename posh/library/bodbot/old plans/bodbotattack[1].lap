@@ -1,0 +1,39 @@
+; Name: bodbotattack.lap
+; Dervied from: poshbotfollow.lap
+; Created: 31/12/2004 by Sam Partington
+
+(
+  (C wander-around (minutes 10) (goal((see-player)))
+    (elements
+      ((stuck (trigger ((is-stuck))) avoid))
+      ((pickup (trigger ((see-item))) pickup-item))
+      ((walk-around (trigger ((is-rotating False))) walk))
+    )
+  )
+  
+  (AP avoid (minutes 10) (stop-bot rotate then-walk))
+
+  (C then-walk (minutes 10) (goal((is-walking)))
+    (elements
+      ((try-walk (trigger ((is-rotating False))) walk))
+    )
+  )
+  
+  (C to-enemy-base (minutes 10) (goal ((at-enemy-base)))
+    (elements
+      (
+        ; in future, run-to-base will have its own element which actually goes there
+        (run-to-base (trigger((know-enemy-base-pos))) wander-around)
+        (find-base (trigger((reachable-nav-point))) walk-to-nav-point)
+        (wander-base (trigger((succeed))) wander-around)
+      )
+    )
+  )
+  
+  (RDC life (goal ((fail)))
+      (drives
+        ((hit (trigger((hit-object)(is-rotating False))) avoid))
+        ((to-enemy-base (trigger((succeed))) to-enemy-base))
+      )
+  )
+)

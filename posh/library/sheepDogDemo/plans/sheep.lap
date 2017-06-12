@@ -1,0 +1,39 @@
+(
+  
+  # This is a Competence.
+  # 
+  
+  (C c-graze (minutes 10) (goal ((succeed 0)))
+    (elements
+      (
+        (alone-no-target   (trigger((alone)(no_target))) pick_flocking_target)
+        (alone-with-target (trigger((alone))) move_to_target)
+        (default           (trigger((succeed))) ap-graze)
+      )
+    )
+  )
+  
+  # AP means "Action Pattern".  This calls a list of actions ("functions")
+  # in the behavior.
+  
+  # These are all ACTIONS in the behavior
+  # The (minutes 10) stuff is pointless and does nothing in our case,
+  # but you can't take it out.
+  
+  (AP ap-panic (minutes 10) (set_panic_to_max panic_flock_move))
+  (AP ap-graze (minutes 10) (reduce_panic_level panic_flock_move))
+
+
+  # The Drive Control gets checked/run every single time step.
+  # It starts at the top and checks all of the triggers until it
+  # finds one that succeeds.
+  
+  (SDC life (goal ((succeed 0)))
+      (drives
+      	# all of the triggers are SENSES in the behavior
+        ((pred-close (trigger((predator_close))) ap-panic))
+        ((neighbor-panic (trigger((neighbor_panic))) ap-panic))
+        ((default-behavior (trigger((succeed))) c-graze))
+      )
+  )
+)

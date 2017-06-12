@@ -1,0 +1,71 @@
+# This agent initialisisation file initialises 2 dogs and 10 sheep
+
+# -----------------
+# 2 Dogs
+# Each dog uses the dog.lap plan.
+# -----------------
+
+[clean-dog]
+MASON.name = Dog1
+MASON.fieldNames = dogs, agents
+MASON.display = kite, red, 4, Dog1
+
+[clean-dog]
+MASON.name = Dog2
+MASON.fieldNames = dogs, agents
+MASON.display = kite, red, 4, Dog2
+
+# ------------------
+# 10 Sheep
+# Each sheep uses the sheep.lap plan.
+# ------------------
+
+[sheep]
+MASON.name = Sheep1
+MASON.fieldNames = sheeps, agents
+MASON.display = compass, white, 4, Sheep1
+
+[sheep]
+MASON.name = Sheep2
+MASON.fieldNames = sheeps, agents
+MASON.display = compass, white, 4, Sheep2
+
+[sheep]
+MASON.name = Sheep3
+MASON.fieldNames = sheeps, agents
+MASON.display = compass, white, 4, Sheep3
+
+[sheep]
+MASON.name = Sheep4
+MASON.fieldNames = sheeps, agents
+MASON.display = compass, white, 4, Sheep4
+
+[sheep]
+MASON.name = Sheep5
+MASON.fieldNames = sheeps, agents
+MASON.display = compass, white, 4, Sheep5
+
+[sheep]
+MASON.name = Sheep6
+MASON.fieldNames = sheeps, agents
+MASON.display = compass, white, 4, Sheep6
+
+[sheep]
+MASON.name = Sheep7
+MASON.fieldNames = sheeps, agents
+MASON.display = compass, white, 4, Sheep7
+
+[sheep]
+MASON.name = Sheep8
+MASON.fieldNames = sheeps, agents
+MASON.display = compass, white, 4, Sheep8
+
+[sheep]
+MASON.name = Sheep9
+MASON.fieldNames = sheeps, agents
+MASON.display = compass, white, 4, Sheep9
+
+[sheep]
+MASON.name = Sheep10
+MASON.fieldNames = sheeps, agents
+MASON.display = compass, white, 4, Sheep10

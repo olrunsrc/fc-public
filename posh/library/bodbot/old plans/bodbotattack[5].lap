@@ -1,0 +1,43 @@
+; Name: bodbotattack.lap
+; Dervied from: previous version of bodbotattack.lap (see plan archive directory)
+; Created: ??/02/2005 by Sam Partington
+
+(
+  (C wander-around (minutes 10) (goal((see-player)))
+    (elements
+      ((stuck (trigger ((is-stuck))) avoid))
+      ((pickup (trigger ((see-item))) pickup-item))
+      ((walk-around (trigger ((is-rotating False))) walk))
+    )
+  )
+  
+  (AP avoid (minutes 5) (stop-bot rotate then-walk))
+
+  (C then-walk (minutes 10) (goal((is-walking)))
+    (elements
+      ((try-walk (trigger ((is-rotating False))) walk))
+    )
+  )
+  
+  (C to-enemy-base (minutes 10) (goal ((at-enemy-base)))
+    (elements
+      (
+        ; in future, run-to-base will have its own element which actually goes there
+        ;(run-to-base (trigger((know-enemy-base-pos))) wander-around)
+        (find-base (trigger((reachable-nav-point))) walk-to-nav-point)
+        (wander-base (trigger((succeed))) wander-around)
+      )
+    )
+  )
+  
+  (AP go-to-own-base (minutes 10) (to-own-base)) 
+  
+  (RDC life (goal ((fail)))
+      (drives
+        ((hit (trigger((hit-object)(is-rotating False))) avoid))
+        ((take-enemy-flag-from-base (trigger((enemy-flag-reachable))) to-enemy-flag)) ;this doesn't seem to fire when the bot is holding the enemy flag (that's the correct behaviour, but perhaps we should extend the trigger nonetheless 
+        ((go-home (trigger((have-enemy-flag))) go-to-own-base)) ;we need to extend the trigger so it also checks that the bot knows where the home base is!
+        ((to-enemy-base (trigger((succeed))) to-enemy-base))
+      )
+  )
+)

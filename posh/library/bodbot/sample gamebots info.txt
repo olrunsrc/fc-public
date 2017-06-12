@@ -1,0 +1,299 @@
+-440.035156,1041.223145,-118.950569} {Velocity 0.000000,0.000000,0.000000} {Name
+ Yigal} {Team 0} {Health 100} {Weapon None} {CurrentAmmo 0} {Armor 0} {AltFiring
+ 0}
+
+R>> END {Time 49.542465}
+
+R>> BEG {Time 49.683132}
+
+R>> GAM {PlayerScores {CTF-Command.FriendlyRemoteMale1Bot0 0.000000} {CTF-Comman
+d.FriendlyMale0 0.000000}} {TeamScores {0 0.000000} {1 0.000000}}
+
+R>> SLF {Id CTF-Command.FriendlyRemoteMale1Bot0} {Rotation 0,32941,0} {Location
+-440.035156,1041.223145,-118.950569} {Velocity 0.000000,0.000000,0.000000} {Name
+ Yigal} {Team 0} {Health 100} {Weapon None} {CurrentAmmo 0} {Armor 0} {AltFiring
+ 0}
+
+R>> END {Time 49.683132}
+
+R>> BEG {Time 49.815540}
+
+R>> GAM {PlayerScores {CTF-Command.FriendlyRemoteMale1Bot0 0.000000} {CTF-Comman
+d.FriendlyMale0 0.000000}} {TeamScores {0 0.000000} {1 0.000000}}
+
+R>> SLF {Id CTF-Command.FriendlyRemoteMale1Bot0} {Rotation 0,32941,0} {Location
+-440.035156,1041.223145,-118.950569} {Velocity 0.000000,0.000000,0.000000} {Name
+ Yigal} {Team 0} {Health 100} {Weapon None} {CurrentAmmo 0} {Armor 0} {AltFiring
+ 0}
+
+R>> END {Time 49.815540}
+
+R>> BEG {Time 50.009945}
+
+R>> GAM {PlayerScores {CTF-Command.FriendlyRemoteMale1Bot0 0.000000} {CTF-Comman
+d.FriendlyMale0 0.000000}} {TeamScores {0 0.000000} {1 0.000000}}
+
+R>> SLF {Id CTF-Command.FriendlyRemoteMale1Bot0} {Rotation 0,32941,0} {Location
+-440.035156,1041.223145,-118.950569} {Velocity 0.000000,0.000000,0.000000} {Name
+ Yigal} {Team 0} {Health 100} {Weapon None} {CurrentAmmo 0} {Armor 0} {AltFiring
+ 0}
+
+R>> END {Time 50.009945}
+
+R>> WAL {Id CTF-Command.LevelInfo0} {Normal 0.704063,-0.092692,0.000000} {Locati
+on -440.035156,1041.223145,-118.950569}
+
+R>> BEG {Time 50.174149}
+
+R>> GAM {PlayerScores {CTF-Command.FriendlyRemoteMale1Bot0 0.000000} {CTF-Comman
+d.FriendlyMale0 0.000000}} {TeamScores {0 0.000000} {1 0.000000}}
+
+R>> SLF {Id CTF-Command.FriendlyRemoteMale1Bot0} {Rotation 0,32941,0} {Location
+-440.035156,1041.223145,-118.950569} {Velocity 0.000000,0.000000,0.000000} {Name
+ Yigal} {Team 0} {Health 100} {Weapon None} {CurrentAmmo 0} {Armor 0} {AltFiring
+ 0}
+
+R>> END {Time 50.174149}
+
+R>> BEG {Time 50.363400}
+
+R>> GAM {PlayerScores {CTF-Command.FriendlyRemoteMale1Bot0 0.000000} {CTF-Comman
+d.FriendlyMale0 0.000000}} {TeamScores {0 0.000000} {1 0.000000}}
+
+R>> SLF {Id CTF-Command.FriendlyRemoteMale1Bot0} {Rotation 0,32941,0} {Location
+-440.035156,1041.223145,-118.950569} {Velocity 0.000000,0.000000,0.000000} {Name
+ Yigal} {Team 0} {Health 100} {Weapon None} {CurrentAmmo 0} {Armor 0} {AltFiring
+ 0}
+
+R>> END {Time 50.363400}
+
+R>> BEG {Time 50.594284}
+
+R>> GAM {PlayerScores {CTF-Command.FriendlyRemoteMale1Bot0 0.000000} {CTF-Comman
+d.FriendlyMale0 0.000000}} {TeamScores {0 0.000000} {1 0.000000}}
+
+R>> SLF {Id CTF-Command.FriendlyRemoteMale1Bot0} {Rotation 0,32941,0} {Location
+-440.035156,1041.223145,-118.950569} {Velocity 0.000000,0.000000,0.000000} {Name
+ Yigal} {Team 0} {Health 100} {Weapon None} {CurrentAmmo 0} {Armor 0} {AltFiring
+ 0}
+
+R>> END {Time 50.594284}
+
+R>> BEG {Time 50.737621}
+
+R>> GAM {PlayerScores {CTF-Command.FriendlyRemoteMale1Bot0 0.000000} {CTF-Comman
+d.FriendlyMale0 0.000000}} {TeamScores {0 0.000000} {1 0.000000}}
+
+R>> SLF {Id CTF-Command.FriendlyRemoteMale1Bot0} {Rotation 0,26014,0} {Location
+-440.035156,1041.223145,-118.950569} {Velocity 0.000000,0.000000,0.000000} {Name
+ Yigal} {Team 0} {Health 100} {Weapon None} {CurrentAmmo 0} {Armor 0} {AltFiring
+ 0}
+
+R>> END {Time 50.737621}
+
+R>> BEG {Time 50.950443}
+
+R>> GAM {PlayerScores {CTF-Command.FriendlyRemoteMale1Bot0 0.000000} {CTF-Comman
+d.FriendlyMale0 0.000000}} {TeamScores {0 0.000000} {1 0.000000}}
+
+R>> SLF {Id CTF-Command.FriendlyRemoteMale1Bot0} {Rotation 0,21714,0} {Location
+-440.035156,1041.223145,-118.950569} {Velocity 0.000000,0.000000,0.000000} {Name
+ Yigal} {Team 0} {Health 100} {Weapon None} {CurrentAmmo 0} {Armor 0} {AltFiring
+ 0}
+
+R>> END {Time 50.950443}
+
+R>> BEG {Time 55.605804}
+
+R>> GAM {PlayerScores {CTF-Command.FriendlyRemoteMale1Bot0 0.000000} {CTF-Comman
+d.FriendlyMale0 0.000000}} {TeamScores {0 0.000000} {1 0.000000}}
+
+R>> SLF {Id CTF-Command.FriendlyRemoteMale1Bot0} {Rotation 0,28099,0} {Location
+-440.035156,1041.223145,-118.950569} {Velocity 0.000000,0.000000,0.000000} {Name
+ Yigal} {Team 0} {Health 100} {Weapon None} {CurrentAmmo 0} {Armor 0} {AltFiring
+ 0}
+
+R>> END {Time 55.605804}
+
+R>> BEG {Time 55.768490}
+
+R>> GAM {PlayerScores {CTF-Command.FriendlyRemoteMale1Bot0 0.000000} {CTF-Comman
+d.FriendlyMale0 0.000000}} {TeamScores {0 0.000000} {1 0.000000}}
+
+R>> SLF {Id CTF-Command.FriendlyRemoteMale1Bot0} {Rotation 0,38097,0} {Location
+-440.035156,1041.223145,-118.950569} {Velocity 0.000000,0.000000,0.000000} {Name
+ Yigal} {Team 0} {Health 100} {Weapon None} {CurrentAmmo 0} {Armor 0} {AltFiring
+ 0}
+
+R>> END {Time 55.768490}
+
+R>> BEG {Time 55.863770}
+
+R>> GAM {PlayerScores {CTF-Command.FriendlyRemoteMale1Bot0 0.000000} {CTF-Comman
+d.FriendlyMale0 0.000000}} {TeamScores {0 0.000000} {1 0.000000}}
+
+R>> SLF {Id CTF-Command.FriendlyRemoteMale1Bot0} {Rotation 0,42978,0} {Location
+-440.035156,1041.223145,-118.950569} {Velocity 0.000000,0.000000,0.000000} {Name
+ Yigal} {Team 0} {Health 100} {Weapon None} {CurrentAmmo 0} {Armor 0} {AltFiring
+ 0}
+
+R>> END {Time 55.863770}
+
+R>> BEG {Time 55.974895}
+
+R>> GAM {PlayerScores {CTF-Command.FriendlyRemoteMale1Bot0 0.000000} {CTF-Comman
+d.FriendlyMale0 0.000000}} {TeamScores {0 0.000000} {1 0.000000}}
+
+R>> SLF {Id CTF-Command.FriendlyRemoteMale1Bot0} {Rotation 0,45836,0} {Location
+-440.035156,1041.223145,-118.950569} {Velocity 0.000000,0.000000,0.000000} {Name
+ Yigal} {Team 0} {Health 100} {Weapon None} {CurrentAmmo 0} {Armor 0} {AltFiring
+ 0}
+
+R>> END {Time 55.974895}
+
+R>> BEG {Time 56.097183}
+
+R>> GAM {PlayerScores {CTF-Command.FriendlyRemoteMale1Bot0 0.000000} {CTF-Comman
+d.FriendlyMale0 0.000000}} {TeamScores {0 0.000000} {1 0.000000}}
+
+R>> SLF {Id CTF-Command.FriendlyRemoteMale1Bot0} {Rotation 0,49170,0} {Location
+-440.035156,1041.223145,-118.950569} {Velocity 0.000000,0.000000,0.000000} {Name
+ Yigal} {Team 0} {Health 100} {Weapon None} {CurrentAmmo 0} {Armor 0} {AltFiring
+ 0}
+
+R>> END {Time 56.097183}
+
+R>> BEG {Time 56.183193}
+
+R>> GAM {PlayerScores {CTF-Command.FriendlyRemoteMale1Bot0 0.000000} {CTF-Comman
+d.FriendlyMale0 0.000000}} {TeamScores {0 0.000000} {1 0.000000}}
+
+R>> SLF {Id CTF-Command.FriendlyRemoteMale1Bot0} {Rotation 0,52839,0} {Location
+-440.035156,1041.223145,-118.950569} {Velocity 0.000000,0.000000,0.000000} {Name
+ Yigal} {Team 0} {Health 100} {Weapon None} {CurrentAmmo 0} {Armor 0} {AltFiring
+ 0}
+
+R>> END {Time 56.183193}
+
+R>> BEG {Time 56.362778}
+
+R>> GAM {PlayerScores {CTF-Command.FriendlyRemoteMale1Bot0 0.000000} {CTF-Comman
+d.FriendlyMale0 0.000000}} {TeamScores {0 0.000000} {1 0.000000}}
+
+R>> SLF {Id CTF-Command.FriendlyRemoteMale1Bot0} {Rotation 0,55419,0} {Location
+-440.035156,1041.223145,-118.950569} {Velocity 0.000000,0.000000,0.000000} {Name
+ Yigal} {Team 0} {Health 100} {Weapon None} {CurrentAmmo 0} {Armor 0} {AltFiring
+ 0}
+
+R>> END {Time 56.362778}
+
+R>> BEG {Time 56.517113}
+
+R>> GAM {PlayerScores {CTF-Command.FriendlyRemoteMale1Bot0 0.000000} {CTF-Comman
+d.FriendlyMale0 0.000000}} {TeamScores {0 0.000000} {1 0.000000}}
+
+R>> SLF {Id CTF-Command.FriendlyRemoteMale1Bot0} {Rotation 0,60807,0} {Location
+-440.035156,1041.223145,-118.950569} {Velocity 0.000000,0.000000,0.000000} {Name
+ Yigal} {Team 0} {Health 100} {Weapon None} {CurrentAmmo 0} {Armor 0} {AltFiring
+ 0}
+
+R>> NAV {Id CTF-Command.PathNode47} {Location 1165.640137,1355.264893,-62.988136
+} {Reachable False}
+
+R>> NAV {Id CTF-Command.PathNode41} {Location 1420.212891,1353.976807,-13.902565
+} {Reachable False}
+
+R>> NAV {Id CTF-Command.PathNode31} {Location 704.550720,1201.303101,-109.899193
+} {Reachable False}
+
+R>> NAV {Id CTF-Command.LiftExit8} {Location 445.953522,1237.406128,-109.903236}
+ {Reachable False}
+
+R>> NAV {Id CTF-Command.PathNode104} {Location 520.342957,1149.670776,-109.90024
+6} {Reachable False}
+
+R>> NAV {Id CTF-Command.PathNode103} {Location 88.745651,1181.128418,-109.902870
+} {Reachable True}
+
+R>> END {Time 56.517113}
+
+R>> BEG {Time 56.628902}
+
+R>> GAM {PlayerScores {CTF-Command.FriendlyRemoteMale1Bot0 0.000000} {CTF-Comman
+d.FriendlyMale0 0.000000}} {TeamScores {0 0.000000} {1 0.000000}}
+
+R>> SLF {Id CTF-Command.FriendlyRemoteMale1Bot0} {Rotation 0,56177,0} {Location
+-440.035156,1041.223145,-118.950569} {Velocity 0.000000,0.000000,0.000000} {Name
+ Yigal} {Team 0} {Health 100} {Weapon None} {CurrentAmmo 0} {Armor 0} {AltFiring
+ 0}
+
+R>> END {Time 56.628902}
+
+R>> BEG {Time 56.848095}
+
+R>> GAM {PlayerScores {CTF-Command.FriendlyRemoteMale1Bot0 0.000000} {CTF-Comman
+d.FriendlyMale0 0.000000}} {TeamScores {0 0.000000} {1 0.000000}}
+
+R>> SLF {Id CTF-Command.FriendlyRemoteMale1Bot0} {Rotation 0,52823,0} {Location
+-440.035156,1041.223145,-118.950569} {Velocity 0.000000,0.000000,0.000000} {Name
+ Yigal} {Team 0} {Health 100} {Weapon None} {CurrentAmmo 0} {Armor 0} {AltFiring
+ 0}
+
+R>> END {Time 56.848095}
+
+R>> WAL {Id CTF-Command.LevelInfo0} {Normal 0.000000,1.000000,0.000000} {Locatio
+n -440.035156,1041.223145,-118.950569}
+
+R>> BEG {Time 56.971981}
+
+R>> GAM {PlayerScores {CTF-Command.FriendlyRemoteMale1Bot0 0.000000} {CTF-Comman
+d.FriendlyMale0 0.000000}} {TeamScores {0 0.000000} {1 0.000000}}
+
+R>> SLF {Id CTF-Command.FriendlyRemoteMale1Bot0} {Rotation 0,52821,0} {Location
+-424.934509,1041.223145,-116.300003} {Velocity 68.892235,0.000000,0.000000} {Nam
+e Yigal} {Team 0} {Health 100} {Weapon None} {CurrentAmmo 0} {Armor 0} {AltFirin
+g 0}
+
+R>> END {Time 56.971981}
+
+R>> BEG {Time 57.064621}
+
+R>> GAM {PlayerScores {CTF-Command.FriendlyRemoteMale1Bot0 0.000000} {CTF-Comman
+d.FriendlyMale0 0.000000}} {TeamScores {0 0.000000} {1 0.000000}}
+
+R>> SLF {Id CTF-Command.FriendlyRemoteMale1Bot0} {Rotation 0,52821,0} {Location
+-416.358063,1041.223145,-116.300003} {Velocity 69.227539,0.000000,0.000000} {Nam
+e Yigal} {Team 0} {Health 100} {Weapon None} {CurrentAmmo 0} {Armor 0} {AltFirin
+g 0}
+
+R>> END {Time 57.064621}
+
+R>> BEG {Time 57.189365}
+
+R>> GAM {PlayerScores {CTF-Command.FriendlyRemoteMale1Bot0 0.000000} {CTF-Comman
+d.FriendlyMale0 0.000000}} {TeamScores {0 0.000000} {1 0.000000}}
+
+R>> SLF {Id CTF-Command.FriendlyRemoteMale1Bot0} {Rotation 0,52063,0} {Location
+-403.108521,1041.223145,-116.300003} {Velocity 87.463791,0.000000,0.000000} {Nam
+e Yigal} {Team 0} {Health 100} {Weapon None} {CurrentAmmo 0} {Armor 0} {AltFirin
+g 0}
+
+R>> END {Time 57.189365}
+
+R>> BEG {Time 57.281731}
+
+R>> GAM {PlayerScores {CTF-Command.FriendlyRemoteMale1Bot0 0.000000} {CTF-Comman
+d.FriendlyMale0 0.000000}} {TeamScores {0 0.000000} {1 0.000000}}
+
+R>> SLF {Id CTF-Command.FriendlyRemoteMale1Bot0} {Rotation 0,51469,0} {Location
+-398.234344,1041.223145,-116.300003} {Velocity 81.831932,0.000000,0.000000} {Nam
+e Yigal} {Team 0} {Health 100} {Weapon None} {CurrentAmmo 0} {Armor 0} {AltFirin
+g 0}
+
+R>> END {Time 57.281731}
+
+R>> BEG {Time 57.355938}
+
+R>> GAM {PlayerScores {CTF-Command.FriendlyRemoteMale1Bot0 0.000000} {CTF-Comman
+d.FriendlyMale0 0.000000}} {TeamScores {0 0.000000} {1 0.000000}}
+

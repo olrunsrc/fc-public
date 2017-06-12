@@ -1,0 +1,59 @@
+
+(
+ 
+ (C a-groom (goal ((succeed 0)))
+    (elements   
+      ((has-no-target      (trigger((has_groom_target 0)))            ap-pick-groom-target))
+      ((target-not-willing (trigger((groom_target_wants_to_groom 0))) ap-pick-groom-target))
+      ((not-near-target    (trigger((is_near_groom_target 0)))        move_to_groom_target)) 
+      ((default-groom      (trigger((succeed)))                       ap-groom-with-target))
+     )
+    ) 
+ 
+ (AP ap-pick-groom-target (pick_groom_target move_to_groom_target))   
+ (AP ap-groom-with-target (decrease_food_saturation_time groom_with_target))
+ 
+###############################################################################################
+ 
+  (C a-feed (goal ((succeed 0)))
+    (elements
+      ((has-no-food      		(trigger((has_food 0)))            	ap-pick-food))
+      ((not-near-target  		(trigger((is_near_food_target 0))) 	move_to_food))
+#      ((not-free-food	  	 (trigger((free_food 0))			 	 comparison))
+#	   ((fight-sequence   	 (trigger((comparison 0))			 	 fight))	
+      ((default-feeding  		(trigger((succeed)))               	ap-feed))
+     )
+    )
+
+ (AP ap-pick-food 	(pick_food move_to_food)) 
+# (AP ap-feed       	 (feed replace)) 
+ (AP ap-feed       	(decrease_groom_saturation_time feed))
+
+
+##############################################################################
+
+ (C a-explore (goal ((succeed 0)))
+    (elements
+      ((outside 			(trigger((is_far_from_group 1))) 		ap-move-to-closest))      
+      ((exploration 		(trigger((wants_to_explore 1))) 		ap-random-move))
+     ) 
+    )
+ (AP ap-move-to-closest (decrease_groom_saturation_time decrease_food_saturation_time move_to_closest))      
+ (AP ap-random-move (decrease_groom_saturation_time decrease_food_saturation_time move_around))
+
+##############################################################################
+
+# The Drive Control gets checked/run every single time step.
+# It starts at the top and checks all of the triggers until it
+# finds one that succeeds.
+
+# all of the triggers are SENSES in the behavior
+  
+ (SDC life (goal ((succeed 0)))
+     (drives
+       ((feed     (trigger((wants_food))) 			a-feed))
+       ((groom    (trigger((wants_to_groom))) 		a-groom))   
+       ((explore  (trigger((wants_to_explore))) 	a-explore))                       	          
+      )
+     )
+ )

@@ -1,0 +1,11 @@
+(
+  (C find-cookie (minutes 10) (goal((see_cookie)))
+    (elements ((look-for-cookie (trigger ((see_cookie 0))) change_dir)))
+  )
+
+  (DC life (goal ((see_cookie)))
+      (drives
+        ((get-cookie (trigger((see_cookie 0))) find-cookie))
+      )
+  )
+)

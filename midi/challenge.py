@@ -20,7 +20,10 @@ import os,sys,logging
 import subprocess as prc
 import mmap
 import urlparse
+import posix_ipc
 
+Kib = 1024
+Mib = Kib*Kib
 
 class Challenge(object):
 
@@ -30,9 +33,17 @@ class Challenge(object):
 
     def __init__(self):
         ''' connect to ros and set up web page and web sockets '''
-	self.memfile = open("data/chalmap","r+b")
-	self.memmap = mmap.mmap(self.memfile.fileno(),0)
+	#self.memfile = open("data/chalmap","r+b")
+	#self.memmap = mmap.mmap(self.memfile.fileno(),0)
+        print("init")
+	memory = posix_ipc.SharedMemory("chalmap", posix_ipc.O_CREAT, size=8*Kib)
+        print("init")
+	self.memmap = mmap.mmap(memory.fd, memory.size)
+        print("init")
+	memory.close_fd()
+        print("init")
 	self.state = SrcState()
+        print("init")
 
     def init(self):
         ''' connect to ros and set up web page '''
@@ -51,7 +62,7 @@ class Challenge(object):
     def finish(self):
 	self.memmap.flush()
 	self.memmap.close()
-	self.memfile.close()
+	#self.memfile.close()
 	self.state.fini()
 	self.web.finish()
         self.wsproc.terminate()

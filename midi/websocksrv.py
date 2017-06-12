@@ -34,6 +34,7 @@ import logging
 import sys
 import mmap
 import socket
+import posix_ipc
 
 global chalmap
 def getSrcString():
@@ -156,8 +157,13 @@ class ChallengeProtocolA(WebSocketServerProtocol):
 class WSS:
     def __init__(self,protocol,ip='127.0.0.1',port=9002):
 	global chalmap
-	self.memfile = open("data/chalmap","r+b")
-	self.memmap = mmap.mmap(self.memfile.fileno(),0)
+	#self.memfile = open("data/chalmap","r+b")
+	#self.memmap = mmap.mmap(self.memfile.fileno(),0)
+
+	memory = posix_ipc.SharedMemory("chalmap")
+	self.memmap = mmap.mmap(memory.fd, memory.size)
+	memory.close_fd()
+
 	chalmap = self.memmap
         ip_str = str(ip)
         port_int = int(port)
@@ -179,7 +185,7 @@ class WSS:
     def fini(self):
 	try:
 	    self.memmap.close()
-	    self.memfile.close()
+	    #self.memfile.close()
 	    self.server.close()
             self.loop.stop()
 	    self.loop.close()
@@ -195,7 +201,7 @@ def main():
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     s.connect(("8.8.8.8", 80))
     ip = s.getsockname()[0]
-    srv = WSS(ChallengeProtocolA, "10.9.20.1", 9002)
+    srv = WSS(ChallengeProtocolA, "192.168.2.10", 9002)
     try:
         srv.run()
     except KeyboardInterrupt:

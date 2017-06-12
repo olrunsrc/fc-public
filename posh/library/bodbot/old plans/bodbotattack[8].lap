@@ -1,0 +1,59 @@
+; Name: bodbotattack.lap
+; Dervied from: previous version of bodbotattack.lap (see plan archive directory)
+; Created: ??/02/2005 by Sam Partington
+
+(
+  (C wander-around (minutes 10) (goal((see-player)))
+    (elements
+      ((stuck (trigger ((is-stuck))) avoid))
+      ((pickup (trigger ((see-item))) pickup-item))
+      ((walk-around (trigger ((is-rotating False))) walk))
+    )
+  )
+  
+  (AP avoid (minutes 5) (stop-bot rotate then-walk))
+
+  (C then-walk (minutes 10) (goal((is-walking)))
+    (elements
+      ((try-walk (trigger ((is-rotating False))) walk))
+    )
+  )
+  
+  (C to-enemy-base (minutes 10) (goal ((at-enemy-base)))
+    (elements
+      (
+        ; in future, run-to-base will have its own element which actually goes there
+        ;(run-to-base (trigger((know-enemy-base-pos))) wander-around)
+        (find-base (trigger((reachable-nav-point))) walk-to-nav-point)
+        (wander-base (trigger((succeed))) wander-around)
+      )
+    )
+  )
+  
+  (AP go-to-own-base (minutes 10) (to-own-base))
+  (AP go-to-own-flag (minutes 10) (to-own-flag))
+  (AP go-to-enemy-flag (minutes 10) (to-enemy-flag))
+  
+  (AP expire-the-damage-info (seconds 8) (expire-damage-info)) ; no point having it stay on the stack for long as it gets called very often anyway
+  (AP expire-the-projectile-info (seconds 2) (expire-projectile-info))
+  
+  (AP attack-enemy-carrying-our-flag (minutes 20) (shoot-enemy-carrying-our-flag run-to-enemy-carrying-our-flag)) ;not sure which ordering here is best
+  
+  (RDC life (goal ((fail)))
+      (drives
+        ;((expire-our-projectile-info (trigger ((succeed))) expire-the-projectile-info (seconds 3)))
+        ((expire-our-damage-info (trigger ((succeed))) expire-the-damage-info (seconds 10)))
+        
+        ((pickup-our-flag-from-ground (trigger ((our-flag-on-ground))) go-to-own-flag)) ;(our-flag-reachable) was in the trigger but it never seemed to fire
+        ;((avoid-being-shot (trigger ((incoming-projectile))) wander-around)) ;will be something particular soon
+        ((pickup-enemy-flag-from-ground (trigger ((enemy-flag-on-ground))) go-to-enemy-flag)) ;need to do something with (enemy-flag-reachable)
+        
+        ((respond-to-attack-since-health-low (trigger ((taken-damage) (own-health-level 30 <))) wander-around)) ;again, needs special thing 
+        ((attack-enemy-with-our-flag (trigger ((see-enemy-with-our-flag))) attack-enemy-carrying-our-flag))
+        ((take-enemy-flag-from-base (trigger((enemy-flag-reachable))) to-enemy-flag)) ;this doesn't seem to fire when the bot is holding the enemy flag (that's the correct behaviour, but perhaps we should extend the trigger nonetheless 
+        ((hit (trigger((hit-object)(is-rotating False))) avoid)) ; was in first place
+        ((go-home (trigger((have-enemy-flag))) go-to-own-base)) ;we need to extend the trigger so it also checks that the bot knows where the home base is!
+        ((to-enemy-base (trigger((succeed))) to-enemy-base))
+      )
+  )
+)

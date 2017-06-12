@@ -1,0 +1,30 @@
+# This agent initialisisation file initialises 10 males and 10 females, using the malefemale script
+
+# -----------------
+# 5 Males
+# -----------------
+
+[risk-assess]
+MASON.name = John
+MASON.fieldNames = male, agents
+MASON.display = compass, 100-100-255, 3.0, John
+
+[risk-assess]
+MASON.name = Paul
+MASON.fieldNames = male, agents
+MASON.display = compass, 90-90-255, 3.0, Paul
+
+[risk-assess]
+MASON.name = George
+MASON.fieldNames = male, agents
+MASON.display = compass, 80-80-255, 3.0, George
+
+[risk-assess]
+MASON.name = Ringo
+MASON.fieldNames = male, agents
+MASON.display = compass, 70-70-255, 3.0, Ringo
+
+[risk-assess]
+MASON.name = Stu
+MASON.fieldNames = male, agents
+MASON.display = compass, 60-60-255, 3.0, Stu

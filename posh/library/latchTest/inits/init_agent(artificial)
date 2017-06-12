@@ -1,0 +1,56 @@
+[grooming]
+MASON.name = Agent 1
+MASON.fieldNames = agents
+MASON.display = compass, 100-100-255, 10.0, Agent 1
+MASON.loc = 300, 300
+
+[grooming]
+MASON.name = Agent 2
+MASON.fieldNames = agents
+MASON.display = compass, 100-100-255, 10.0, Agent 2
+MASON.loc = 300, 300
+
+[grooming]
+MASON.name = Agent 3
+MASON.fieldNames = agents
+MASON.display = compass, 100-100-255, 10.0, Agent 3
+MASON.loc = 300, 300
+
+[grooming]
+MASON.name = Agent 4
+MASON.fieldNames = agents
+MASON.display = compass, 100-100-255, 10.0, Agent 4
+MASON.loc = 300, 300
+
+[grooming]
+MASON.name = Agent 5
+MASON.fieldNames = agents
+MASON.display = compass, 100-100-255, 10.0, Agent 5
+MASON.loc = 300, 300
+
+####################################################
+####################################################
+
+[resources]
+MASON.name = Food 1
+MASON.fieldNames = food
+MASON.display = circle, 100-100-255, 7.0, Food 1
+MASON.loc = 300, 150
+
+[resources]
+MASON.name = Food 2
+MASON.fieldNames = food
+MASON.display = circle, 100-100-255, 7.0, Food 2
+MASON.loc = 300, 450
+
+[resources]
+MASON.name = Water 1
+MASON.fieldNames = water
+MASON.display = circle, 100-100-255, 7.0, Water 1
+MASON.loc = 150, 300
+
+[resources]
+MASON.name = Water 2
+MASON.fieldNames = water
+MASON.display = circle, 100-100-255, 7.0, Water 2
+MASON.loc = 450, 300

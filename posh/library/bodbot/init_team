@@ -1,0 +1,39 @@
+# This agent initialisisation file initialises 2 teams of bots. Each time has an
+# attack bot, which uses the attackbot.lap plan file, and a defend bot, which 
+# uses the defendbot.lap plan file.
+
+# Note: Gamebots does not seem to set the names of the bots properly so these
+# names won't be used.
+
+
+# -----------------
+# Team 0
+# -----------------
+
+[clean-attackbot]
+Bot.botname = Tom
+Bot.team = 0
+Bot.ip = 127.0.0.1
+Bot.port = 3000
+
+[defendbot]
+Bot.botname = Bob
+Bot.team = 0
+Bot.ip = 127.0.0.1
+Bot.port = 3000
+
+# -----------------
+# Team 1
+# -----------------
+
+[clean-attackbot]
+Bot.botname = Mary
+Bot.team = 1
+Bot.ip = 127.0.0.1
+Bot.port = 3000
+
+[defendbot]
+Bot.botname = Jill
+Bot.team = 1
+Bot.ip = 127.0.0.1
+Bot.port = 3000
