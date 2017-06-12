@@ -8,4 +8,10 @@ export ROS_MASTER_URI=http://192.168.2.1:11311
 export ROS_10=http://192.168.2.10:11311
 source /home/docker/ws/install/setup.bash
 
+alias cdw='cd /home/ubuntu/ws'
+alias cdo='cd /home/olrun'
+alias rtl='rostopic list'
+alias rt1='rostopic echo -n 1'
+alias rtlo='rostopic list | grep olrun'
+alias rtlv='rostopic list | grep valkyrie'
 
