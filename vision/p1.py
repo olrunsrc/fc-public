@@ -20,13 +20,14 @@ CKPT_PATH = 'vtest/chkpt/saved.ckpt'
 
 class Processor():
   def __init__(self,sess):
+    self.sess = sess
     self.proc,self.fd = self.inference()
     self.initSession(sess,CKPT_PATH)   
 
   def fiximg(self,img):
     fimg = img
-    fimg[0:34,0:64,:] = np.ones([34,64,4],np.float32)
-    fimg[0:34,448:512,:] = np.ones([34,64,4],np.float32)
+    fimg[0:34,0:64,:] = np.ones([34,64,3],np.float32)
+    fimg[0:34,448:512,:] = np.ones([34,64,3],np.float32)
     return fimg
 
   def block_reduction_a(self,inputs, scope=None, reuse=None, deep=1):
@@ -50,7 +51,7 @@ class Processor():
           branch_2 = slim.max_pool2d(inputs, [3, 3], stride=2,
                                    #padding='VALID',
                                    scope='MaxPool_1a_3x3')
-    return tf.concat(axis=3, values=[branch_0, branch_1, branch_2])
+    return tf.concat(3, [branch_0, branch_1, branch_2])
 
   def inception_v4_base(self, inputs, final_endpoint='Conv2d_4a_1x1', scope=None):
     """Creates the Inception V4 network up to the given final endpoint.
@@ -84,7 +85,7 @@ class Processor():
         
         for idx in range(2):
           block_scope = 'Mixed_3' + chr(ord('a') + idx)
-          net = block_reduction_a(net, scope=block_scope, reuse=None, deep=idx+1)
+          net = self.block_reduction_a(net, scope=block_scope, reuse=None, deep=idx+1)
           if add_and_check_final(block_scope, net): return net, end_points
     
         # "Fully connected" block
@@ -107,7 +108,7 @@ class Processor():
     with tf.variable_scope(scope, 'InceptionV4model', [inputs], reuse=reuse) as scope:
       with slim.arg_scope([slim.batch_norm, slim.dropout],
                         is_training=is_training):
-        net, end_points = inception_v4_base(inputs, scope=scope)
+        net, end_points = self.inception_v4_base(inputs, scope=scope)
 
         with slim.arg_scope([slim.conv2d, slim.max_pool2d, slim.avg_pool2d],
                           stride=1, padding='SAME'):
@@ -121,7 +122,7 @@ class Processor():
   def inference(self):
     process_data_node = tf.placeholder(tf.float32,
       shape=(1, IMAGE_HEIGHT, IMAGE_WIDTH, NUM_CHANNELS))
-    process_model,_ = model(process_data_node,is_training=False,reuse=False)
+    process_model,_ = self.model(process_data_node,is_training=False,reuse=False)
     process_prediction = tf.nn.softmax(process_model)
     process_image = tf.argmax(process_prediction,dimension=3)
     return process_image,process_data_node

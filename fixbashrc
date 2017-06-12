@@ -14,4 +14,4 @@ alias rtl='rostopic list'
 alias rt1='rostopic echo -n 1'
 alias rtlo='rostopic list | grep olrun'
 alias rtlv='rostopic list | grep valkyrie'
-
+alias getf='curl http://192.168.2.150:8000/'

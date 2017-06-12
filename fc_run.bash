@@ -66,7 +66,7 @@ docker run -it --name team_container \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
   -v "/tmp/.docker.xauth:/tmp/.docker.xauth" \
   -v /dev/log:/dev/log \
-  -v /home/ubuntu/fc-dryrun:/home/ubuntu/fc-dryrun \
+  -v /home/ubuntu/fc-dryrun:/home/docker/fc-dryrun \
   --ulimit rtprio=99 \
   --net=vpn-br0 \
   --ip=192.168.2.10 \
