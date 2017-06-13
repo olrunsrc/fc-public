@@ -71,7 +71,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         cuda-curand-$CUDA_PKG_VERSION \
         cuda-cusparse-$CUDA_PKG_VERSION \
         cuda-npp-$CUDA_PKG_VERSION \
-        cuda-cudart-$CUDA_PKG_VERSION && \
+        cuda-cudart-$CUDA_PKG_VERSION \
         cuda-core-$CUDA_PKG_VERSION \
         cuda-misc-headers-$CUDA_PKG_VERSION \
         cuda-command-line-tools-$CUDA_PKG_VERSION \
@@ -104,14 +104,14 @@ WORKDIR ${WS}
 RUN echo "deb http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1404/x86_64 /" > /etc/apt/sources.list.d/nvidia-ml.list
 
 #ENV CUDNN_VERSION 6.0.21
-#ENV CUDNN_VERSION 5.1.10
+ENV CUDNN_VERSION 5.1.10
 LABEL com.nvidia.cudnn.version="${CUDNN_VERSION}"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
             #libcudnn6=$CUDNN_VERSION-1+cuda8.0 && \
             #libcudnn6-dev=$CUDNN_VERSION-1+cuda8.0 && \
+            libcudnn5-dev=$CUDNN_VERSION-1+cuda8.0 \
             libcudnn5=$CUDNN_VERSION-1+cuda8.0 && \
-            libcudnn5-dev=$CUDNN_VERSION-1+cuda8.0 && \
     rm -rf /var/lib/apt/lists/*
 
 #install Tensorflow
@@ -148,6 +148,6 @@ COPY trajectories/ trajectories/
 COPY vision/ vision/
 COPY posh/ posh/
 COPY olrun.bash .
-COPY fixbashrc.txt .
+COPY fixbashrc .
 COPY testtf.py .
 CMD ["/bin/bash", "olrun.bash" ]

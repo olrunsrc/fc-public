@@ -11,7 +11,8 @@ class TensorNet:
     self.processor = Processor(self.sess)
 
   def process(self,image):   #272x512 RGB 32F input
-    return self.processor.process(image)
+    primg = self.processor.process(image)
+    return primg.astype(np.uint8)
 
   #def process(self,image):   #272x512 RGB 32F input
   #  gray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
