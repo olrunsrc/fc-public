@@ -164,6 +164,11 @@ class SrcState:
 
 	time.sleep(1)
 
+    def rosTask(self,t,c):
+        print("Starting task (%d,%d)" % (t,c))
+        ret = self.taskProxy(t,c)
+        print("Started task (%d,%d) returned %s" % (t,c,ret))
+
     def init1(self):
         sats_nm = "/task1/checkpoint2/satellite"
 	satSubscriber = rospy.Subscriber( sats_nm, Satellite, self.rcvdsat )
@@ -215,16 +220,20 @@ class SrcState:
 	done = action and ord(action)==27
 	data = self.state
         if action and action.lower()=='a':
-	    self.taskProxy(1,1)
+	    #self.taskProxy(1,1)
+	    self.rosTask(1,1)
 	    self.state.current = max(1.0,self.state.current)
         if action and action.lower()=='b':
-	    self.taskProxy(2,1)
+	    #self.taskProxy(2,1)
+	    self.rosTask(2,1)
 	    self.state.current = max(2.0,self.state.current)
         if action and action.lower()=='c':
-	    self.taskProxy(3,1)
+	    #self.taskProxy(3,1)
+	    self.rosTask(3,1)
 	    self.state.current = max(3.0,self.state.current)
         if action and ord(action)>=ord('2') and ord(action)<=ord('8'):  
-	    self.taskProxy(int(self.state.current),ord(action)-ord('0'))
+	    #self.taskProxy(int(self.state.current),ord(action)-ord('0'))
+	    self.rosTask(int(self.state.current),ord(action)-ord('0'))
 	return done, json.dumps(data,cls=JEnc)
 
 if __name__ == '__main__':
