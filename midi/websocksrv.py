@@ -35,15 +35,18 @@ import sys
 import mmap
 import socket
 import posix_ipc
+from ipcomm import IPComm
 
-global chalmap
+global ipcWS
 def getSrcString():
-    global chalmap
+    global ipcWS
     try:
-	chalmap.seek(0)
-	jsonstr = chalmap.readline()
+      res = "oops"
+      with ipcWS.sem:
+	ipcWS.mmap.seek(0)
+	jsonstr = ipcWS.mmap.readline()
 	res = "{\"SRC\": %s }" % jsonstr
-	return res
+      return res
     except Exception as e:
 	print(e)
 
@@ -128,6 +131,15 @@ class ChallengeProtocolA(WebSocketServerProtocol):
             print(e)
 
     @trollius.coroutine
+    def getTask(self,msg):
+ 	global ipcWS
+	try:
+	    val = str(msg.get('x',' '))
+	    ipcWS.queue.send(val)
+        except Exception as e:
+            print(e)
+
+    @trollius.coroutine
     def onMessage(self, payload, isBinary):
         if not isBinary:
             #print(payload)
@@ -139,6 +151,8 @@ class ChallengeProtocolA(WebSocketServerProtocol):
 		yield self.getSquare(msg)
 	    elif cmd == 'SRC': 
 		yield self.getSrc(msg)
+	    elif cmd == 'tsk': 
+		yield self.getTask(msg)
 	else:
 	    print("CPAWebSockets received binary message")
 
@@ -156,15 +170,8 @@ class ChallengeProtocolA(WebSocketServerProtocol):
 
 class WSS:
     def __init__(self,protocol,ip='127.0.0.1',port=9002):
-	global chalmap
-	#self.memfile = open("data/chalmap","r+b")
-	#self.memmap = mmap.mmap(self.memfile.fileno(),0)
-
-	memory = posix_ipc.SharedMemory("chalmap")
-	self.memmap = mmap.mmap(memory.fd, memory.size)
-	memory.close_fd()
-
-	chalmap = self.memmap
+	global ipcWS
+	ipcWS = IPComm("chalmap")
         ip_str = str(ip)
         port_int = int(port)
         wsip = u"ws://" + ip_str + u":" + str(port_int)
@@ -185,7 +192,6 @@ class WSS:
     def fini(self):
 	try:
 	    self.memmap.close()
-	    #self.memfile.close()
 	    self.server.close()
             self.loop.stop()
 	    self.loop.close()
@@ -198,10 +204,8 @@ def main():
         format='%(threadName)10s %(name)18s: %(message)s',
         stream=sys.stderr,
     )
-    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    s.connect(("8.8.8.8", 80))
-    ip = s.getsockname()[0]
-    srv = WSS(ChallengeProtocolA, "192.168.2.10", 9002)
+    ip = sys.argv[1]
+    srv = WSS(ChallengeProtocolA, ip, 9002)
     try:
         srv.run()
     except KeyboardInterrupt:

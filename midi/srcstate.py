@@ -33,7 +33,9 @@ from tf.transformations import euler_from_quaternion
 from srcsim.srv import StartTask
 from srcsim.msg import Task
 from srcsim.msg import Satellite
-from srcsim.msg import Leak  #value
+from srcsim.msg import Leak  #value f64
+#from srcsim.msg import Harness #status uint8
+#from srcsim.msg import Score 
 
 LEFT = 0
 RIGHT = 1
@@ -55,6 +57,12 @@ time start_time
 time elapsed_time
 bool timed_out
 bool finished
+
+duration[] checkpoint_durations
+duration[] checkpoint_penalties
+uint8 score
+duration total_completion_time
+
 '''
 class JEnc(json.JSONEncoder):
     def default(self, o):
@@ -102,6 +110,22 @@ class SatState:
 	    self.ok  = float(msg.yaw_correct_now)
 	    self.done= float(msg.yaw_completed)
 
+class ScoreState:
+    def __init__(self):
+	self.score = 0.0
+	self.total = 0.0
+        self.dur = [ -1.0 for i in range(18) ]
+        self.pen = [ -1.0 for i in range(18) ]
+
+    def update(self, msg):
+	    self.score = float(msg.current_checkpoint)
+	    self.total = float(msg.current_checkpoint)
+	    for i,v in enumerate( msg.checkpoint_durations ):
+		self.dur[i] = v.to_sec()
+	    for i,v in enumerate( msg.checkpoint_penalties ):
+		self.pen[i] = v.to_sec()
+
+
 class ChallengeState:
     def __init__(self):
 	self.current = 0.0
@@ -111,6 +135,9 @@ class ChallengeState:
 	self.satpitch = SatState(0)
 	self.satyaw = SatState(1)
 	self.leak = 0.0
+	self.harness = 0.0
+        self.clock = 0.0
+	self.score = ScoreState()
 
     def update(self, msg):
 	task = 0
@@ -130,6 +157,10 @@ class ChallengeState:
 	    self.satyaw.update(msg)
 	if msg.__class__.__name__=='Leak':
 	    self.leak = float(msg.value)
+	if msg.__class__.__name__=='Score':
+	    self.score.update(msg)
+	if msg.__class__.__name__=='Harness':
+	    self.harness = float(msg.status)
 
 class SrcState:
     INTERVAL = 0.05
@@ -165,7 +196,7 @@ class SrcState:
 	time.sleep(1)
 
     def rosTask(self,t,c):
-        print("Starting task (%d,%d)" % (t,c))
+        #print("Starting task (%d,%d)" % (t,c))
         ret = self.taskProxy(t,c)
         print("Started task (%d,%d) returned %s" % (t,c,ret))
 
@@ -178,11 +209,6 @@ class SrcState:
 	leaks_nm = "/task3/checkpoint5/leak"
 	leakSubscriber = rospy.Subscriber( leaks_nm, Leak, self.rcvdleak )
 	self.initted3 = True
-
-    def loop(self,action):
-	done = ord(action)==27
-        data = action
-	return done, data
 
     def fini(self):
 	pass
@@ -220,20 +246,16 @@ class SrcState:
 	done = action and ord(action)==27
 	data = self.state
         if action and action.lower()=='a':
-	    #self.taskProxy(1,1)
-	    self.rosTask(1,1)
+	    self.taskProxy(1,1)
 	    self.state.current = max(1.0,self.state.current)
         if action and action.lower()=='b':
-	    #self.taskProxy(2,1)
-	    self.rosTask(2,1)
+	    self.taskProxy(2,1)
 	    self.state.current = max(2.0,self.state.current)
         if action and action.lower()=='c':
-	    #self.taskProxy(3,1)
-	    self.rosTask(3,1)
+	    self.taskProxy(3,1)
 	    self.state.current = max(3.0,self.state.current)
         if action and ord(action)>=ord('2') and ord(action)<=ord('8'):  
-	    #self.taskProxy(int(self.state.current),ord(action)-ord('0'))
-	    self.rosTask(int(self.state.current),ord(action)-ord('0'))
+	    self.taskProxy(int(self.state.current),ord(action)-ord('0'))
 	return done, json.dumps(data,cls=JEnc)
 
 if __name__ == '__main__':

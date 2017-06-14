@@ -56,7 +56,7 @@ class Flyer:
     memory.close_fd()
     self.queue = posix_ipc.MessageQueue("/flyerqueue", posix_ipc.O_CREAT)
     #self.wsproc = prc.Popen('python flyerws.py', shell=True )
-    self.wsproc = prc.Popen('python flyerws.py --ip %s --port %s' % (ip,port), shell=True )
+    self.wsproc = prc.Popen('python -u flyerws.py --ip %s --port %s' % (ip,port), shell=True )
     self.writecnt = 0
     self.loc = (0,0,0)
     self.walker = Walker()

@@ -3,6 +3,7 @@ from __future__ import print_function
 import web
 import threading
 import mmap
+from ipcomm import IPComm
 
 urls = ( 
   '/', 'index',
@@ -47,22 +48,25 @@ class step:
         ans = "*"
 	data = web.data()
         print( web.input() )
-	item = Qitem(data, ans, self.event)
-	Pages.theSmartie.queue.put(item)
-	self.event.wait()
-        print( "Returned %s local %s" % (item.resp,ans) )
-	self.event.clear()
+	#item = Qitem(data, ans, self.event)
+	#Pages.theSmartie.queue.put(item)
+	#self.event.wait()
+        Pages.ipcHT.queue.send(data)
+	with Pages.ipcHT.sem:
+	    Pages.ipcHT.mmap.seek(0)
+	    print( "Returned %s " % (Pages.ipcHT.mmap.readline()) )
 	return "Stepped"
 
 class serverexit:
     def __init__(self):
 	self.event = threading.Event()
     def GET(self):
-	item = Qitem({'msg':'exit'}, ans, self.event)
-	Pages.theSmartie.queue.put(item)
-	self.event.wait()
-        print( "Returned %s local %s" % (item.resp,ans) )
-	self.event.clear()
+	#item = Qitem({'msg':'exit'}, ans, self.event)
+	#Pages.theSmartie.queue.put(item)
+        Pages.ipcHT.queue.send("{'msg':'exit'}")
+	with Pages.ipcHT.sem:
+	    Pages.ipcHT.mmap.seek(0)
+	    print( "Returned %s " % (Pages.ipcHT.mmap.readline()) )
 	return "Exited"
         
 class Qitem:
@@ -75,9 +79,9 @@ class Qitem:
         return "Qitem(%s, %s, %d)" % ( self.req, self.resp, self.evt.is_set())
 
 class Pages():
-
     def __init__(self,smart):
 	Pages.theSmartie = smart
+        Pages.ipcHT = IPComm("htmlmap")
         print( "In Pages globals are %s" % globals().keys() )
         self.app = web.application(urls,globals())
 

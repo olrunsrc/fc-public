@@ -21,9 +21,7 @@ import subprocess as prc
 import mmap
 import urlparse
 import posix_ipc
-
-Kib = 1024
-Mib = Kib*Kib
+from ipcomm import IPComm 
 
 class Challenge(object):
 
@@ -33,72 +31,73 @@ class Challenge(object):
 
     def __init__(self):
         ''' connect to ros and set up web page and web sockets '''
-	#self.memfile = open("data/chalmap","r+b")
-	#self.memmap = mmap.mmap(self.memfile.fileno(),0)
-        print("init")
-	memory = posix_ipc.SharedMemory("chalmap", posix_ipc.O_CREAT, size=8*Kib)
-        print("init")
-	self.memmap = mmap.mmap(memory.fd, memory.size)
-        print("init")
-	memory.close_fd()
-        print("init")
+	self.ipcWS = IPComm("chalmap")
+	self.ipcHT = IPComm("htmlmap")
 	self.state = SrcState()
         print("init")
 
     def init(self):
         ''' connect to ros and set up web page '''
-        self.queue = Queue.Queue()
-        self.data = 0
+        self.HTdata = 0
 	self.web = Pages(self)
         port = Challenge.PORT
         rospy.loginfo("Challenge listening on port %s" % port)
 	os.environ['PORT'] = port
 	self.state.init()
 
-    def initWS(self):
+    def initWS(self,ip):
         ''' set up web sockets '''
-  	self.wsproc = prc.Popen('python websocksrv.py', shell=True )
+        cmd = "python -u websocksrv.py %s" % ip
+	print("Starting %s"%cmd)
+  	self.wsproc = prc.Popen(cmd, shell=True )
+
 
     def finish(self):
-	self.memmap.flush()
-	self.memmap.close()
-	#self.memfile.close()
+	self.ipcWS = None
+	self.ipcHT = None
 	self.state.fini()
 	self.web.finish()
         self.wsproc.terminate()
 
-
     def loop(self):
-        self.data += 1
+        #print("top of loop")
+        self.HTdata += 1
         done = False
-        if not self.queue.empty():
-            item = self.queue.get()
-            self.data += 1
+        with self.ipcHT.sem:
+          #print("loop got HTsem")
+          if not self.ipcHT.empty():
+            print("queue has %d items"%self.ipcHT.queue.current_messages)
+            item,_ = self.ipcHT.queue.receive()
+            self.HTdata += 1
+            print(item)
 	    try:
-		print( "Queued data is %s" % item.req )
-		request = dict(urlparse.parse_qsl(item.req))    
+		print( "Queued data is %s" % item )
+		request = dict(urlparse.parse_qsl(item))    
 		msg = str(request.get('msg','NOOP'))
 		print( "msg: %s" % msg )
 		if msg=='exit':
 		    print("Prepare to exit")
-		    #self.finish()
 		    done = True
 		if msg.lower() in SrcState.CMDS:
 		    self.state.loop(msg)
-		item.resp = self.data
+		self.ipcHT.mmap.seek(0)
+		self.ipcHT.mmap.write(self.HTdata)
+		self.ipcHT.mmap.write("\n")
 	    except Exception as e:
 		print(e)
-		item.resp = e
-
-            item.evt.set()
-            #item.evt.clear()
-            self.queue.task_done()
-	try:
+		self.ipcHT.mmap.seek(0)
+		self.ipcHT.mmap.write(str(e))
+		self.ipcHT.mmap.write("\n")
+        #print("top of WSsem loop")
+        with self.ipcWS.sem:
+            #print("loop got WSsem")
+	    try:
 		_,data = self.state.loop(None)
-		self.memmap.seek(0)
-		self.memmap.write(data)
-		self.memmap.write("\n")
-	except Exception as e:
+		#print("WSsem loop data is %s"%data)
+		self.ipcWS.mmap.seek(0)
+		self.ipcWS.mmap.write(data)
+		self.ipcWS.mmap.write("\n")
+	    except Exception as e:
 		print(e)
         return done
 
@@ -106,9 +105,6 @@ class Challenge(object):
         try:
             rate = rospy.Rate(10) # 10hz
 	    thread.start_new_thread(self.web.run, ())
-	    #self.p.start()
-	    #thread.start_new_thread(self.ws.run, ())
-            #self.ws.run()
             while not rospy.is_shutdown():
                 done = self.loop()
                 if done:
@@ -128,7 +124,7 @@ if __name__ == '__main__':
     )
     rospy.init_node('Challenge')
     teleop = Challenge()
-    teleop.initWS()
+    teleop.initWS(sys.argv[1])
     teleop.init()
     teleop.run()
 

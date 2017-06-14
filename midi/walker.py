@@ -213,11 +213,12 @@ class Walker():
 
     def process_foot(self, foot):
         msg = self.getFootFootstepMsg(foot)
-        res = self.execute_footsteps(msg)
-        if res:
-            self.loginfo('done walking')
-            return
-        self.loginfo('failed to walk, aborting trajectory')
+        self.footstep_publisher.publish(msg)
+        #res = self.execute_footsteps(msg)
+        #if res:
+        #    self.loginfo('done walking')
+        #    return
+        #self.loginfo('failed to walk, aborting trajectory')
 
     def getFootFootstepMsg(self, foot):
         #msg = self.getEmptyFootsetListMsg()
