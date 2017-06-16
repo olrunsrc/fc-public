@@ -51,10 +51,10 @@ class Vision:
     key = 0
     self.get_image()
     im8uc3 = cv2.flip(self.r5_8uc3[::2,::2],-1)  #272x512 rightside up, colors still scrambled
-    fcimg = cv2.cvtColor(im8uc3,cv2.COLOR_BGR2RGB)     #272x512 RGB bytes (408kB)
+    fcimg = im8uc3 #cv2.cvtColor(im8uc3,cv2.COLOR_BGR2RGB)     #272x512 RGB bytes (408kB)
     fcmsg = self.bridge.cv2_to_imgmsg(fcimg, "rgb8")
     fcmsg.header = self.header
-    grayimg = cv2.cvtColor(im8uc3[::2,::2],cv2.COLOR_BGR2GRAY)     #136x256 grayscale 1 byte (34kB)
+    grayimg = cv2.cvtColor(im8uc3[::2,::2],cv2.COLOR_RGB2GRAY)     #136x256 grayscale 1 byte (34kB)
     graymsg = self.bridge.cv2_to_imgmsg(grayimg, "mono8")
     graymsg.header = self.header
     smallimg = fcimg[::8,::8]     #34x64 RGB bytes (6516 Bytes)

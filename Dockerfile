@@ -151,5 +151,5 @@ COPY olr/ olr/
 COPY olrun.bash .
 COPY fixbashrc .
 COPY testtf.py .
-COPY restart.bash
+COPY restart.bash .
 CMD ["/bin/bash", "olrun.bash" ]

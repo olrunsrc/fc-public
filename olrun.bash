@@ -10,7 +10,7 @@ rm -f *.txt
 source /home/docker/ws/install/setup.bash
 #
 (cd midi; python -u challenge.py 192.168.2.10 > ../chal.txt 2>&1) &
-(cd midi; python -u flyer2.py --ip 192.168.2.10 > ../flyer2.txt 2>&1) &
+(cd midi; python -u flyer3.py --ip 192.168.2.10 > ../flyer3.txt 2>&1) &
 (cd vision; python -u vision.py > ../vision.txt 2>&1) &
 (cd posh; python -u launch.py olrun > ../posh.txt 2>&1) &
 (python -m SimpleHTTPServer 8000; echo "oops, webserver died.") &
