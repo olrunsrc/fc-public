@@ -4,16 +4,15 @@
     <meta charset="utf-8">
     <title>Challenge</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="chal.js"></script>
-    <style>.srcreq { border: 1px solid black; }</style>
+    <script src="chal2.js"></script>
+    <style>
+	.srcreq { border: 1px solid black; }
+	.statcol { min-width: 200px; }
+    </style>
   </head>
   <body>
 	Remote IP: <input type="text" id="ip-data" value="192.168.2.10"/></br>
     <a href="#" id="connectme">Connect</a>
-    <!--a href="/exit" id="serverexit">EXIT</a>
-    <a href="#" id="get-data">Get JSON data</a>
-    <a href="#" id="post-step">Take a step</a>
-    <a href="#" id="ws-square">Send a WebSocket message</a-->
     <a href="#" id="ws-src">Request Challenge data</a>
     <br/><input type="text" id="ws-data" value="2" /><p/>
     <table>
@@ -30,17 +29,18 @@
     </table>
     <div id="show-src">
     <h2>Challenge Status</h2>
-    <table>
+    <table >
         <tr><td colspan=3 id="pose"></td></tr>
         <tr><td id="clock"></td>
             <td id="stepcnt"></td>
-            <td id="spare"></td></tr>
-	<tr><td id="task1"></td>
-            <td id="task2"></td>
-            <td id="task3"></td></tr>
+            <td id="harness"></td></tr>
+	<tr><td class="statcol" id="task1"></td>
+            <td class="statcol" id="task2"></td>
+            <td class="statcol" id="task3"></td></tr>
 	<tr><td id="satpitch"></td>
             <td id="satyaw"></td>
             <td id="leak"></td></tr>
+        <tr><td colspan=3 id="score"></td></tr>
     </table>
     </div>
     <div id="show-data"></div>

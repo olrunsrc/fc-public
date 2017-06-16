@@ -135,7 +135,8 @@ class ChallengeProtocolA(WebSocketServerProtocol):
  	global ipcWS
 	try:
 	    val = str(msg.get('x',' '))
-	    ipcWS.queue.send(val)
+	    res =ipcWS.queue.send("msg=%s"%val)
+            print("Sent tsk %s, returned %s"%(val,res))
         except Exception as e:
             print(e)
 

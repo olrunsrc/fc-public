@@ -159,8 +159,19 @@ class Walker():
         if ch.lower() in self.WALKING_BINDINGS:
             self.process_walking_command(self.WALKING_BINDINGS[ch.lower()], ch)
             return
-        if ch.lower() == 'wlk':
+        if ch.lower() == 'rst':   #all walker cmds = rst-reset,wlk,sup-stepup,tlt-torso,nck-[3],abt
+            return
+        if ch.lower() == 'wlk':   #all walker cmds = rst-reset,wlk,sup-stepup,tlt-torso,nck-[3],abt
             self.process_something(data)
+            return
+        if ch.lower() == 'sup':   #all walker cmds = rst-reset,wlk,sup-stepup,tlt-torso,nck-[3],abt
+            return
+        if ch.lower() == 'tlt':   #all walker cmds = rst-reset,wlk,sup-stepup,tlt-torso,nck-[3],abt
+            return
+        if ch.lower() == 'nck':   #all walker cmds = rst-reset,wlk,sup-stepup,tlt-torso,nck-[3],abt
+	    print("nck: ",data.R)
+            return
+        if ch.lower() == 'abt':   #all walker cmds = rst-reset,wlk,sup-stepup,tlt-torso,nck-[3],abt
             return
 
     def process_something(self,data):
@@ -213,8 +224,8 @@ class Walker():
 
     def process_foot(self, foot):
         msg = self.getFootFootstepMsg(foot)
-        self.footstep_publisher.publish(msg)
-        #res = self.execute_footsteps(msg)
+        #self.footstep_publisher.publish(msg)
+        res = self.execute_footsteps(msg)
         #if res:
         #    self.loginfo('done walking')
         #    return

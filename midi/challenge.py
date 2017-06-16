@@ -88,6 +88,31 @@ class Challenge(object):
 		self.ipcHT.mmap.seek(0)
 		self.ipcHT.mmap.write(str(e))
 		self.ipcHT.mmap.write("\n")
+        with self.ipcWS.sem:
+          #print("loop got HTsem")
+          if not self.ipcWS.empty():
+            print("queue has %d items"%self.ipcWS.queue.current_messages)
+            item,_ = self.ipcWS.queue.receive()
+            self.HTdata += 1 #yes HT - use same counter for HTTP and WS traffic
+            print(item)
+	    try:
+		print( "Queued data is %s" % item )
+		request = dict(urlparse.parse_qsl(item))    
+		msg = str(request.get('msg','NOOP'))
+		print( "msg: %s" % msg )
+		if msg=='exit':
+		    print("Prepare to exit")
+		    done = True
+		if msg.lower() in SrcState.CMDS:
+		    self.state.loop(msg)
+		self.ipcWS.mmap.seek(0)
+		self.ipcWS.mmap.write(str(self.HTdata))
+		self.ipcWS.mmap.write("\n")
+	    except Exception as e:
+		print(e)
+		self.ipcWS.mmap.seek(0)
+		self.ipcWS.mmap.write(str(e))
+		self.ipcWS.mmap.write("\n")
         #print("top of WSsem loop")
         with self.ipcWS.sem:
             #print("loop got WSsem")

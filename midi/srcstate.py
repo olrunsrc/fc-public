@@ -34,8 +34,9 @@ from srcsim.srv import StartTask
 from srcsim.msg import Task
 from srcsim.msg import Satellite
 from srcsim.msg import Leak  #value f64
-#from srcsim.msg import Harness #status uint8
-#from srcsim.msg import Score 
+#only srcsim-0.6 and up
+from srcsim.msg import Harness #status uint8
+from srcsim.msg import Score 
 
 LEFT = 0
 RIGHT = 1
@@ -118,13 +119,24 @@ class ScoreState:
         self.pen = [ -1.0 for i in range(18) ]
 
     def update(self, msg):
-	    self.score = float(msg.current_checkpoint)
-	    self.total = float(msg.current_checkpoint)
+	    self.score = float(msg.score)
+	    self.total = float(msg.total_completion_time.to_sec())
 	    for i,v in enumerate( msg.checkpoint_durations ):
 		self.dur[i] = v.to_sec()
 	    for i,v in enumerate( msg.checkpoint_penalties ):
 		self.pen[i] = v.to_sec()
 
+class PoseState:
+    def __init__(self):
+	self.xyz = [0.0,0.0,0.0]
+	self.rpy = [0.0,0.0,0.0]
+
+    def update(self, msg): 
+	    pos = msg.pose.pose.position
+	    self.xyz = [float(pos.x),float(pos.y),float(pos.z)]
+	    quat = msg.pose.pose.orientation
+	    eul = euler_from_quaternion([quat.x, quat.y, quat.z, quat.w])
+	    self.rpy = [float(eul[0]),float(eul[1]),float(eul[2])]
 
 class ChallengeState:
     def __init__(self):
@@ -138,6 +150,8 @@ class ChallengeState:
 	self.harness = 0.0
         self.clock = 0.0
 	self.score = ScoreState()
+	self.pose = PoseState()
+	self.stepcnt = 0.0
 
     def update(self, msg):
 	task = 0
@@ -161,6 +175,9 @@ class ChallengeState:
 	    self.score.update(msg)
 	if msg.__class__.__name__=='Harness':
 	    self.harness = float(msg.status)
+	if msg.__class__.__name__=='Odometry':
+            self.clock = rospy.Time.now().to_sec()
+	    self.pose.update(msg)
 
 class SrcState:
     INTERVAL = 0.05
@@ -170,6 +187,10 @@ class SrcState:
 	self.nexttime = 0.0
 	self.nextsattime = 0.0
 	self.nextleaktime = 0.0
+	self.nextscoretime = 0.0
+	self.nextharnesstime = 0.0
+	self.nextfsstime = 0.0
+	self.nextposetime = 0.0
 	self.initted1 = False
 	self.initted3 = False
 
@@ -184,14 +205,19 @@ class SrcState:
 	tasks_nm = "/srcsim/finals/task"
 	taskSubscriber = rospy.Subscriber( tasks_nm, Task, self.rcvdmsg )
 
+	#only srcsim-0.6 and up
+	score_nm = "/srcsim/finals/score"
+	scoreSubscriber = rospy.Subscriber( score_nm, Score, self.rcvdscore )
+
+	#only srcsim-0.6 and up
+	harness_nm = "/srcsim/finals/harness"
+	harnessSubscriber = rospy.Subscriber( harness_nm, Harness, self.rcvdharness )
+
         taskpx_nm = "/srcsim/finals/start_task"
 	self.taskProxy = rospy.ServiceProxy(taskpx_nm, StartTask)
 
 	self.tfBuffer = tf2_ros.Buffer()
 	tfListener = tf2_ros.TransformListener(self.tfBuffer)
-
-	self.stepCounter = 0
-	self.robotpose = None
 
 	time.sleep(1)
 
@@ -213,12 +239,18 @@ class SrcState:
     def fini(self):
 	pass
 
-    def rcvdfss(self,msg):
-	if msg.status == 1:
-	    self.stepCounter += 1
+    def rcvdfss(self,msg): #not continuous
+	#now = rospy.Time.now().to_sec()
+	#if now > self.nextfsstime:
+	#    self.nextfsstime = now + SrcState.INTERVAL
+	    if msg.status == 1:
+		self.state.stepcnt += 1
 
     def rcvdpose(self,msg):
-	self.robotpose = msg
+	now = rospy.Time.now().to_sec()
+	if now > self.nextposetime:
+	    self.nextposetime = now + SrcState.INTERVAL
+	    self.state.update(msg)
 
     def rcvdmsg(self,msg):
 	now = rospy.Time.now().to_sec()
@@ -242,20 +274,32 @@ class SrcState:
 	    self.nextleaktime = now + SrcState.INTERVAL
 	    self.state.update(msg)
 
+    def rcvdscore(self,msg):
+	now = rospy.Time.now().to_sec()
+	if now > self.nextscoretime:
+	    self.nextscoretime = now + SrcState.INTERVAL
+	    self.state.update(msg)
+
+    def rcvdharness(self,msg): #not continuous
+	#now = rospy.Time.now().to_sec()
+	#if now > self.nextharnesstime:
+	#    self.nextharnesstime = now + SrcState.INTERVAL
+	    self.state.update(msg)
+
     def loop(self,action):
 	done = action and ord(action)==27
 	data = self.state
         if action and action.lower()=='a':
-	    self.taskProxy(1,1)
+	    self.rosTask(1,1)
 	    self.state.current = max(1.0,self.state.current)
         if action and action.lower()=='b':
-	    self.taskProxy(2,1)
+	    self.rosTask(2,1)
 	    self.state.current = max(2.0,self.state.current)
         if action and action.lower()=='c':
-	    self.taskProxy(3,1)
+	    self.rosTask(3,1)
 	    self.state.current = max(3.0,self.state.current)
         if action and ord(action)>=ord('2') and ord(action)<=ord('8'):  
-	    self.taskProxy(int(self.state.current),ord(action)-ord('0'))
+	    self.rosTask(int(self.state.current),ord(action)-ord('0'))
 	return done, json.dumps(data,cls=JEnc)
 
 if __name__ == '__main__':

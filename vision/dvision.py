@@ -11,7 +11,29 @@ from std_msgs.msg import UInt8MultiArray, MultiArrayLayout, MultiArrayDimension
 from sensor_msgs.msg import Image
 from geometry_msgs.msg import Pose
 from cv_bridge import CvBridge, CvBridgeError
-from tensornet import TensorNet
+#from tensornet import TensorNet
+
+#dummy network for non-tensorflow development
+class TensorNet:
+  def __init__(self,netname):
+    self.name = netname
+
+  #def process(self,image):   #272x512 RGB 32F input
+  #  primg = self.processor.process(image)
+  #  return primg.astype(np.uint8)
+
+  def process(self,image):   #272x512 RGB 32F input
+    gray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
+    g8uc = (gray*256.0).astype(np.uint8)
+    img = g8uc[::8,::8] #34x64 Grayscale 8UC output
+    return img
+
+  def subset(self,image):
+    return np.ravel(image[14:20,8:56])
+
+  def fini(self):
+    return True
+
 
 class Vision:
   def __init__(self,net,win):

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Flyer Test</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/camanjs/3.3.0/caman.full.min.js"></script>
+    <script src="flyer3.js"></script>
+    <style>
+	.srcreq { border: 1px solid black; text-align: center }
+	.statcol { min-width: 200px; }
+    </style>
+  </head>
+  <body>
+	Remote IP: <input type="text" id="ip-data" value="192.168.2.10"/>
+    <a href="#" id="connectme">Connect</a><br/>
+<!--
+    Rval = [0.762,1.524,1.840,10.0,-10.0,-1.840,-1.524,-0.762]
+    stride = [0.4,0.2,0.1,0.05,-0.1,0,0,0]
+    X reset, I 1gray 2small 3fc 4seg, S step R,th, V step u/d, T torso, H head u/d, L hd look l/r, A Abort
+ -->
+
+    <table>
+	<tr><th></th>
+	    <th colspan="3">Left</th>
+	    <th colspan="2">Straight</th>
+	    <th colspan="3">Right</th></tr>
+	<tr><th></th>
+	    <th>Tight</th>
+	    <th>Norm</th>
+	    <th>Wide</th>
+	    <th colspan="2">Ahead</th>
+	    <th>Wide</th>
+	    <th>Norm</th>
+	    <th>Tight</th></tr>
+	<tr><th>0.35m</th>
+	    <td class="srcreq" data-src="S; 0.76; 0.46">LT.46</td>
+	    <td class="srcreq" data-src="S; 1.52; 0.23">LN.23</td>
+	    <td class="srcreq" data-src="S; 1.84; 0.19">LW.19</td>
+            <td class="srcreq" data-src="S; 10.0; 0.035">LS.03</td>
+	    <td class="srcreq" data-src="S;-10.0;-0.035">RS.03</td>
+            <td class="srcreq" data-src="S;-1.84;-0.19">RW.19</td>
+            <td class="srcreq" data-src="S;-1.52;-0.23">RN.23</td>
+	    <td class="srcreq" data-src="S;-0.76;-0.46">RT.46</td>
+	    <td class="srcreq" data-src="X; 1.00">Reset</td></tr>
+	<tr><th>0.2m</th>
+	    <td class="srcreq" data-src="S; 0.76; 0.26">LT.26</td>
+	    <td class="srcreq" data-src="S; 1.52; 0.13">LN.13</td>
+	    <td class="srcreq" data-src="S; 1.84; 0.11">LW.11</td>
+            <td class="srcreq" data-src="S; 10.0; 0.02">LS.02</td>
+	    <td class="srcreq" data-src="S;-10.0;-0.02">RS.02</td>
+            <td class="srcreq" data-src="S;-1.84;-0.11">RW.11</td>
+            <td class="srcreq" data-src="S;-1.52;-0.13">RN.13</td>
+	    <td class="srcreq" data-src="S;-0.76;-0.26">RT.26</td>
+	    <td class="srcreq" data-src="V; 0.15">Step Up</td></tr>
+	<tr><th>0.1m</th>
+	    <td class="srcreq" data-src="S; 0.76; 0.13">LT.13</td>
+	    <td class="srcreq" data-src="S; 1.52; 0.07">LN.07</td>
+	    <td class="srcreq" data-src="S; 1.84; 0.05">LW.05</td>
+            <td class="srcreq" data-src="S; 10.0; 0.01">LS.01</td>
+	    <td class="srcreq" data-src="S;-10.0;-0.01">RS.01</td>
+            <td class="srcreq" data-src="S;-1.84;-0.05">RW.05</td>
+            <td class="srcreq" data-src="S;-1.52;-0.07">RN.07</td>
+	    <td class="srcreq" data-src="S;-0.76;-0.13">RT.13</td>
+	    <td class="srcreq" data-src="V;-0.15">Step Dn</td></tr>
+	<tr><th>0 m</th>
+	    <td class="srcreq" data-src="S; 0.00; 0.78">L-45</td>
+	    <td class="srcreq" data-src="S; 0.00; 0.52">L-30</td>
+	    <td class="srcreq" data-src="S; 0.00; 0.39">L-22</td>
+            <td class="srcreq" data-src="S; 0.00; 0.19">L-11</td>
+            <td class="srcreq" data-src="S; 0.00;-0.19">R-11</td>
+	    <td class="srcreq" data-src="S; 0.00;-0.39">R-22</td>
+	    <td class="srcreq" data-src="S; 0.00;-0.52">R-30</td>
+	    <td class="srcreq" data-src="S; 0.00;-0.78">R-45</td>
+	    <td class="srcreq" data-src="T; 0.00">Torso Up</td></tr>
+	<tr><th>Back</th>
+	    <td class="srcreq" data-src="S;-0.76; 0.13">LT.13</td>
+	    <td class="srcreq" data-src="S;-1.52; 0.07">LN.07</td>
+	    <td class="srcreq" data-src="S;-1.84; 0.05">LW.05</td>
+            <td class="srcreq" data-src="S;-10.0; 0.01">LS.01</td>
+	    <td class="srcreq" data-src="S; 10.0;-0.01">RS.01</td>
+            <td class="srcreq" data-src="S; 1.84;-0.05">RW.05</td>
+            <td class="srcreq" data-src="S; 1.52;-0.07">RN.07</td>
+	    <td class="srcreq" data-src="S; 0.76;-0.13">RT.13</td>
+	    <td class="srcreq" data-src="T;-0.30">Torso Dn</td></tr>
+	<tr><th></th>
+	    <td class="srcreq" data-src="H;-0.15">HdUp</td>
+	    <td class="srcreq" data-src="H; 0.00">Hd0</td>
+	    <td class="srcreq" data-src="H; 0.15">HdDn</td>
+            <td class="srcreq" colspan="2" 
+                               data-src="S; 0.0; 0.0">Together</td>
+	    <!--td class="srcreq" data-src="S; 10.0;-0.01">RS.01</td-->
+            <td class="srcreq" data-src="I; 1.00">ImgG</td>
+            <td class="srcreq" data-src="I; 2.00">ImgS</td>
+	    <td class="srcreq" data-src="I; 4.00">Segm</td>
+	    <td class="srcreq" data-src="I; 3.00">FC</td></tr>
+	<tr><th>Look</th>
+	    <td class="srcreq" data-src="L; 0.76">L45</td>
+	    <td class="srcreq" data-src="L; 0.52">L30</td>
+	    <td class="srcreq" data-src="L; 0.26">L15</td>
+            <td class="srcreq" colspan="2" 
+                               data-src="L; 0.0">Center</td>
+	    <td class="srcreq" data-src="L;-0.26">R15</td>
+	    <td class="srcreq" data-src="L;-0.52">R30</td>
+	    <td class="srcreq" data-src="L;-0.76">R45</td>
+	    <td class="srcreq" data-src="A; 0.0">AbrtWlk</td></tr>
+    </table>
+    <div id="show-data"></div>
+    <!--a href="#" id="bigme">Enlarge</a-->
+    <div><h3>Gray 34kB</h3><span id="graylabel"></span><br/><canvas id="grayimg" width="256" height="136"></canvas></div>
+    <div><h3>Small Color 7kB</h3><span id="smalllabel"></span><br/><canvas id="smallimg" width="256" height="136"></canvas></div>
+    <div><h3>Segmented 2kB</h3><span id="seglabel"></span><br/><canvas id="segimg" width="256" height="136"></canvas></div>
+    <!--div><canvas id="mycam" width="512" height="272"></canvas></div-->
+    <!--div><canvas id="mycam" width="64" height="34"></canvas></div-->
+
+    <!--h2>Challenge Status</h2-->
+
+
+  </body>
+</html>
+
