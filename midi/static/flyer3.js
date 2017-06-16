@@ -18,23 +18,23 @@ $(document).ready(function () {
 		var showData = $('#show-data');
 		var data = event.data
 		var sz = data.byteLength
-		var hd = new Int32Array( data.slice(0,8) )
-		var ld = new Float32Array( data.slice(8,28) )
-		var img = new Uint8Array( data.slice(28,hd[0]) )
-		//var ldstr = ld.map(function(v){return v.toFixed(2)}).join(', ')
-		var ldstr = []
-		ld.forEach(function(v,i,a){ ldstr.push(v.toFixed(3)) })
-		showData.empty();
-		showData.append('Message length is ' + sz.toString() + "<br/>")
-		showData.append(hd[0].toString() + ', ' + hd[1].toString() + ', ')
-		//showData.append(ld[0].toString() + ', ' + ld[1].toString() + ', ')
-		//showData.append(ld[2].toString() + ', ' + ld[3].toString() + ', ')
-		//showData.append(ld[4].toString() + "<br/>" )
-		showData.append(ldstr.join(', ') + "<br/>" )
-		//showData.append('Array length is ' + img.length.toString() + "<br/>")
-		if( sz == 6556) showSmall( img, hd[1] )
-		if( sz == 34844) showGray( img, hd[1] )
-		if( sz == 2204) showSeg( img, hd[1] )
+		if( sz > 100){
+			var hd = new Int32Array( data.slice(0,8) )
+			var ld = new Float32Array( data.slice(8,28) )
+			var img = new Uint8Array( data.slice(28,hd[0]) )
+			var ldstr = []
+			ld.forEach(function(v,i,a){ ldstr.push(v.toFixed(3)) })
+			showData.empty();
+			showData.append('Message length is ' + sz.toString() + "<br/>")
+			showData.append(hd[0].toString() + ', ' + hd[1].toString() + ', ')
+			showData.append(ldstr.join(', ') + "<br/>" )
+			if( sz == 6556) showSmall( img, hd[1] )
+			if( sz == 34844) showGray( img, hd[1] )
+			if( sz == 2204) showSeg( img, hd[1] )
+		} else {
+			var img = new Uint8Array( data.slice(28,sz) )
+			showData.append('<br/>' + String.fromCharCode.apply(null,img)) 
+		}
         }
     });
 

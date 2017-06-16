@@ -230,9 +230,11 @@ class Flyer:
     step = Astep(cmd,64)
     step.R = r
     step.t = th
-    print(step)
+    print(cmd,r,th)
     steps = [step]
-    self.walker.process_keys(steps)
+    ret = self.walker.process_keys(steps)
+    if ret:
+        self.write_image(ret)
 
   def fini(self):
     try:

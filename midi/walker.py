@@ -20,6 +20,7 @@ from ihmc_msgs.msg import NeckTrajectoryRosMessage
 from ihmc_msgs.msg import OneDoFJointTrajectoryRosMessage
 from ihmc_msgs.msg import SO3TrajectoryPointRosMessage
 from ihmc_msgs.msg import TrajectoryPoint1DRosMessage
+from ihmc_msgs.msg import ChestTrajectoryRosMessage
 
 import numpy as np
 import rospy
@@ -40,6 +41,9 @@ class Foot:
         self.y = xyt[1]
         self.t = xyt[2]
         self.side = side #Left +1, Right -1
+    def __repr__(self):
+        return "!%s(%6.3f,%6.3f) th = %6.3f" % (self.__class__.__name__,
+            self.x,self.y,self.t)
 
 class Center:
     def __init__(self,foot,bigR):
@@ -70,6 +74,18 @@ class Steplist:
         self.center.append(c)
         self.list.append(f)
 	return f        
+
+    def resetfeet(self):
+	x = (self.list[-1].x + self.list[-2].x)/2
+	y = (self.list[-1].y + self.list[-2].y)/2
+	t = (self.list[-1].y + self.list[-2].t)/2
+	c = Center(self.list[-1],0)
+	c.x = x
+	c.y = y
+        f = c.newFoot(t)
+        self.center.append(c)
+        self.list.append(f)
+	return f
 
     def stepn(self,R,th,n=1):
         for i in range(n):
@@ -114,6 +130,7 @@ class Walker():
 
     def receivedFootStepStatus_cb(self, msg):
         if msg.status == FootstepStatusRosMessage.COMPLETED:
+	    print("footstep completed")
             self.footstep_count += 1
 
     def __init__(self,verbose=3,logger=print):
@@ -134,6 +151,12 @@ class Walker():
         self.abort_walking_publisher = rospy.Publisher(
             '/ihmc_ros/{0}/control/abort_walking'.format(robot_name),
             AbortWalkingRosMessage, queue_size=1)
+        ctp_name = "/ihmc_ros/{0}/control/chest_trajectory".format(robot_name)
+        self.chestTrajectoryPublisher = rospy.Publisher( ctp_name, 
+            ChestTrajectoryRosMessage, queue_size=1)
+        self.neck_publisher = rospy.Publisher(
+            '/ihmc_ros/{0}/control/neck_trajectory'.format(robot_name),
+            NeckTrajectoryRosMessage, queue_size=1)
 
         right_foot_frame_parameter_name = "/ihmc_ros/{0}/right_foot_frame_name".format(robot_name)
         left_foot_frame_parameter_name = "/ihmc_ros/{0}/left_foot_frame_name".format(robot_name)
@@ -148,44 +171,69 @@ class Walker():
         self.list = Steplist(firstFoot,standingFoot)
 
     def process_keys(self, data):  #expects an array of dictionaries
-        if len(data)>0:
-            if self.v > 2:
-                print (data) 
-            for d in data:
-          	self.process_key(d.key,d) #dictionary {key: str, val: float}
+	ret = None
+	try:
+		if len(data)>0:
+		    if self.v > 2:
+			print (data) 
+		    for d in data:
+		  	ret = self.process_key(d.key,d) #dictionary {key: str, val: float}
+	except Exception as e:
+	    print("Process keys error: ",e)
+        return ret
 
     def process_key(self, ch, data):
+	ret = None
         """Process key event."""
         if ch.lower() in self.WALKING_BINDINGS:
             self.process_walking_command(self.WALKING_BINDINGS[ch.lower()], ch)
-            return
+            return ret
         if ch.lower() == 'rst':   #all walker cmds = rst-reset,wlk,sup-stepup,tlt-torso,nck-[3],abt
-            return
+            firstFoot = self.createFoot(Foot.RIGHT)
+            print("firstFoot",firstFoot)
+            standingFoot = self.createFoot(Foot.LEFT)
+            print("standFoot",standingFoot)
+            self.list = Steplist(firstFoot,standingFoot)
+	    if data.R > 2.0:
+	        foot = self.list.resetfeet()
+	        ret = self.process_foot(foot)
+            return ret
         if ch.lower() == 'wlk':   #all walker cmds = rst-reset,wlk,sup-stepup,tlt-torso,nck-[3],abt
-            self.process_something(data)
-            return
-        if ch.lower() == 'sup':   #all walker cmds = rst-reset,wlk,sup-stepup,tlt-torso,nck-[3],abt
-            return
-        if ch.lower() == 'tlt':   #all walker cmds = rst-reset,wlk,sup-stepup,tlt-torso,nck-[3],abt
-            return
-        if ch.lower() == 'nck':   #all walker cmds = rst-reset,wlk,sup-stepup,tlt-torso,nck-[3],abt
+            return self.process_something(data)
+
+        if ch.lower() == 'sup':   #TODO sup-stepup,tlt-torso,nck-[3],abt
+            return ret
+        if ch.lower() == 'tlt':   #TODO tlt-torso'
+	    chestMsg = self.createChestCmd([0.0,data.R,0.0])
+	    self.chestTrajectoryPublisher.publish(chestMsg)
+            return ret
+        if ch.lower() == 'nck':   #TODO nck-[3]
 	    print("nck: ",data.R)
-            return
-        if ch.lower() == 'abt':   #all walker cmds = rst-reset,wlk,sup-stepup,tlt-torso,nck-[3],abt
-            return
+	    msg = NeckTrajectoryRosMessage()
+	    msg.unique_id = -1
+	    self._append_trajectory_point_1d(
+	            msg, 1.0, data.R)
+	    self.neck_publisher.publish(msg)
+            return ret
+        if ch.lower() == 'abt':
+            msg = AbortWalkingRosMessage()
+            msg.unique_id = -1
+            self.abort_walking_publisher.publish(msg)
+            return 'walking aborted'
 
     def process_something(self,data):
         R = data.R
         th = data.t
         #self.loginfo( "Something %s, %6.3f, %d, %d" % (data.key, data.val, data.row, data.col))
-        self.loginfo( "Walk R=%6.3f th=%6.3f len=%6.3f" % (R, th, R*th))
+        self.loginfo( "Walk#%d R=%6.3f th=%6.3f len=%6.3f" % (len(self.list.list), R, th, R*th))
         foot = self.list.step(R,th)
-        self.process_foot(foot)
+        print(foot)
+        return self.process_foot(foot)
         
     def getRth(self,data):
         return (3.0,0.07)
 
-    # Creates Foot with the current position and orientation of the foot.
+    # Get from ROS the current position and orientation of the foot.
     def getROSloc(self, foot_side):
         lffn = self.LEFT_FOOT_FRAME_NAME
 	rffn = self.RIGHT_FOOT_FRAME_NAME
@@ -224,12 +272,12 @@ class Walker():
 
     def process_foot(self, foot):
         msg = self.getFootFootstepMsg(foot)
-        #self.footstep_publisher.publish(msg)
         res = self.execute_footsteps(msg)
-        #if res:
-        #    self.loginfo('done walking')
-        #    return
-        #self.loginfo('failed to walk, aborting trajectory')
+        if res:
+            self.loginfo('done walking')
+            return 'stepped'
+        self.loginfo('failed to walk, aborting trajectory')
+	return 'aborted'
 
     def getFootFootstepMsg(self, foot):
         #msg = self.getEmptyFootsetListMsg()
@@ -268,6 +316,45 @@ class Walker():
         elif binding['action'] == 'rotate':
             self.loginfo('Rotating ' + ('counter-clockwise' if is_lower_case else 'clockwise'))
             self.rotate(self.ROT_STEP * direction)
+
+    def createChestCmd(self,vec):
+        #Chest roll (never), pitch, yaw
+        ZERO_VECTOR = [0.0, 0.0, 0.0]
+        LEAN_FWD = [0.0, 0.3, 0.0]
+        TURN_IN = [0.0, 0.3, 0.2]
+
+        msg = ChestTrajectoryRosMessage()
+        self._append_trajectory_point_so3(msg, 0.5, vec)
+        msg.unique_id = -1
+
+        return msg
+
+    def _append_trajectory_point_so3(self, msg, time, joint_values):
+        roll, pitch, yaw = joint_values
+        quat = quaternion_from_euler(roll, pitch, yaw)
+        point = SO3TrajectoryPointRosMessage()
+        point.time = time
+        point.orientation = Quaternion()
+        point.orientation.x = quat[0]
+        point.orientation.y = quat[1]
+        point.orientation.z = quat[2]
+        point.orientation.w = quat[3]
+        point.angular_velocity = Vector3()
+        point.angular_velocity.x = 0
+        point.angular_velocity.y = 0
+        point.angular_velocity.z = 0
+        msg.taskspace_trajectory_points.append(point)
+
+    def _append_trajectory_point_1d(self, msg, time, joint_values):
+        if not msg.joint_trajectory_messages:
+            msg.joint_trajectory_messages = [
+                OneDoFJointTrajectoryRosMessage() for _ in joint_values]
+        for i, joint_value in enumerate(joint_values):
+            point = TrajectoryPoint1DRosMessage()
+            point.time = time
+            point.position = joint_value
+            point.velocity = 0
+            msg.joint_trajectory_messages[i].trajectory_points.append(point)
 
     def createRotationFootStepList(self, yaw):
         left_footstep = FootstepDataRosMessage()
@@ -395,12 +482,15 @@ class Walker():
 
     def execute_footsteps(self, msg):
         self.footstep_count = 0
-        self.footstep_publisher.publish(msg)
+
+        print(self.footstep_publisher.publish(msg))
+
         number_of_footsteps = len(msg.footstep_data_list)
-        max_iterations = 100
+        #max_iterations = 100 #10s sim time at 10Hz
+        max_iterations = 40   #4s sim time at 10Hz
         count = 0
         while count < max_iterations:
-            self.rate.sleep()
+            self.rate.sleep()    
             count += 1
             if self.footstep_count == number_of_footsteps:
                 return True
