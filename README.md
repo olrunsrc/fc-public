@@ -10,5 +10,5 @@ Currently installs:
   trollius
   autobahn
   CUDA 8.0
-  cuDNN 6
+  cuDNN 5.1
   Tensorflow

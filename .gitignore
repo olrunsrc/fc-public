@@ -1,6 +1,10 @@
 #secret
 static.key
 
+#old images
+*.jpg
+*.png
+
 #Gedit backups
 *~
 

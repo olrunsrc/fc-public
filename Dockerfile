@@ -147,7 +147,9 @@ COPY midi/ midi/
 COPY trajectories/ trajectories/
 COPY vision/ vision/
 COPY posh/ posh/
+COPY olr/ olr/
 COPY olrun.bash .
 COPY fixbashrc .
 COPY testtf.py .
+COPY restart.bash
 CMD ["/bin/bash", "olrun.bash" ]
