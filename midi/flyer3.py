@@ -248,7 +248,7 @@ class Flyer:
 	print("Error shutting down Flyer")
 
 def main(args):
-  rospy.init_node('Flyer2', anonymous=True)
+  rospy.init_node('Flyer3', anonymous=True)
   ip = "192.168.2.10"
   port = 9001
   try:
@@ -266,7 +266,7 @@ def main(args):
   key = 0
   try:
     mod.get_image(1) #1-Gray 2-Small 3-FC(save) 4-Seg
-    mod.write_image(mod.grayimg,lock=False)
+    mod.write_image("Start",lock=False)
     while not rospy.is_shutdown():
       found = mod.check_queue()
       r.sleep()

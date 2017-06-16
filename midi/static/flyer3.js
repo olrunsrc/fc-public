@@ -132,9 +132,9 @@ $(document).ready(function () {
 	  for( var x=0; x < resize[1]; x++ ){
             inidx = resize[1]*y + x 
             outidx = resize[2]*(resize[1]*resize[2]*y + x)
-            d0 = inimg[ 3*inidx + 0];
+            d2 = inimg[ 3*inidx + 0];
 	    d1 = inimg[ 3*inidx + 1];
-	    d2 = inimg[ 3*inidx + 2];
+	    d0 = inimg[ 3*inidx + 2];
 	    d3 = 255;
 	    for( var j=0; j < resize[2] ; j++ ){
 	      for( var i=0; i < resize[2]; i++ ){
